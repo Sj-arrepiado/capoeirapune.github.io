@@ -81,124 +81,29 @@
       background: var(--secondary);
       color: var(--primary);
     }
-    /* Hero section */
-    .hero {
-      text-align: center;
-      padding: 64px 16px 36px 16px;
-      background: linear-gradient(135deg, var(--primary) 70%, var(--highlight) 100%);
-      color: #fff;
-      box-shadow: var(--shadow);
-    }
-    .hero-logo {
-      height: 68px;
-      margin-bottom: 18px;
-    }
-    .hero-title {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.2em;
-      margin: 0;
-      color: var(--secondary);
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-shadow: 1px 2px 12px #006B5B88;
-    }
-    .hero-message {
-      font-size: 1.14em;
-      margin: 16px 0 28px 0;
-      color: #fff;
-      font-weight: 500;
-      text-shadow: 1px 2px 8px var(--primary);
-    }
-    .hero-btn {
-      display: inline-block;
-      background: var(--secondary);
-      color: var(--primary);
-      padding: 15px 38px;
-      border-radius: 30px;
-      font-size: 1.15em;
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-decoration: none;
-      margin-top: 10px;
-      box-shadow: var(--shadow);
-      transition: background 0.2s, color 0.2s, transform 0.2s;
-      font-family: 'Montserrat', Arial, sans-serif;
-      animation: btnBounce 2s infinite;
-    }
-    @keyframes btnBounce {
-      0%, 100% { transform: translateY(0);}
-      60% { transform: translateY(-9px);}
-      80% { transform: translateY(0);}
-    }
-    .hero-btn:hover {
-      background: var(--highlight);
-      color: #fff;
-      transform: scale(1.07);
-      box-shadow: 0 2px 18px var(--primary);
-    }
-    /* Cards */
-    .card-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 34px;
-      justify-content: center;
-      margin-top: 38px;
-      margin-bottom: 50px;
-    }
-    .card {
-      background: var(--card);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-      padding: 34px 28px;
-      min-width: 220px;
-      max-width: 320px;
-      text-align: center;
-      transition: box-shadow 0.2s, transform 0.2s;
-      cursor: pointer;
-      border: 3px solid var(--background);
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-weight: 600;
-      font-size: 1.13em;
-    }
-    .card:hover {
-      box-shadow: 0 8px 36px var(--highlight);
-      transform: scale(1.06) rotate(-1.5deg);
-      border-color: var(--secondary);
-    }
-    .card-icon {
-      font-size: 2.7em;
-      margin-bottom: 12px;
-      color: var(--primary);
-    }
-    /* Tab Sections */
-    .tab-section {
-      display: none;
-      animation: fadeInTab 0.6s;
-    }
-    @keyframes fadeInTab {
-      from { opacity: 0;}
-      to { opacity: 1;}
-    }
-    .tab-section.active {
-      display: block;
-    }
     /* Carousel */
+    .carousel-hero {
+      position: relative;
+      background: var(--background);
+      overflow: hidden;
+      margin: 0 auto;
+      box-shadow: var(--shadow);
+      border-bottom: 4px solid var(--primary);
+    }
     .carousel-container {
       position: relative;
       overflow: hidden;
-      margin: 32px auto 0 auto;
+      min-height: 340px;
+      height: 340px;
+      max-width: 850px;
+      margin: 0 auto;
       background: var(--background);
-      min-height: 320px;
-      height: 320px;
-      max-width: 650px;
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
     }
     .carousel-slide {
       display: none;
       position: absolute;
       width: 100%;
-      height: 320px;
+      height: 340px;
       left: 0; top: 0;
       text-align: center;
       animation: moveIn 1s;
@@ -209,11 +114,11 @@
     }
     .carousel-slide img {
       width: 100%;
-      height: 320px;
+      height: 340px;
       object-fit: cover;
       display: block;
       margin: 0 auto;
-      border-radius: var(--radius);
+      border-radius: 0;
       filter: brightness(0.97) saturate(1.09) contrast(1.02);
       transition: filter 0.3s;
     }
@@ -222,15 +127,15 @@
       left: 50%;
       top: 66%;
       transform: translate(-50%, -50%);
-      background: rgba(240,165,0,0.8); /* secondary with opacity */
+      background: rgba(240,165,0,0.8);
       color: var(--primary);
-      padding: 12px 28px;
-      font-size: 1.45em;
+      padding: 14px 36px;
+      font-size: 1.7em;
       font-weight: bold;
-      border-radius: 14px;
+      border-radius: 18px;
       letter-spacing: 2px;
       box-shadow: 0 2px 20px var(--primary);
-      text-shadow: 1px 2px 8px var(--accent);
+      text-shadow: 1px 2px 8px var(--highlight);
     }
     .carousel-arrow {
       position: absolute;
@@ -275,6 +180,110 @@
       opacity: 1;
       border-color: var(--primary);
     }
+    /* Hero Content */
+    .hero-content {
+      text-align: center;
+      padding: 32px 16px 24px 16px;
+      background: linear-gradient(135deg, var(--primary) 70%, var(--highlight) 100%);
+      color: #fff;
+    }
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2em;
+      margin: 0 0 14px 0;
+      color: var(--secondary);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-shadow: 1px 2px 12px #006B5B88;
+    }
+    .hero-message {
+      font-size: 1.1em;
+      margin: 12px 0 18px 0;
+      color: #fff;
+      font-weight: 500;
+      text-shadow: 1px 2px 8px var(--primary);
+    }
+    .hero-btn {
+      display: inline-block;
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 14px 34px;
+      border-radius: 30px;
+      font-size: 1.08em;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-decoration: none;
+      margin-top: 12px;
+      box-shadow: var(--shadow);
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      font-family: 'Montserrat', Arial, sans-serif;
+      animation: btnBounce 2s infinite;
+    }
+    @keyframes btnBounce {
+      0%, 100% { transform: translateY(0);}
+      60% { transform: translateY(-7px);}
+      80% { transform: translateY(0);}
+    }
+    .hero-btn:hover {
+      background: var(--highlight);
+      color: #fff;
+      transform: scale(1.07);
+      box-shadow: 0 2px 18px var(--primary);
+    }
+    /* Cards */
+    .card-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 34px;
+      justify-content: center;
+      margin-top: 38px;
+      margin-bottom: 50px;
+    }
+    .card {
+      background: var(--card);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 34px 28px;
+      min-width: 220px;
+      max-width: 320px;
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+      cursor: pointer;
+      border: 3px solid var(--background);
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 600;
+      font-size: 1.13em;
+      position: relative;
+    }
+    .card:hover {
+      box-shadow: 0 8px 36px var(--highlight);
+      transform: scale(1.06) rotate(-1.5deg);
+      border-color: var(--secondary);
+    }
+    .card-icon {
+      font-size: 2.7em;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+    .card-desc {
+      margin-top: 10px;
+      font-size: 0.99em;
+      color: var(--text);
+      opacity: 0.85;
+      font-weight: 500;
+    }
+    /* Tab Sections */
+    .tab-section {
+      display: none;
+      animation: fadeInTab 0.6s;
+    }
+    @keyframes fadeInTab {
+      from { opacity: 0;}
+      to { opacity: 1;}
+    }
+    .tab-section.active {
+      display: block;
+    }
     /* Instructor Card */
     .instructor-card {
       display: flex;
@@ -297,6 +306,33 @@
     .instructor-photo:hover {
       box-shadow: 0 8px 36px var(--primary);
       border-color: var(--highlight);
+    }
+    .testimonials-section {
+      margin-top: 36px;
+      text-align: center;
+    }
+    .testimonial-card {
+      background: var(--card);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      display: inline-block;
+      padding: 24px 18px;
+      margin: 0 12px;
+      min-width: 220px;
+      max-width: 340px;
+      font-size: 1.02em;
+      color: var(--primary);
+      font-family: 'Quicksand', 'Montserrat', sans-serif;
+      font-style: italic;
+    }
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 8px var(--secondary);
+      border: 2px solid var(--highlight);
     }
     /* Contact Card */
     .contact-card {
@@ -332,14 +368,14 @@
     }
     @media (max-width: 700px) {
       nav { padding: 0 8px;}
-      .hero { padding: 26px 4px 12px 4px; }
-      .hero-title { font-size: 1.18em;}
-      .card-row { gap: 14px; }
       .carousel-slide img, .carousel-slide, .carousel-container {
         max-height: 160px;
         min-height: 160px;
         height: 160px;
       }
+      .hero-content { padding: 22px 4px 12px 4px; }
+      .hero-title { font-size: 1.18em;}
+      .card-row { gap: 14px; }
       .gallery img {
         width: 98vw;
         height: 22vw;
@@ -356,6 +392,7 @@
         margin-bottom: 16px;
       }
       .carousel-text { font-size: 1em; padding: 8px 10px; }
+      .testimonial-card { min-width: unset; max-width: 98vw;}
     }
   </style>
 </head>
@@ -373,39 +410,91 @@
       <li><button onclick="showTab('contact')">Contact</button></li>
     </ul>
   </nav>
-  <div id="home" class="tab-section active">
-    <div class="hero">
-      <img src="logo.png" alt="Grupo Capoeira Brasil Pune Logo" class="hero-logo">
-      <h1 class="hero-title">Grupo Capoeira Brasil Pune</h1>
-      <div class="hero-message">
-        Welcome to Grupo Capoeira Brasil — Discover the spirit of Capoeira through community, friendship, and movement.
+  <div class="carousel-hero">
+    <div class="carousel-container" id="carousel">
+      <div class="carousel-slide">
+        <img src="carousel1.jpg" alt="Comunidade">
+        <div class="carousel-text">Comunidade<br><span style="font-size:0.65em;font-weight:400;">Together we grow, support, and inspire each other in the roda.</span></div>
       </div>
-      <a href="#contact" class="hero-btn" onclick="showTab('contact');window.scrollTo(0,0);return false;">Join Us</a>
+      <div class="carousel-slide">
+        <img src="carousel2.jpg" alt="Camarada">
+        <div class="carousel-text">Camarada<br><span style="font-size:0.65em;font-weight:400;">Friendship and respect in every movement and song.</span></div>
+      </div>
+      <div class="carousel-slide">
+        <img src="carousel3.jpg" alt="Self defence">
+        <div class="carousel-text">Self Defence<br><span style="font-size:0.65em;font-weight:400;">Agility and awareness—Capoeira empowers you physically and mentally.</span></div>
+      </div>
+      <button class="carousel-arrow left" onclick="plusSlides(-1)">&#10094;</button>
+      <button class="carousel-arrow right" onclick="plusSlides(1)">&#10095;</button>
+      <div class="carousel-dots">
+        <span class="carousel-dot" onclick="currentSlide(1)"></span>
+        <span class="carousel-dot" onclick="currentSlide(2)"></span>
+        <span class="carousel-dot" onclick="currentSlide(3)"></span>
+      </div>
     </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Capoeira Brasil Pune</h1>
+      <div class="hero-message">
+        Discover the spirit of Capoeira through movement, music, and community.<br>
+        Beginners, kids, and adults all welcome!
+      </div>
+      <a href="#contact" class="hero-btn" onclick="showTab('contact');window.scrollTo(0,0);return false;">Try a Free Class!</a>
+    </div>
+  </div>
+  <div id="home" class="tab-section active">
     <div class="card-row">
       <div class="card" onclick="showTab('about')">
         <div class="card-icon">🌀</div>
-        <div>What is Capoeira? <br> Learn about this unique art of movement, music, and culture.</div>
+        <div><strong>What is Capoeira?</strong></div>
+        <div class="card-desc">
+          Capoeira is a unique blend of martial arts, dance, acrobatics, and music—born in Brazil and now practiced worldwide.
+        </div>
       </div>
       <div class="card" onclick="showTab('classes')">
         <div class="card-icon">🥋</div>
-        <div>Our Classes <br> For all ages and levels, with a vibrant community.</div>
+        <div><strong>Our Classes</strong></div>
+        <div class="card-desc">
+          Classes for all ages: playful kids, energetic teens, and adults seeking fitness, flexibility, and fun in a vibrant community.
+        </div>
       </div>
       <div class="card" onclick="showTab('gallery')">
         <div class="card-icon">🖼️</div>
-        <div>See the Action <br> Explore our gallery and Capoeira moments.</div>
+        <div><strong>See the Action</strong></div>
+        <div class="card-desc">
+          Explore our photo gallery and relive moments from workshops, events, and the roda. Pictures speak louder than words!
+        </div>
       </div>
       <div class="card" onclick="showTab('contact')">
         <div class="card-icon">📞</div>
-        <div>Contact Us <br> Join, collaborate, or start your Capoeira journey.</div>
+        <div><strong>Contact Us</strong></div>
+        <div class="card-desc">
+          Message us for trial classes, collaborations, or questions about Capoeira. We're always happy to connect!
+        </div>
+      </div>
+    </div>
+    <div class="testimonials-section">
+      <h3 style="color:var(--primary);margin-bottom:18px;">Student Stories</h3>
+      <div class="testimonial-card">
+        <img src="student1.jpg" alt="Student testimonial" class="testimonial-avatar">
+        <div>
+          “Capoeira made me stronger, fitter, and brought amazing friends into my life. The energy in class is unreal!”<br>
+          <span style="color:var(--secondary);font-size:0.95em;">— Ananya, Age 22</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <img src="student2.jpg" alt="Student testimonial" class="testimonial-avatar">
+        <div>
+          “My son loves Capoeira! He learned discipline, rhythm, and confidence in a really fun way.”<br>
+          <span style="color:var(--secondary);font-size:0.95em;">— Rajesh, Parent</span>
+        </div>
       </div>
     </div>
   </div>
   <div id="about" class="tab-section">
     <h2>🌀 What is Capoeira?</h2>
     <blockquote>
-      Capoeira is more than just a martial art — it’s rhythm, movement, culture, and community all woven together.<br>
-      It’s where music meets motion, where discipline meets fun, and where everyone, no matter their age, finds a place to grow.
+      Capoeira is more than just a martial art — it's rhythm, movement, culture, and community all woven together.<br>
+      It’s where music meets motion, discipline meets fun, and everyone finds a place to grow.
     </blockquote>
     <div class="instructor-card">
       <img src="instructor.jpg" alt="Instrutor Arrepiado Photo" class="instructor-photo">
@@ -413,21 +502,26 @@
         <h3>Instrutor Arrepiado (Sagar Jain)</h3>
         <p>14+ years of Capoeira, 12+ years teaching, representing Grupo Capoeira Brasil under Mestre Caxias.</p>
         <p>Founder of Capoeira Brasil Pune, Sagar brings a blend of discipline, joy, and tradition to every class.</p>
+        <p><b>Why Capoeira?</b> It builds fitness, agility, and confidence—while connecting you to a global community and rich culture.</p>
       </div>
     </div>
-    <h3>Why Capoeira?</h3>
+    <h3 style="margin-top:36px;">Why Capoeira?</h3>
     <div class="card-row">
       <div class="card"><div class="card-icon">🤸‍♂️</div>
-        Movement & Flexibility
+        Movement & Flexibility<br>
+        <span class="card-desc">Capoeira improves coordination, balance, and keeps your body moving in new ways.</span>
       </div>
       <div class="card"><div class="card-icon">🎶</div>
-        Music & Culture
+        Music & Culture<br>
+        <span class="card-desc">Learn traditional Brazilian songs and play instruments—music is the heartbeat of Capoeira.</span>
       </div>
       <div class="card"><div class="card-icon">💪</div>
-        Strength & Fitness
+        Strength & Fitness<br>
+        <span class="card-desc">Every class builds core strength, stamina, and resilience—while having fun!</span>
       </div>
       <div class="card"><div class="card-icon">🧑‍🤝‍🧑</div>
-        Community & Friendship
+        Community & Friendship<br>
+        <span class="card-desc">Capoeira is all about community: supporting each other and growing together.</span>
       </div>
     </div>
   </div>
@@ -436,48 +530,79 @@
     <div class="card-row">
       <div class="card">
         <div class="card-icon">👶</div>
-        <div>Little Capoeiristas (Ages 3.5–6)<br>Rhythm, coordination, teamwork through play.</div>
+        <div><strong>Little Capoeiristas (Ages 3.5–6)</strong></div>
+        <div class="card-desc">
+          Playful games to build rhythm, teamwork, and coordination. Kids learn through movement and music!
+        </div>
       </div>
       <div class="card">
         <div class="card-icon">🧒</div>
-        <div>Kids (Ages 7–12)<br>Fundamentals, confidence, and respect.</div>
+        <div><strong>Kids (Ages 7–12)</strong></div>
+        <div class="card-desc">
+          Developing strong fundamentals in balance, respect, and musicality. Safe, fun, and energetic!
+        </div>
       </div>
       <div class="card">
         <div class="card-icon">🧑</div>
-        <div>Teens & Adults<br>Technique, flow, acrobatics, and musicality.</div>
+        <div><strong>Teens & Adults</strong></div>
+        <div class="card-desc">
+          Technique, flow, acrobatics, and musical training—plus a welcoming community for all skill levels.
+        </div>
       </div>
       <div class="card">
         <div class="card-icon">🏫</div>
-        <div>Schools & Colleges<br>Wellness, cultural events, physical education.</div>
+        <div><strong>Schools & Colleges</strong></div>
+        <div class="card-desc">
+          Capoeira for wellness, cultural festivals, and physical education—bring the art to your institution!
+        </div>
       </div>
       <div class="card">
         <div class="card-icon">🧑‍🤝‍🧑</div>
-        <div>Private & Group Sessions<br>Personalized learning for families, friends, or teams.</div>
+        <div><strong>Private & Group Sessions</strong></div>
+        <div class="card-desc">
+          One-on-one or small group classes tailored to your goals. Perfect for families, friends, or teams.
+        </div>
       </div>
     </div>
-    <p style="text-align:center; margin-top:28px;">Each class includes warm-ups, sequences, partner work, music practice.<br>Workshops, performances, and Batizado (graduation) events throughout the year.</p>
+    <div style="text-align:center; margin-top:28px;">Each class includes warm-ups, sequences, partner work, music practice.<br>We host workshops, performances, and Batizado (graduation) events throughout the year.</div>
   </div>
   <div id="gallery" class="tab-section">
     <h2>🖼️ Gallery</h2>
-    <div class="carousel-container" id="carousel">
+    <div class="carousel-container" id="carousel-gallery">
       <div class="carousel-slide">
         <img src="carousel1.jpg" alt="Comunidade">
-        <div class="carousel-text">Comunidade</div>
+        <div class="carousel-text">Comunidade<br><span style="font-size:0.65em;font-weight:400;">Together we grow, support, and inspire each other in the roda.</span></div>
       </div>
       <div class="carousel-slide">
         <img src="carousel2.jpg" alt="Camarada">
-        <div class="carousel-text">Camarada</div>
+        <div class="carousel-text">Camarada<br><span style="font-size:0.65em;font-weight:400;">Friendship and respect in every movement and song.</span></div>
       </div>
       <div class="carousel-slide">
         <img src="carousel3.jpg" alt="Self defence">
-        <div class="carousel-text">Self defence</div>
+        <div class="carousel-text">Self Defence<br><span style="font-size:0.65em;font-weight:400;">Agility and awareness—Capoeira empowers you physically and mentally.</span></div>
       </div>
-      <button class="carousel-arrow left" onclick="plusSlides(-1)">&#10094;</button>
-      <button class="carousel-arrow right" onclick="plusSlides(1)">&#10095;</button>
+      <button class="carousel-arrow left" onclick="plusSlidesGallery(-1)">&#10094;</button>
+      <button class="carousel-arrow right" onclick="plusSlidesGallery(1)">&#10095;</button>
       <div class="carousel-dots">
-        <span class="carousel-dot" onclick="currentSlide(1)"></span>
-        <span class="carousel-dot" onclick="currentSlide(2)"></span>
-        <span class="carousel-dot" onclick="currentSlide(3)"></span>
+        <span class="carousel-dot" onclick="currentSlideGallery(1)"></span>
+        <span class="carousel-dot" onclick="currentSlideGallery(2)"></span>
+        <span class="carousel-dot" onclick="currentSlideGallery(3)"></span>
+      </div>
+    </div>
+    <div class="card-row" style="margin-top:38px;">
+      <div class="card">
+        <div class="card-icon">📸</div>
+        <div><strong>Events & Workshops</strong></div>
+        <div class="card-desc">
+          See moments from our Batizado, open rodas, and special Capoeira workshops.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤹‍♂️</div>
+        <div><strong>Training & Fun</strong></div>
+        <div class="card-desc">
+          Photos of students, instructors, and friends—training, playing, and learning together.
+        </div>
       </div>
     </div>
   </div>
@@ -510,24 +635,24 @@
       window.scrollTo(0,0);
     }
 
-    // Carousel
+    // Carousel top
     let slideIndex = 1;
     showSlides(slideIndex);
-    let slideTimer = setInterval(() => plusSlides(1), 4000);
+    let slideTimer = setInterval(() => plusSlides(1), 4600);
 
     function plusSlides(n) {
       clearInterval(slideTimer);
       showSlides(slideIndex += n);
-      slideTimer = setInterval(() => plusSlides(1), 4000);
+      slideTimer = setInterval(() => plusSlides(1), 4600);
     }
     function currentSlide(n) {
       clearInterval(slideTimer);
       showSlides(slideIndex = n);
-      slideTimer = setInterval(() => plusSlides(1), 4000);
+      slideTimer = setInterval(() => plusSlides(1), 4600);
     }
     function showSlides(n) {
-      let slides = document.querySelectorAll(".carousel-slide");
-      let dots = document.querySelectorAll(".carousel-dot");
+      let slides = document.querySelectorAll(".carousel-hero .carousel-slide");
+      let dots = document.querySelectorAll(".carousel-hero .carousel-dot");
       if (slides.length === 0) return;
       if (n > slides.length) {slideIndex = 1}
       if (n < 1) {slideIndex = slides.length}
@@ -535,6 +660,33 @@
       dots.forEach(d => d.classList.remove("active"));
       slides[slideIndex-1].style.display = "block";
       dots[slideIndex-1].classList.add("active");
+    }
+
+    // Carousel in Gallery tab
+    let slideIndexGallery = 1;
+    showSlidesGallery(slideIndexGallery);
+    let slideTimerGallery = setInterval(() => plusSlidesGallery(1), 4600);
+
+    function plusSlidesGallery(n) {
+      clearInterval(slideTimerGallery);
+      showSlidesGallery(slideIndexGallery += n);
+      slideTimerGallery = setInterval(() => plusSlidesGallery(1), 4600);
+    }
+    function currentSlideGallery(n) {
+      clearInterval(slideTimerGallery);
+      showSlidesGallery(slideIndexGallery = n);
+      slideTimerGallery = setInterval(() => plusSlidesGallery(1), 4600);
+    }
+    function showSlidesGallery(n) {
+      let slides = document.querySelectorAll("#carousel-gallery .carousel-slide");
+      let dots = document.querySelectorAll("#carousel-gallery .carousel-dot");
+      if (slides.length === 0) return;
+      if (n > slides.length) {slideIndexGallery = 1}
+      if (n < 1) {slideIndexGallery = slides.length}
+      slides.forEach(s => s.style.display = "none");
+      dots.forEach(d => d.classList.remove("active"));
+      slides[slideIndexGallery-1].style.display = "block";
+      dots[slideIndexGallery-1].classList.add("active");
     }
   </script>
 </body>

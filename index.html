@@ -35,19 +35,21 @@
       overflow: hidden;
       margin: 0 auto 24px auto;
       background: var(--background);
-      min-height: 260px;
+      min-height: 320px;
+      height: 420px;
     }
     .carousel-slide {
       display: none;
       position: absolute;
       width: 100%;
-      height: 320px;
+      height: 420px;
       left: 0; top: 0;
       text-align: center;
     }
     .carousel-slide img {
       width: 100%;
-      max-height: 320px;
+      max-height: 420px;
+      min-height: 420px;
       object-fit: cover;
       display: block;
       margin: 0 auto;
@@ -270,7 +272,15 @@
       main {
         padding: 8px;
       }
-      .carousel-slide img { max-height: 180px; }
+      .carousel-slide img, .carousel-slide {
+        max-height: 220px;
+        min-height: 220px;
+        height: 220px;
+      }
+      .carousel-container {
+        min-height: 220px;
+        height: 220px;
+      }
       .gallery img {
         width: 98vw;
         height: 18vw;
@@ -292,7 +302,7 @@
 </head>
 <body>
   <div class="top-message">
-    Welcome to Grupo Capoeira Brasil Pune – Discover the spirit of Capoeira through community, friendship, and self defence!
+    Welcome to Grupo Capoeira Brasil — Discover the spirit of Capoeira through community, friendship, and movement.
   </div>
   <div class="carousel-container" id="carousel">
     <div class="carousel-slide">
@@ -432,7 +442,7 @@
         <p><strong>Grupo Capoeira Brasil Pune</strong></p>
         <p>📍 Pune, India</p>
         <p>📧 Email: <a href="mailto:arrepiado@capoeirapune.com">arrepiado@capoeirapune.com</a></p>
-        <p>📞 Phone: <a href="tel:+919766481796">9766 481 796</a></p>
+        <p>📞 Phone: <a href="tel:+919766481796">+91 9766481796</a></p>
         <p>📸 Instagram: <a href="https://instagram.com/capoeirapune.india" target="_blank">@capoeirapune.india</a></p>
         <p>For class timings, trial sessions, or collaborations — message us on Instagram or email us directly.</p>
       </div>

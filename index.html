@@ -5,235 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Grupo Capoeira Brasil Pune</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Quicksand:wght@500&display=swap" rel="stylesheet">
   <style>
     :root {
       --background: #FAF7F0;
       --primary: #006B5B;
       --secondary: #F0A500;
       --highlight: #5088A2;
-      --accent: #C85A2E;
       --text: #2F2F2F;
-      --wave: #F0A500;
+      --card: #ffffff;
+      --shadow: 0 4px 24px #006B5B22;
+      --radius: 18px;
     }
     body {
-      font-family: 'Montserrat', Arial, sans-serif;
+      font-family: 'Quicksand', 'Montserrat', Arial, sans-serif;
       background: var(--background);
       color: var(--text);
       margin: 0;
       padding: 0;
-      transition: background 1s;
-    }
-    .hero {
-      position: relative;
-      text-align: center;
-      padding: 48px 12px 32px 12px;
-      background: linear-gradient(135deg, var(--primary) 70%, var(--highlight) 100%);
-      color: #fff;
-      overflow: hidden;
-      animation: heroFade 1.5s;
-    }
-    @keyframes heroFade {
-      from { opacity: 0; transform: translateY(-40px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    .hero-logo {
-      height: 64px;
-      margin-bottom: 10px;
-      filter: drop-shadow(0 2px 12px var(--secondary));
-      animation: logoBounce 1s;
-    }
-    @keyframes logoBounce {
-      0%, 100% { transform: translateY(0);}
-      50% { transform: translateY(-18px);}
-    }
-    .hero-title {
-      font-family: 'Pacifico', cursive;
-      font-size: 2.7em;
-      margin: 0;
-      letter-spacing: 2px;
-      color: var(--secondary);
-      text-shadow: 2px 2px 0 var(--accent), 0px 4px 8px var(--primary);
-      animation: textPop 1.1s;
-    }
-    @keyframes textPop {
-      0% { transform: scale(0.7); opacity: 0;}
-      80% { transform: scale(1.1);}
-      100% { transform: scale(1); opacity: 1;}
-    }
-    .hero-message {
-      font-size: 1.2em;
-      margin: 12px 0 28px 0;
-      color: #fff;
-      font-weight: 500;
-      text-shadow: 1px 2px 8px var(--primary);
-      animation: fadeIn 1.5s;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0;}
-      to { opacity: 1;}
-    }
-    .hero-btn {
-      display: inline-block;
-      background: var(--secondary);
-      color: var(--primary);
-      padding: 16px 34px;
-      border-radius: 30px;
-      font-size: 1.2em;
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-decoration: none;
-      margin-top: 10px;
-      box-shadow: 0 6px 28px var(--accent), 0 2px 10px var(--secondary);
-      transition: background 0.2s, color 0.2s, transform 0.2s;
-      animation: btnBounce 2s infinite;
-    }
-    @keyframes btnBounce {
-      0%, 100% { transform: translateY(0);}
-      60% { transform: translateY(-8px);}
-      80% { transform: translateY(0);}
-    }
-    .hero-btn:hover {
-      background: var(--highlight);
-      color: #fff;
-      transform: scale(1.07);
-      box-shadow: 0 2px 18px var(--primary);
-    }
-    .wave-divider {
-      display: block;
-      width: 100vw;
-      height: 52px;
-      margin: 0;
-      background: none;
-    }
-    .carousel-container {
-      width: 100vw;
-      max-width: 100%;
-      position: relative;
-      overflow: hidden;
-      margin: 0 auto 36px auto;
-      background: var(--background);
-      min-height: 420px;
-      height: 420px;
-      box-shadow: 0 4px 36px #C85A2E18;
-    }
-    .carousel-slide {
-      display: none;
-      position: absolute;
-      width: 100%;
-      height: 420px;
-      left: 0; top: 0;
-      text-align: center;
-      animation: moveIn 1s;
-    }
-    @keyframes moveIn {
-      from { opacity: 0; transform: scale(1.1);}
-      to { opacity: 1; transform: scale(1);}
-    }
-    .carousel-slide img {
-      width: 100%;
-      max-height: 420px;
-      min-height: 420px;
-      object-fit: cover;
-      display: block;
-      margin: 0 auto;
-      filter: brightness(0.97) saturate(1.09) contrast(1.02);
-      transition: filter 0.3s;
-    }
-    .carousel-slide img:hover {
-      filter: brightness(1.03) saturate(1.2) contrast(1.09);
-    }
-    .carousel-text {
-      position: absolute;
-      left: 50%;
-      top: 62%;
-      transform: translate(-50%, -50%);
-      background: rgba(240,165,0,0.77); /* secondary with opacity */
-      color: var(--primary);
-      padding: 18px 38px;
-      font-size: 2.4em;
-      font-weight: bold;
-      border-radius: 18px;
-      letter-spacing: 2px;
-      box-shadow: 0 2px 30px var(--primary);
-      text-shadow: 1px 2px 14px var(--accent);
-      animation: textBounce 1s;
-    }
-    @keyframes textBounce {
-      0%, 100% { transform: translate(-50%, -50%) scale(1);}
-      50% { transform: translate(-50%, -50%) scale(1.13);}
-    }
-    .carousel-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2.2em;
-      color: var(--accent);
-      background: rgba(250,247,240,0.7);
-      border: none;
-      cursor: pointer;
-      padding: 8px 16px;
-      border-radius: 8px;
-      z-index: 10;
-      transition: background 0.2s, color 0.2s;
-    }
-    .carousel-arrow:hover {
-      background: var(--secondary);
-      color: var(--primary);
-    }
-    .carousel-arrow.left { left: 18px; }
-    .carousel-arrow.right { right: 18px; }
-    .carousel-dots {
-      position: absolute;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 16px;
-    }
-    .carousel-dot {
-      height: 18px;
-      width: 18px;
-      border-radius: 50%;
-      background: var(--highlight);
-      opacity: 0.4;
-      cursor: pointer;
-      transition: background 0.2s, opacity 0.2s;
-      border: 3px solid var(--background);
-    }
-    .carousel-dot.active {
-      background: var(--secondary);
-      opacity: 1;
-      border-color: var(--accent);
     }
     nav {
       background: var(--primary);
       color: #fff;
       display: flex;
       align-items: center;
-      padding: 0 20px;
+      padding: 0 24px;
       min-height: 70px;
       font-family: 'Montserrat', Arial, sans-serif;
       font-weight: 700;
       letter-spacing: 1px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
     }
     .logo-container {
       display: flex;
       align-items: center;
     }
     .logo-img {
-      height: 40px;
+      height: 36px;
       margin-right: 10px;
-      border: none;
-      padding: 0;
-      box-shadow: none;
-      background: none;
       border-radius: 0;
-      filter: drop-shadow(0 2px 8px var(--secondary));
-      transition: filter 0.3s;
     }
     .logo-text {
-      font-size: 1.15em;
+      font-size: 1.08em;
       font-weight: bold;
       letter-spacing: 2px;
       color: #fff;
@@ -249,135 +65,249 @@
     nav ul li {
       margin: 0 8px;
     }
-    nav ul li a {
+    nav ul li button {
+      background: none;
       color: var(--secondary);
-      text-decoration: none;
-      padding: 8px 18px;
-      border-radius: 18px;
-      transition: text-decoration 0.2s, color 0.2s, background 0.2s;
-      font-weight: 600;
       border: none;
-      background: none;
+      font-size: 1em;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
     }
-    nav ul li a:hover, nav ul li a.active {
-      text-decoration: underline;
-      color: var(--highlight);
-      background: var(--accent);
-    }
-    main {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 24px;
-      background: var(--background);
-      border-radius: 0;
-      box-shadow: none;
-    }
-    .section {
-      margin-bottom: 48px;
-    }
-    h1, h2, h3, h4 {
+    nav ul li button.active,
+    nav ul li button:hover {
+      background: var(--secondary);
       color: var(--primary);
-      font-family: 'Pacifico', cursive;
-      letter-spacing: 2px;
-      margin-bottom: 16px;
+    }
+    /* Hero section */
+    .hero {
+      text-align: center;
+      padding: 64px 16px 36px 16px;
+      background: linear-gradient(135deg, var(--primary) 70%, var(--highlight) 100%);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+    .hero-logo {
+      height: 68px;
+      margin-bottom: 18px;
+    }
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2em;
+      margin: 0;
+      color: var(--secondary);
       font-weight: 700;
-      text-shadow: 1px 2px 8px var(--secondary);
+      letter-spacing: 2px;
+      text-shadow: 1px 2px 12px #006B5B88;
     }
-    blockquote {
-      background: none;
-      border-left: 7px solid var(--accent);
-      padding: 10px 28px;
-      margin-bottom: 20px;
-      font-style: italic;
-      border-radius: 0;
-      box-shadow: 0 2px 18px var(--secondary);
-      color: var(--text);
-      font-size: 1.09em;
+    .hero-message {
+      font-size: 1.14em;
+      margin: 16px 0 28px 0;
+      color: #fff;
+      font-weight: 500;
+      text-shadow: 1px 2px 8px var(--primary);
     }
+    .hero-btn {
+      display: inline-block;
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 15px 38px;
+      border-radius: 30px;
+      font-size: 1.15em;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-decoration: none;
+      margin-top: 10px;
+      box-shadow: var(--shadow);
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      font-family: 'Montserrat', Arial, sans-serif;
+      animation: btnBounce 2s infinite;
+    }
+    @keyframes btnBounce {
+      0%, 100% { transform: translateY(0);}
+      60% { transform: translateY(-9px);}
+      80% { transform: translateY(0);}
+    }
+    .hero-btn:hover {
+      background: var(--highlight);
+      color: #fff;
+      transform: scale(1.07);
+      box-shadow: 0 2px 18px var(--primary);
+    }
+    /* Cards */
+    .card-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 34px;
+      justify-content: center;
+      margin-top: 38px;
+      margin-bottom: 50px;
+    }
+    .card {
+      background: var(--card);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 34px 28px;
+      min-width: 220px;
+      max-width: 320px;
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+      cursor: pointer;
+      border: 3px solid var(--background);
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 600;
+      font-size: 1.13em;
+    }
+    .card:hover {
+      box-shadow: 0 8px 36px var(--highlight);
+      transform: scale(1.06) rotate(-1.5deg);
+      border-color: var(--secondary);
+    }
+    .card-icon {
+      font-size: 2.7em;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+    /* Tab Sections */
+    .tab-section {
+      display: none;
+      animation: fadeInTab 0.6s;
+    }
+    @keyframes fadeInTab {
+      from { opacity: 0;}
+      to { opacity: 1;}
+    }
+    .tab-section.active {
+      display: block;
+    }
+    /* Carousel */
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      margin: 32px auto 0 auto;
+      background: var(--background);
+      min-height: 320px;
+      height: 320px;
+      max-width: 650px;
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+    .carousel-slide {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 320px;
+      left: 0; top: 0;
+      text-align: center;
+      animation: moveIn 1s;
+    }
+    @keyframes moveIn {
+      from { opacity: 0; transform: scale(1.08);}
+      to { opacity: 1; transform: scale(1);}
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+      border-radius: var(--radius);
+      filter: brightness(0.97) saturate(1.09) contrast(1.02);
+      transition: filter 0.3s;
+    }
+    .carousel-text {
+      position: absolute;
+      left: 50%;
+      top: 66%;
+      transform: translate(-50%, -50%);
+      background: rgba(240,165,0,0.8); /* secondary with opacity */
+      color: var(--primary);
+      padding: 12px 28px;
+      font-size: 1.45em;
+      font-weight: bold;
+      border-radius: 14px;
+      letter-spacing: 2px;
+      box-shadow: 0 2px 20px var(--primary);
+      text-shadow: 1px 2px 8px var(--accent);
+    }
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2em;
+      color: var(--highlight);
+      background: rgba(250,247,240,0.7);
+      border: none;
+      cursor: pointer;
+      padding: 8px 16px;
+      border-radius: 8px;
+      z-index: 10;
+      transition: background 0.2s;
+    }
+    .carousel-arrow.left { left: 10px; }
+    .carousel-arrow.right { right: 10px; }
+    .carousel-arrow:hover {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+    .carousel-dots {
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+    .carousel-dot {
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      background: var(--highlight);
+      opacity: 0.4;
+      cursor: pointer;
+      transition: background 0.2s, opacity 0.2s;
+      border: 2px solid var(--background);
+    }
+    .carousel-dot.active {
+      background: var(--secondary);
+      opacity: 1;
+      border-color: var(--primary);
+    }
+    /* Instructor Card */
     .instructor-card {
       display: flex;
       align-items: flex-start;
       gap: 28px;
-      background: none;
-      padding: 0;
-      border-radius: 0;
-      margin: 20px 0;
-      box-shadow: none;
+      margin: 38px 0 0 0;
       font-family: 'Montserrat', Arial, sans-serif;
     }
     .instructor-photo {
-      height: 155px;
-      width: 155px;
+      height: 120px;
+      width: 120px;
       object-fit: cover;
-      border-radius: 22px;
-      margin-right: 28px;
-      box-shadow: 0 2px 18px var(--accent);
-      border: 4px solid var(--secondary);
-      background: none;
-      transition: box-shadow 0.2s, border-color 0.2s;
-    }
-    .instructor-photo:hover {
-      box-shadow: 0 6px 36px var(--primary);
-      border-color: var(--highlight);
-    }
-    .programs {
-      display: flex;
-      gap: 22px;
-      margin-bottom: 18px;
-      flex-wrap: wrap;
-    }
-    .program {
-      background: var(--highlight);
-      border-radius: 18px;
-      padding: 18px;
-      flex: 1;
-      min-width: 220px;
-      box-shadow: 0 1px 8px var(--primary);
-      border: 2px solid var(--secondary);
-      color: #fff;
-      font-weight: 600;
-      font-size: 1.08em;
-    }
-    .extras ul {
-      margin-left: 22px;
-    }
-    dl dt {
-      font-weight: bold;
-      color: var(--accent);
-    }
-    dl dd {
-      margin-bottom: 16px;
-      color: var(--primary);
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      justify-content: flex-start;
-    }
-    .gallery img {
-      width: 240px;
-      height: 155px;
-      object-fit: cover;
-      border-radius: 18px;
-      box-shadow: 0 2px 16px var(--accent);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
       border: 3px solid var(--secondary);
       background: none;
-      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      transition: box-shadow 0.2s, border-color 0.2s;
+      margin-bottom: 10px;
     }
-    .gallery img:hover {
-      transform: scale(1.08) rotate(-2.5deg);
+    .instructor-photo:hover {
       box-shadow: 0 8px 36px var(--primary);
       border-color: var(--highlight);
     }
+    /* Contact Card */
     .contact-card {
       background: var(--highlight);
       padding: 22px;
-      border-radius: 18px;
+      border-radius: var(--radius);
       margin-top: 10px;
-      box-shadow: 0 2px 18px var(--accent);
+      box-shadow: var(--shadow);
       color: #fff;
       font-weight: 600;
+      font-size: 1.08em;
     }
     .contact-card a {
       color: var(--secondary);
@@ -386,7 +316,7 @@
       transition: color 0.2s;
     }
     .contact-card a:hover {
-      color: var(--accent);
+      color: var(--primary);
       text-decoration: underline;
     }
     footer {
@@ -401,18 +331,15 @@
       letter-spacing: 2px;
     }
     @media (max-width: 700px) {
-      main {
-        padding: 8px;
-      }
+      nav { padding: 0 8px;}
+      .hero { padding: 26px 4px 12px 4px; }
+      .hero-title { font-size: 1.18em;}
+      .card-row { gap: 14px; }
       .carousel-slide img, .carousel-slide, .carousel-container {
-        max-height: 220px;
-        min-height: 220px;
-        height: 220px;
+        max-height: 160px;
+        min-height: 160px;
+        height: 160px;
       }
-      .hero {
-        padding: 28px 4px 18px 4px;
-      }
-      .hero-title { font-size: 1.3em;}
       .gallery img {
         width: 98vw;
         height: 22vw;
@@ -428,198 +355,186 @@
       .instructor-photo {
         margin-bottom: 16px;
       }
-      .carousel-text { font-size: 1.09em; padding: 8px 10px; }
+      .carousel-text { font-size: 1em; padding: 8px 10px; }
     }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <img src="logo.png" alt="Grupo Capoeira Brasil Pune Logo" class="hero-logo">
-    <h1 class="hero-title">Grupo Capoeira Brasil Pune</h1>
-    <div class="hero-message">
-      Welcome to Grupo Capoeira Brasil — Discover the spirit of Capoeira through community, friendship, and movement.
-    </div>
-    <a href="#contact" class="hero-btn">Join the Roda</a>
-    <svg class="wave-divider" viewBox="0 0 1440 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill="var(--wave)" fill-opacity="1" d="M0,32 C360,80 1080,0 1440,32 L1440,52 L0,52 Z"></path>
-    </svg>
-  </div>
-  <div class="carousel-container" id="carousel">
-    <div class="carousel-slide">
-      <img src="carousel1.jpg" alt="Comunidade">
-      <div class="carousel-text">Comunidade</div>
-    </div>
-    <div class="carousel-slide">
-      <img src="carousel2.jpg" alt="Camarada">
-      <div class="carousel-text">Camarada</div>
-    </div>
-    <div class="carousel-slide">
-      <img src="carousel3.jpg" alt="Self defence">
-      <div class="carousel-text">Self defence</div>
-    </div>
-    <button class="carousel-arrow left" onclick="plusSlides(-1)">&#10094;</button>
-    <button class="carousel-arrow right" onclick="plusSlides(1)">&#10095;</button>
-    <div class="carousel-dots">
-      <span class="carousel-dot" onclick="currentSlide(1)"></span>
-      <span class="carousel-dot" onclick="currentSlide(2)"></span>
-      <span class="carousel-dot" onclick="currentSlide(3)"></span>
-    </div>
-  </div>
   <nav>
     <div class="logo-container">
       <img src="logo.png" alt="Grupo Capoeira Brasil Pune Logo" class="logo-img">
       <span class="logo-text">Grupo Capoeira Brasil Pune</span>
     </div>
     <ul>
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#about-capoeira">About Capoeira</a></li>
-      <li><a href="#instructor">About Instructor</a></li>
-      <li><a href="#classes">Classes</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><button class="active" onclick="showTab('home')">Home</button></li>
+      <li><button onclick="showTab('about')">About</button></li>
+      <li><button onclick="showTab('classes')">Classes</button></li>
+      <li><button onclick="showTab('gallery')">Gallery</button></li>
+      <li><button onclick="showTab('contact')">Contact</button></li>
     </ul>
   </nav>
-  <main>
-    <section id="home" class="section">
-      <h1>Welcome to Grupo Capoeira Brasil Pune!</h1>
-      <blockquote>
-        Capoeira is more than just a martial art — it’s rhythm, movement, culture, and community all woven together.<br>
-        It’s where music meets motion, where discipline meets fun, and where everyone, no matter their age, finds a place to grow.
-      </blockquote>
-      <p>At our academy, we train to move better, feel stronger, and connect deeper — with ourselves and with others. Whether you’re looking to improve your fitness, learn something new, or just experience the energy of Capoeira, you’re welcome here.</p>
-      <p>Grupo Capoeira Brasil Pune is part of Grupo Capoeira Brasil, one of the largest and most respected Capoeira organizations in the world. Founded in Brazil in 1989, our group is known for its strong roots, musicality, and open-hearted community — now spreading its rhythm across Pune and all of India.</p>
-      <p><strong>Come be part of it.</strong> Step into the roda, feel the beat, and discover what Capoeira can bring to your life.</p>
-    </section>
-
-    <section id="about-capoeira" class="section">
-      <h2>🌀 What is Capoeira?</h2>
-      <p>Capoeira is an Afro-Brazilian martial art that beautifully blends dance, music, acrobatics, and self-defense into one powerful and expressive art form. It is often described as a game rather than a fight — played between two people inside a circle called a roda, accompanied by traditional instruments like the berimbau, atabaque, and pandeiro.</p>
-      <p>Unlike most martial arts that rely on force, Capoeira focuses on rhythm, flow, and creativity. Every movement is a dialogue — a combination of attack, defense, and playfulness, all performed in harmony with the music. It trains not only the body but also the mind, encouraging agility, awareness, discipline, and community spirit.</p>
-      <h3>🪘 A Brief History of Capoeira</h3>
-      <p>Capoeira was born in Brazil during the 16th century, created by African slaves who were brought to the country by Portuguese colonizers. These enslaved people combined African combat techniques, dances, and rhythms to develop a disguised form of self-defense — one that looked like a dance to deceive their masters.</p>
-      <p>For many years, Capoeira was banned in Brazil and practiced secretly, as it symbolized resistance and freedom. But over time, it evolved from a tool of survival to a cultural treasure. In the 20th century, great mestres (masters) like Mestre Bimba and Mestre Pastinha helped formalize and preserve Capoeira’s traditions, eventually leading to its recognition by UNESCO as an Intangible Cultural Heritage of Humanity in 2014.</p>
-      <p>Today, Capoeira is practiced worldwide, representing strength, freedom, art, and unity.</p>
-      <h3>🇮🇳 Capoeira in Pune</h3>
-      <p>Capoeira made its way to Pune in the early 2010s, introduced through workshops and the growing influence of Grupo Capoeira Brasil (GCB) — one of the world’s most respected Capoeira organizations.</p>
-      <p>Under the guidance of Mestre Caxias and led locally by Instrutor Arrepiado, Capoeira has steadily grown into a vibrant community of students, artists, and athletes. Grupo Capoeira Brasil Pune now trains students of all ages — from toddlers to adults — nurturing not just skill, but also values of respect, rhythm, discipline, and joy.</p>
-      <p>Through regular classes, workshops, and annual events like the Batizado (graduation ceremony), Capoeira continues to spread its message of culture, movement, and unity across the city.</p>
-    </section>
-
-    <section id="instructor" class="section">
-      <h2>About Instrutor Arrepiado</h2>
-      <div class="instructor-card">
-        <img src="instructor.jpg" alt="Instrutor Arrepiado Photo" class="instructor-photo">
-        <div>
-          <p><strong>Instrutor Arrepiado</strong>, known outside the roda as Sagar Jain, has been practicing Capoeira for over 14 years and teaching for more than 12 years. He represents Grupo Capoeira Brasil, one of the world’s most respected Capoeira organizations, under the guidance of Mestre Caxias.</p>
-          <p>His journey began with a deep fascination for the rhythm, movement, and energy of Capoeira — an art that combines martial arts, dance, music, and culture into one dynamic expression. Over the years, he has trained with masters and teachers from around the world, continuing to deepen his understanding of both the physical and cultural essence of the art.</p>
-          <p>In Pune, Instrutor Arrepiado founded Grupo Capoeira Brasil Pune, a growing community where students of all ages — from toddlers to adults — come together to explore Capoeira through movement, music, and connection. His teaching focuses on discipline, consistency, and joy, ensuring that every student learns not only the movements but also the spirit and tradition of Capoeira.</p>
-          <p>Instrutor Arrepiado’s mission is to make Capoeira accessible to everyone and to share its values of respect, resilience, and community across India.</p>
-        </div>
+  <div id="home" class="tab-section active">
+    <div class="hero">
+      <img src="logo.png" alt="Grupo Capoeira Brasil Pune Logo" class="hero-logo">
+      <h1 class="hero-title">Grupo Capoeira Brasil Pune</h1>
+      <div class="hero-message">
+        Welcome to Grupo Capoeira Brasil — Discover the spirit of Capoeira through community, friendship, and movement.
       </div>
-    </section>
-
-    <section id="classes" class="section">
-      <h2>🥋 Classes</h2>
-      <p>At Grupo Capoeira Brasil Pune, we offer Capoeira classes for all ages and experience levels — from playful beginners to dedicated practitioners.</p>
-      <div class="programs">
-        <div class="program">
-          <h4>Little Capoeiristas (Ages 3.5–6)</h4>
-          <p>Introducing rhythm, coordination, and teamwork through fun Capoeira-based games.</p>
-        </div>
-        <div class="program">
-          <h4>Kids (Ages 7–12)</h4>
-          <p>Developing strong fundamentals in movement, balance, and music while learning discipline and respect.</p>
-        </div>
-        <div class="program">
-          <h4>Teens & Adults</h4>
-          <p>Building technique, flow, acrobatics, and musicality — combining physical training with cultural understanding.</p>
-        </div>
+      <a href="#contact" class="hero-btn" onclick="showTab('contact');window.scrollTo(0,0);return false;">Join Us</a>
+    </div>
+    <div class="card-row">
+      <div class="card" onclick="showTab('about')">
+        <div class="card-icon">🌀</div>
+        <div>What is Capoeira? <br> Learn about this unique art of movement, music, and culture.</div>
       </div>
-      <div class="extras">
-        <ul>
-          <li>Teach in Schools and Colleges: Introducing Capoeira as a part of physical education, cultural events, and wellness programs.</li>
-          <li>Offer Private Lessons: One-on-one sessions tailored to individual goals — from fitness and coordination to movement refinement.</li>
-          <li>Conduct Small Curated Group Sessions: Perfect for families, friends, or corporate teams who want a personalized learning experience.</li>
-        </ul>
+      <div class="card" onclick="showTab('classes')">
+        <div class="card-icon">🥋</div>
+        <div>Our Classes <br> For all ages and levels, with a vibrant community.</div>
       </div>
-      <p>Each class includes warm-ups, sequences, partner work, and music practice.</p>
-      <p>We also host workshops, performances, and our annual Batizado — a celebration of progress, tradition, and community.</p>
-      <p>📍 Classes held in Pune</p>
-      <p>📧 <a href="mailto:arrepiado@capoeirapune.com">arrepiado@capoeirapune.com</a></p>
-    </section>
-
-    <section id="faq" class="section">
-      <h2>❓ FAQ</h2>
-      <dl>
-        <dt>Do I need any martial arts or dance experience to start?</dt>
-        <dd>Not at all! Capoeira is for everyone. Beginners are always welcome.</dd>
-        <dt>What should I wear for class?</dt>
-        <dd>Comfortable workout clothes. Once you join regularly, you can get the official Grupo Capoeira Brasil Pune uniform.</dd>
-        <dt>Is Capoeira suitable for kids?</dt>
-        <dd>Yes — it’s one of the best arts for children to improve coordination, focus, and confidence, all while having fun.</dd>
-        <dt>How often should I train?</dt>
-        <dd>Ideally 2–3 times a week for steady progress, but even once a week with consistency can make a big difference.</dd>
-        <dt>Is there music in Capoeira classes?</dt>
-        <dd>Yes! Music is at the heart of Capoeira. Students learn to sing in Portuguese and play traditional instruments like the berimbau, atabaque, and pandeiro.</dd>
-      </dl>
-    </section>
-
-    <section id="gallery" class="section">
-      <h2>Gallery</h2>
-      <div class="gallery">
-        <img src="photo1.jpg" alt="Capoeira Movement 1">
-        <img src="photo2.jpg" alt="Capoeira Movement 2">
-        <img src="photo3.jpg" alt="Capoeira Movement 3">
-        <img src="photo4.jpg" alt="Capoeira Movement 4">
-        <img src="photo5.jpg" alt="Capoeira Movement 5">
+      <div class="card" onclick="showTab('gallery')">
+        <div class="card-icon">🖼️</div>
+        <div>See the Action <br> Explore our gallery and Capoeira moments.</div>
       </div>
-    </section>
-
-    <section id="contact" class="section">
-      <h2>📞 Contact</h2>
-      <div class="contact-card">
-        <p><strong>Grupo Capoeira Brasil Pune</strong></p>
-        <p>📍 Pune, India</p>
-        <p>📧 Email: <a href="mailto:arrepiado@capoeirapune.com">arrepiado@capoeirapune.com</a></p>
-        <p>📞 Phone: <a href="tel:+919766481796">+91 9766481796</a></p>
-        <p>📸 Instagram: <a href="https://instagram.com/capoeirapune.india" target="_blank">@capoeirapune.india</a></p>
-        <p>For class timings, trial sessions, or collaborations — message us on Instagram or email us directly.</p>
+      <div class="card" onclick="showTab('contact')">
+        <div class="card-icon">📞</div>
+        <div>Contact Us <br> Join, collaborate, or start your Capoeira journey.</div>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
+  <div id="about" class="tab-section">
+    <h2>🌀 What is Capoeira?</h2>
+    <blockquote>
+      Capoeira is more than just a martial art — it’s rhythm, movement, culture, and community all woven together.<br>
+      It’s where music meets motion, where discipline meets fun, and where everyone, no matter their age, finds a place to grow.
+    </blockquote>
+    <div class="instructor-card">
+      <img src="instructor.jpg" alt="Instrutor Arrepiado Photo" class="instructor-photo">
+      <div>
+        <h3>Instrutor Arrepiado (Sagar Jain)</h3>
+        <p>14+ years of Capoeira, 12+ years teaching, representing Grupo Capoeira Brasil under Mestre Caxias.</p>
+        <p>Founder of Capoeira Brasil Pune, Sagar brings a blend of discipline, joy, and tradition to every class.</p>
+      </div>
+    </div>
+    <h3>Why Capoeira?</h3>
+    <div class="card-row">
+      <div class="card"><div class="card-icon">🤸‍♂️</div>
+        Movement & Flexibility
+      </div>
+      <div class="card"><div class="card-icon">🎶</div>
+        Music & Culture
+      </div>
+      <div class="card"><div class="card-icon">💪</div>
+        Strength & Fitness
+      </div>
+      <div class="card"><div class="card-icon">🧑‍🤝‍🧑</div>
+        Community & Friendship
+      </div>
+    </div>
+  </div>
+  <div id="classes" class="tab-section">
+    <h2>🥋 Classes</h2>
+    <div class="card-row">
+      <div class="card">
+        <div class="card-icon">👶</div>
+        <div>Little Capoeiristas (Ages 3.5–6)<br>Rhythm, coordination, teamwork through play.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🧒</div>
+        <div>Kids (Ages 7–12)<br>Fundamentals, confidence, and respect.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🧑</div>
+        <div>Teens & Adults<br>Technique, flow, acrobatics, and musicality.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏫</div>
+        <div>Schools & Colleges<br>Wellness, cultural events, physical education.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🧑‍🤝‍🧑</div>
+        <div>Private & Group Sessions<br>Personalized learning for families, friends, or teams.</div>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:28px;">Each class includes warm-ups, sequences, partner work, music practice.<br>Workshops, performances, and Batizado (graduation) events throughout the year.</p>
+  </div>
+  <div id="gallery" class="tab-section">
+    <h2>🖼️ Gallery</h2>
+    <div class="carousel-container" id="carousel">
+      <div class="carousel-slide">
+        <img src="carousel1.jpg" alt="Comunidade">
+        <div class="carousel-text">Comunidade</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="carousel2.jpg" alt="Camarada">
+        <div class="carousel-text">Camarada</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="carousel3.jpg" alt="Self defence">
+        <div class="carousel-text">Self defence</div>
+      </div>
+      <button class="carousel-arrow left" onclick="plusSlides(-1)">&#10094;</button>
+      <button class="carousel-arrow right" onclick="plusSlides(1)">&#10095;</button>
+      <div class="carousel-dots">
+        <span class="carousel-dot" onclick="currentSlide(1)"></span>
+        <span class="carousel-dot" onclick="currentSlide(2)"></span>
+        <span class="carousel-dot" onclick="currentSlide(3)"></span>
+      </div>
+    </div>
+  </div>
+  <div id="contact" class="tab-section">
+    <h2>Contact</h2>
+    <div class="contact-card">
+      <p><strong>Grupo Capoeira Brasil Pune</strong></p>
+      <p>📧 Email: <a href="mailto:arrepiado@capoeirapune.com">arrepiado@capoeirapune.com</a></p>
+      <p>📞 Phone: <a href="tel:+919766481796">+91 9766481796</a></p>
+      <p>📸 Instagram: <a href="https://instagram.com/capoeirapune.india" target="_blank">@capoeirapune.india</a></p>
+      <p>For class timings, trial sessions, or collaborations — message us on Instagram or email us directly.</p>
+    </div>
+  </div>
   <footer>
     <p>&copy; 2025 Grupo Capoeira Brasil Pune</p>
   </footer>
   <script>
-    // Creative vanilla JS carousel
+    // Tabs
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-section').forEach(function(tab) {
+        tab.classList.remove('active');
+      });
+      document.querySelectorAll('nav ul li button').forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
+      Array.from(document.querySelectorAll('nav ul li button')).forEach(function(btn){
+        if (btn.textContent.toLowerCase().includes(tabId)) btn.classList.add('active');
+      });
+      window.scrollTo(0,0);
+    }
+
+    // Carousel
     let slideIndex = 1;
     showSlides(slideIndex);
-    let slideTimer = setInterval(() => plusSlides(1), 5000);
+    let slideTimer = setInterval(() => plusSlides(1), 4000);
 
     function plusSlides(n) {
       clearInterval(slideTimer);
       showSlides(slideIndex += n);
-      slideTimer = setInterval(() => plusSlides(1), 5000);
+      slideTimer = setInterval(() => plusSlides(1), 4000);
     }
     function currentSlide(n) {
       clearInterval(slideTimer);
       showSlides(slideIndex = n);
-      slideTimer = setInterval(() => plusSlides(1), 5000);
+      slideTimer = setInterval(() => plusSlides(1), 4000);
     }
     function showSlides(n) {
-      let slides = document.getElementsByClassName("carousel-slide");
-      let dots = document.getElementsByClassName("carousel-dot");
+      let slides = document.querySelectorAll(".carousel-slide");
+      let dots = document.querySelectorAll(".carousel-dot");
+      if (slides.length === 0) return;
       if (n > slides.length) {slideIndex = 1}
       if (n < 1) {slideIndex = slides.length}
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      for (let i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
+      slides.forEach(s => s.style.display = "none");
+      dots.forEach(d => d.classList.remove("active"));
       slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " active";
+      dots[slideIndex-1].classList.add("active");
     }
   </script>
 </body>

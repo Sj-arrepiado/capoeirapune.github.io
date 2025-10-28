@@ -5,15 +5,112 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Grupo Capoeira Brasil Pune</title>
   <style>
+    :root {
+      --background: #FAF7F0;
+      --primary: #006B5B;
+      --secondary: #F0A500;
+      --highlight: #5088A2;
+      --text: #2F2F2F;
+    }
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: #FAF7F0;
-      color: #2C2C2C;
+      background: var(--background);
+      color: var(--text);
       margin: 0;
       padding: 0;
     }
+    .top-message {
+      background: var(--secondary);
+      color: var(--primary);
+      text-align: center;
+      font-size: 1.25em;
+      padding: 16px 0 8px 0;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+    .carousel-container {
+      width: 100vw;
+      max-width: 100%;
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto 24px auto;
+      background: var(--background);
+      min-height: 260px;
+    }
+    .carousel-slide {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 320px;
+      left: 0; top: 0;
+      text-align: center;
+    }
+    .carousel-slide img {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+    }
+    .carousel-text {
+      position: absolute;
+      left: 50%;
+      top: 58%;
+      transform: translate(-50%, -50%);
+      background: rgba(0,107,91,0.75); /* primary with opacity */
+      color: var(--secondary);
+      padding: 14px 32px;
+      font-size: 2em;
+      font-weight: bold;
+      border-radius: 8px;
+      letter-spacing: 2px;
+      box-shadow: 0 2px 20px #006B5B44;
+      text-shadow: 1px 2px 6px #2F2F2F44;
+    }
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2em;
+      color: var(--highlight);
+      background: rgba(250,247,240,0.7);
+      border: none;
+      cursor: pointer;
+      padding: 8px 16px;
+      border-radius: 4px;
+      z-index: 10;
+      transition: background 0.2s;
+    }
+    .carousel-arrow:hover {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+    .carousel-arrow.left { left: 10px; }
+    .carousel-arrow.right { right: 10px; }
+    .carousel-dots {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+    }
+    .carousel-dot {
+      height: 13px;
+      width: 13px;
+      border-radius: 50%;
+      background: var(--highlight);
+      opacity: 0.4;
+      cursor: pointer;
+      transition: background 0.2s, opacity 0.2s;
+      border: 2px solid var(--background);
+    }
+    .carousel-dot.active {
+      background: var(--secondary);
+      opacity: 1;
+    }
     nav {
-      background: #1B5E20;
+      background: var(--primary);
       color: #fff;
       display: flex;
       align-items: center;
@@ -50,24 +147,23 @@
       margin: 0 8px;
     }
     nav ul li a {
-      color: #fff;
-      background: none;
+      color: var(--secondary);
       text-decoration: none;
       padding: 8px 18px;
       border-radius: 0;
-      transition: text-decoration 0.2s;
+      transition: text-decoration 0.2s, color 0.2s;
       font-weight: 500;
       border: none;
     }
     nav ul li a:hover, nav ul li a.active {
       text-decoration: underline;
-      color: #FDD835;
+      color: var(--highlight);
     }
     main {
       max-width: 900px;
       margin: 30px auto;
       padding: 24px;
-      background: #FAF7F0;
+      background: var(--background);
       border-radius: 0;
       box-shadow: none;
     }
@@ -75,17 +171,17 @@
       margin-bottom: 40px;
     }
     h1, h2, h3, h4 {
-      color: #1B5E20;
+      color: var(--primary);
     }
     blockquote {
       background: none;
-      border-left: 5px solid #1B5E20;
+      border-left: 5px solid var(--primary);
       padding: 10px 20px;
       margin-bottom: 20px;
       font-style: italic;
       border-radius: 0;
       box-shadow: none;
-      color: #2C2C2C;
+      color: var(--text);
     }
     .instructor-card {
       display: flex;
@@ -121,7 +217,7 @@
       min-width: 220px;
       box-shadow: none;
       border: none;
-      color: #1B5E20;
+      color: var(--primary);
     }
     .extras ul {
       margin-left: 22px;
@@ -131,7 +227,7 @@
     }
     dl dd {
       margin-bottom: 16px;
-      color: #1B5E20;
+      color: var(--primary);
     }
     .gallery {
       display: flex;
@@ -158,11 +254,11 @@
       border-radius: 0;
       margin-top: 10px;
       box-shadow: none;
-      color: #2C2C2C;
+      color: var(--text);
     }
     footer {
       text-align: center;
-      background: #1B5E20;
+      background: var(--primary);
       color: #fff;
       padding: 14px 0;
       font-size: 1em;
@@ -174,6 +270,7 @@
       main {
         padding: 8px;
       }
+      .carousel-slide img { max-height: 180px; }
       .gallery img {
         width: 98vw;
         height: 18vw;
@@ -189,10 +286,35 @@
       .instructor-photo {
         margin-bottom: 12px;
       }
+      .carousel-text { font-size: 1.15em; padding: 10px 18px; }
     }
   </style>
 </head>
 <body>
+  <div class="top-message">
+    Welcome to Grupo Capoeira Brasil Pune – Discover the spirit of Capoeira through community, friendship, and self defence!
+  </div>
+  <div class="carousel-container" id="carousel">
+    <div class="carousel-slide">
+      <img src="carousel1.jpg" alt="Comunidade">
+      <div class="carousel-text">Comunidade</div>
+    </div>
+    <div class="carousel-slide">
+      <img src="carousel2.jpg" alt="Camarada">
+      <div class="carousel-text">Camarada</div>
+    </div>
+    <div class="carousel-slide">
+      <img src="carousel3.jpg" alt="Self defence">
+      <div class="carousel-text">Self defence</div>
+    </div>
+    <button class="carousel-arrow left" onclick="plusSlides(-1)">&#10094;</button>
+    <button class="carousel-arrow right" onclick="plusSlides(1)">&#10095;</button>
+    <div class="carousel-dots">
+      <span class="carousel-dot" onclick="currentSlide(1)"></span>
+      <span class="carousel-dot" onclick="currentSlide(2)"></span>
+      <span class="carousel-dot" onclick="currentSlide(3)"></span>
+    </div>
+  </div>
   <nav>
     <div class="logo-container">
       <img src="logo.png" alt="Grupo Capoeira Brasil Pune Logo" class="logo-img">
@@ -319,5 +441,36 @@
   <footer>
     <p>&copy; 2025 Grupo Capoeira Brasil Pune</p>
   </footer>
+  <script>
+    // Simple vanilla JS carousel
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    let slideTimer = setInterval(() => plusSlides(1), 4500);
+
+    function plusSlides(n) {
+      clearInterval(slideTimer);
+      showSlides(slideIndex += n);
+      slideTimer = setInterval(() => plusSlides(1), 4500);
+    }
+    function currentSlide(n) {
+      clearInterval(slideTimer);
+      showSlides(slideIndex = n);
+      slideTimer = setInterval(() => plusSlides(1), 4500);
+    }
+    function showSlides(n) {
+      let slides = document.getElementsByClassName("carousel-slide");
+      let dots = document.getElementsByClassName("carousel-dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+  </script>
 </body>
 </html>

@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Grupo Capoeira Brasil Pune</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -20,26 +19,26 @@
       align-items: center;
       padding: 0 20px;
       min-height: 70px;
-      box-shadow: 0 2px 10px #1B5E2022;
     }
     .logo-container {
       display: flex;
       align-items: center;
     }
     .logo-img {
-      height: 46px; /* Increased by ~20% */
+      height: 46px;
       margin-right: 10px;
-      border-radius: 50%;
-      box-shadow: 0 2px 8px #1B5E2020;
-      background: #fff;
-      padding: 2px;
+      border: none;
+      padding: 0;
+      box-shadow: none;
+      background: none;
+      border-radius: 0;
     }
     .logo-text {
       font-size: 1.15em;
       font-weight: bold;
       letter-spacing: 1px;
       color: #fff;
-      text-shadow: 1px 2px 3px #1B5E2055;
+      text-shadow: none;
     }
     nav ul {
       display: flex;
@@ -51,79 +50,62 @@
       margin: 0 8px;
     }
     nav ul li a {
-      color: #64B5F6;
+      color: #fff;
       background: none;
       text-decoration: none;
       padding: 8px 18px;
-      border-radius: 18px;
-      transition: background 0.2s, color 0.2s;
+      border-radius: 0;
+      transition: text-decoration 0.2s;
       font-weight: 500;
-      border: 2px solid transparent;
+      border: none;
     }
     nav ul li a:hover, nav ul li a.active {
-      color: #FAF7F0;
-      background: #C85A2E;
-      border-color: #C85A2E;
-      box-shadow: 0 2px 8px #C85A2E22;
+      text-decoration: underline;
+      color: #FDD835;
     }
     main {
       max-width: 900px;
       margin: 30px auto;
       padding: 24px;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 4px 22px #1B5E2010;
+      background: #FAF7F0;
+      border-radius: 0;
+      box-shadow: none;
     }
     .section {
       margin-bottom: 40px;
     }
-    h1, h2 {
+    h1, h2, h3, h4 {
       color: #1B5E20;
-    }
-    h2, h3 {
-      background: #FDD835;
-      padding: 2px 12px;
-      border-radius: 8px;
-      display: inline-block;
-      color: #1B5E20;
-      margin-bottom: 12px;
     }
     blockquote {
-      background: #FDD835;
+      background: none;
       border-left: 5px solid #1B5E20;
       padding: 10px 20px;
       margin-bottom: 20px;
       font-style: italic;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px #1B5E2020;
+      border-radius: 0;
+      box-shadow: none;
       color: #2C2C2C;
     }
     .instructor-card {
       display: flex;
       align-items: flex-start;
       gap: 18px;
-      background: #FDD83533;
-      padding: 14px;
-      border-radius: 16px;
+      background: none;
+      padding: 0;
+      border-radius: 0;
       margin: 20px 0;
-      box-shadow: 0 1px 4px #1B5E2030;
-    }
-    .instructor-logo {
-      height: 62px;
-      border-radius: 50%;
-      box-shadow: 0 2px 8px #1B5E2020;
-      background: #fff;
-      padding: 2px;
+      box-shadow: none;
     }
     .instructor-photo {
-      height: 110px;
-      width: 110px;
+      height: 135px;
+      width: 135px;
       object-fit: cover;
-      border-radius: 50%;
-      margin-right: 16px;
-      box-shadow: 0 2px 8px #C85A2E22;
-      border: 3px solid #FDD835;
-      background: #fff;
+      border-radius: 0;
+      margin-right: 20px;
+      box-shadow: none;
+      border: none;
+      background: none;
     }
     .programs {
       display: flex;
@@ -132,13 +114,13 @@
       flex-wrap: wrap;
     }
     .program {
-      background: #FDD83533;
-      border-radius: 12px;
+      background: none;
+      border-radius: 0;
       padding: 10px;
       flex: 1;
       min-width: 220px;
-      box-shadow: 0 1px 8px #1B5E2022;
-      border: 2px solid #FDD835;
+      box-shadow: none;
+      border: none;
       color: #1B5E20;
     }
     .extras ul {
@@ -161,23 +143,21 @@
       width: 220px;
       height: 140px;
       object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px #1B5E2033;
-      border: 3px solid #FDD835;
-      background: #fff;
-      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      border-radius: 0;
+      box-shadow: none;
+      border: none;
+      background: none;
+      transition: transform 0.2s;
     }
     .gallery img:hover {
       transform: scale(1.06);
-      box-shadow: 0 6px 24px #C85A2E55;
-      border-color: #C85A2E;
     }
     .contact-card {
-      background: #FDD83533;
-      padding: 16px;
-      border-radius: 12px;
+      background: none;
+      padding: 16px 0;
+      border-radius: 0;
       margin-top: 10px;
-      box-shadow: 0 2px 8px #1B5E2022;
+      box-shadow: none;
       color: #2C2C2C;
     }
     footer {
@@ -187,8 +167,8 @@
       padding: 14px 0;
       font-size: 1em;
       margin-top: 40px;
-      border-radius: 0 0 20px 20px;
-      box-shadow: 0 -2px 8px #1B5E2022;
+      border-radius: 0;
+      box-shadow: none;
     }
     @media (max-width: 700px) {
       main {
@@ -258,7 +238,6 @@
       <h2>About Instrutor Arrepiado</h2>
       <div class="instructor-card">
         <img src="instructor.jpg" alt="Instrutor Arrepiado Photo" class="instructor-photo">
-        <img src="logo.png" alt="Instrutor Arrepiado Logo" class="instructor-logo">
         <div>
           <p><strong>Instrutor Arrepiado</strong>, known outside the roda as Sagar Jain, has been practicing Capoeira for over 14 years and teaching for more than 12 years. He represents Grupo Capoeira Brasil, one of the world’s most respected Capoeira organizations, under the guidance of Mestre Caxias.</p>
           <p>His journey began with a deep fascination for the rhythm, movement, and energy of Capoeira — an art that combines martial arts, dance, music, and culture into one dynamic expression. Over the years, he has trained with masters and teachers from around the world, continuing to deepen his understanding of both the physical and cultural essence of the art.</p>
@@ -330,9 +309,9 @@
       <div class="contact-card">
         <p><strong>Grupo Capoeira Brasil Pune</strong></p>
         <p>📍 Pune, India</p>
-        <p>📧 Email: <a href="mailto:arrepiado@capoeirapune.com" style="color:#64B5F6;">arrepiado@capoeirapune.com</a></p>
-        <p>📞 Phone: <a href="tel:+919766481796" style="color:#64B5F6;">9766 481 796</a></p>
-        <p>📸 Instagram: <a href="https://instagram.com/capoeirapune.india" target="_blank" style="color:#64B5F6;">@capoeirapune.india</a></p>
+        <p>📧 Email: <a href="mailto:arrepiado@capoeirapune.com">arrepiado@capoeirapune.com</a></p>
+        <p>📞 Phone: <a href="tel:+919766481796">9766 481 796</a></p>
+        <p>📸 Instagram: <a href="https://instagram.com/capoeirapune.india" target="_blank">@capoeirapune.india</a></p>
         <p>For class timings, trial sessions, or collaborations — message us on Instagram or email us directly.</p>
       </div>
     </section>

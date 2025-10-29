@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Grupo Capoeira Brasil Pune</title>
-  <!-- Elegant/classic fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --background: #FAF7F0;
@@ -16,8 +15,7 @@
       --card: #fff;
       --shadow: 0 4px 24px #006B5B22;
       --radius: 28px;
-      --box-width: 850px;
-      --box-height: 340px;
+      --max-width: 950px;
     }
     html { scroll-behavior: smooth; }
     body {
@@ -27,6 +25,7 @@
       margin: 0;
       padding: 0;
     }
+    /* Top nav menu with dropdowns */
     nav {
       position: sticky;
       top: 0;
@@ -43,6 +42,7 @@
     .logo-container {
       display: flex;
       align-items: center;
+      margin-right: 18px;
     }
     .logo-img {
       height: 38px;
@@ -55,16 +55,17 @@
       color: var(--primary);
       font-family: 'Montserrat', sans-serif;
     }
-    nav ul {
+    .nav-menu {
       display: flex;
-      list-style: none;
       margin-left: auto;
       padding: 0;
+      list-style: none;
+      gap: 6px;
     }
-    nav ul li {
-      margin: 0 8px;
+    .nav-item {
+      position: relative;
     }
-    nav ul li a {
+    .nav-link, .nav-dropdown {
       color: var(--primary);
       font-weight: bold;
       text-decoration: none;
@@ -72,146 +73,102 @@
       border-radius: var(--radius);
       transition: background 0.2s, color 0.2s;
       font-family: 'Montserrat', sans-serif;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 1em;
+      outline: none;
     }
-    nav ul li a:hover,
-    nav ul li a.active {
+    .nav-link:hover, .nav-link.active, .nav-dropdown:hover, .nav-dropdown.active {
       background: var(--primary);
       color: #fff;
     }
-    header {
-      background: linear-gradient(135deg, var(--primary) 70%, var(--highlight) 100%);
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 44px;
+      left: 0;
+      background: #fff;
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      min-width: 220px;
+      z-index: 20;
+      flex-direction: column;
+      padding: 10px 0;
+    }
+    .dropdown-content .dropdown-link {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary);
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 10px 24px;
+      font-size: 0.98em;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 0;
+      transition: background 0.2s, color 0.2s;
+    }
+    .dropdown-content .dropdown-link:hover,
+    .dropdown-content .dropdown-link.active {
+      background: var(--primary);
       color: #fff;
-      text-align: center;
-      padding: 68px 16px 58px 16px;
-      position: relative;
-      font-family: 'Lora', serif;
     }
-    .hero-logo {
-      height: 68px;
-      margin-bottom: 18px;
+    .nav-item:hover .dropdown-content,
+    .nav-item:focus-within .dropdown-content {
+      display: flex;
     }
-    .hero-title {
-      font-family: 'Lora', serif;
-      font-size: 2.4em;
-      margin: 0 0 14px 0;
-      color: var(--secondary);
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-shadow: 1px 2px 12px #006B5B88;
+    /* Responsive menu for mobile */
+    @media (max-width: 800px) {
+      .nav-menu { flex-wrap: wrap; gap: 2px;}
+      nav { padding: 0 8px;}
+      .logo-text { font-size: 0.95em;}
+      .dropdown-content { left: auto; right: 0;}
     }
-    .hero-message {
-      font-size: 1.25em;
-      margin: 18px auto 30px auto;
-      color: #fff;
-      font-family: 'Lora', serif;
-      font-weight: 500;
-      text-shadow: 1px 2px 8px var(--primary);
-      max-width: 600px;
-    }
-    /* Section Boxes */
-    .section-box {
+    /* Section boxes */
+    section {
       background: var(--card);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      max-width: var(--box-width);
-      min-height: var(--box-height);
+      max-width: var(--max-width);
       margin: 50px auto;
-      padding: 42px 42px 28px 42px;
+      padding: 42px 42px 32px 42px;
       font-family: 'Lora', serif;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      align-items: center;
       position: relative;
     }
-    .section-box-title {
+    .section-title {
       font-size: 2em;
       font-family: 'Lora', serif;
       color: var(--primary);
       margin-bottom: 14px;
       font-weight: 700;
       letter-spacing: 2px;
-      flex: 1 1 300px;
-      min-width: 300px;
     }
-    .section-box-content {
-      font-size: 1.14em;
+    .section-subtitle {
+      font-size: 1.2em;
+      color: var(--highlight);
+      margin-bottom: 28px;
+      font-weight: 600;
+    }
+    .section-content {
+      font-size: 1.13em;
       color: var(--text);
       margin-bottom: 20px;
-      line-height: 1.65;
-      flex: 2 1 300px;
-      min-width: 300px;
+      line-height: 1.7;
     }
-    .section-box-img,
-    .section-box-illustration {
-      max-width: 260px;
-      display: block;
-      margin: 18px auto 0 auto;
-      border-radius: 15px;
-      box-shadow: 0 2px 16px #5088A288;
-      flex: 1 1 180px;
-    }
-    .section-box-video {
+    .section-img {
       max-width: 320px;
-      border-radius: 16px;
-      box-shadow: 0 2px 20px #5088A266;
-      margin: 24px auto 0 auto;
-      flex: 1 1 180px;
       display: block;
-    }
-    /* Instructor card */
-    .instructor-box {
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      max-width: var(--box-width);
-      margin: 60px auto;
-      padding: 42px 42px 28px 42px;
-      display: flex;
-      gap: 36px;
-      align-items: flex-start;
-    }
-    .instructor-photo {
-      width: 170px;
-      height: 170px;
-      object-fit: cover;
+      margin: 22px auto 0 auto;
       border-radius: 20px;
-      margin-bottom: 10px;
-      box-shadow: 0 2px 18px var(--primary);
-      border: none;
-    }
-    .instructor-details {
-      flex: 1;
-      font-size: 1.13em;
-      font-family: 'Lora', serif;
-      color: var(--text);
-    }
-    .instructor-title {
-      font-size: 1.55em;
-      color: var(--primary);
-      font-family: 'Lora', serif;
-      margin-bottom: 14px;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
-    .gallery-section {
-      max-width: var(--box-width);
-      margin: 60px auto;
-      font-family: 'Lora', serif;
-    }
-    .gallery-title {
-      font-size: 2em;
-      color: var(--primary);
-      text-align: center;
-      font-family: 'Lora', serif;
-      margin-bottom: 24px;
-      letter-spacing: 2px;
+      box-shadow: 0 2px 16px #5088A288;
     }
     .gallery-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 18px;
       justify-content: center;
+      margin-top: 28px;
     }
     .gallery-img {
       width: 220px;
@@ -274,20 +231,9 @@
       font-family: 'Montserrat', sans-serif;
     }
     @media (max-width: 700px) {
-      nav { padding: 0 8px;}
-      header { padding: 28px 4px 18px 4px;}
-      .hero-title { font-size: 1.18em;}
-      .section-box, .instructor-box, .gallery-section {
-        min-height: 220px;
-        height: auto;
-        max-width: 99vw;
-        padding: 18px 4px;
-        flex-direction: column;
-        gap: 16px;
-      }
-      .section-box-title { font-size: 1.15em;}
-      .section-box-img, .section-box-illustration, .section-box-video, .gallery-img, .gallery-video { max-width: 98vw; width: 98vw; height: auto;}
-      .instructor-photo { width: 98vw; height: 150px;}
+      section { padding: 18px 4px;}
+      .section-title { font-size: 1.1em;}
+      .section-img, .gallery-img, .gallery-video { max-width: 98vw; width: 98vw; height: auto;}
       .gallery-grid { gap: 8px;}
       .contact-card {padding:12px;}
     }
@@ -299,115 +245,207 @@
       <img src="logo.png" alt="Grupo Capoeira Brasil Pune Logo" class="logo-img">
       <span class="logo-text">Grupo Capoeira Brasil Pune</span>
     </div>
-    <ul>
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#music">Music & Culture</a></li>
-      <li><a href="#movement">Movement & Fitness</a></li>
-      <li><a href="#benefits">Benefits</a></li>
-      <li><a href="#instructor">Instructor</a></li>
-      <li><a href="#classes">Classes</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+      <li class="nav-item">
+        <button class="nav-dropdown">Capoeira ▾</button>
+        <div class="dropdown-content">
+          <button class="dropdown-link" onclick="scrollToSection('what-is-capoeira')">What is Capoeira?</button>
+          <button class="dropdown-link" onclick="scrollToSection('history-of-capoeira')">History of Capoeira</button>
+          <button class="dropdown-link" onclick="scrollToSection('capoeira-in-pune')">Capoeira in Pune</button>
+          <button class="dropdown-link" onclick="scrollToSection('benefits-of-capoeira')">Benefits of Capoeira</button>
+        </div>
+      </li>
+      <li class="nav-item">
+        <button class="nav-dropdown">About ▾</button>
+        <div class="dropdown-content">
+          <button class="dropdown-link" onclick="scrollToSection('grupo-capoeira-brasil-pune')">Grupo Capoeira Brasil Pune</button>
+          <button class="dropdown-link" onclick="scrollToSection('mestre-caxias')">Mestre Caxias</button>
+          <button class="dropdown-link" onclick="scrollToSection('instrutor-arrepiado')">Instrutor Arrepiado</button>
+          <button class="dropdown-link" onclick="scrollToSection('lineage-philosophy')">Lineage & Philosophy</button>
+        </div>
+      </li>
+      <li class="nav-item">
+        <button class="nav-dropdown">Music ▾</button>
+        <div class="dropdown-content">
+          <button class="dropdown-link" onclick="scrollToSection('instruments-of-capoeira')">Instruments of Capoeira</button>
+          <button class="dropdown-link" onclick="scrollToSection('songs-lyrics')">Songs & Lyrics</button>
+          <button class="dropdown-link" onclick="scrollToSection('capoeira-rhythms')">Capoeira Rhythms</button>
+        </div>
+      </li>
+      <li class="nav-item">
+        <button class="nav-dropdown">Classes ▾</button>
+        <div class="dropdown-content">
+          <button class="dropdown-link" onclick="scrollToSection('toddlers')">Toddlers (3–5 yrs)</button>
+          <button class="dropdown-link" onclick="scrollToSection('kids')">Kids (6–12 yrs)</button>
+          <button class="dropdown-link" onclick="scrollToSection('teens-adults')">Teens & Adults</button>
+          <button class="dropdown-link" onclick="scrollToSection('schools-colleges')">Schools & Colleges</button>
+          <button class="dropdown-link" onclick="scrollToSection('private-lessons')">Private Lessons</button>
+          <button class="dropdown-link" onclick="scrollToSection('workshops-events')">Workshops & Events</button>
+        </div>
+      </li>
+      <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+      <li class="nav-item"><a href="#blog" class="nav-link">Blog</a></li>
+      <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
   </nav>
-  <header id="home">
-    <img src="logo.png" alt="Grupo Capoeira Brasil Pune Logo" class="hero-logo">
-    <h1 class="hero-title">Capoeira Brasil Pune</h1>
-    <div class="hero-message">
-      Discover the spirit of Capoeira through movement, music, and community.<br>
-      Beginners, kids, and adults all welcome!
-    </div>
-  </header>
 
-  <div class="section-box" id="about">
-    <div>
-      <div class="section-box-title">What is Capoeira?</div>
-      <div class="section-box-content">
-        Capoeira is an Afro-Brazilian art form blending martial arts, dance, acrobatics, and music. Created by enslaved Africans in Brazil, Capoeira is about freedom, resilience, and creativity. Played in a circle (roda), two players exchange movements in a dialogue guided by music and song. More than a sport, Capoeira is a living tradition and a celebration of community.
-      </div>
+  <section id="home">
+    <img src="logo.png" alt="Grupo Capoeira Brasil Pune Logo" class="section-img" style="max-width:140px;">
+    <div class="section-title">Capoeira Brasil Pune</div>
+    <div class="section-subtitle">Movement, Music, Community</div>
+    <div class="section-content">
+      Welcome! Step into the world of Capoeira—a joyful blend of martial arts, music, and Brazilian culture. We offer classes for all ages, host workshops, and build community through rhythm and movement. Start your Capoeira journey today!
     </div>
-    <img src="capoeira-history.jpg" alt="Historic Capoeira" class="section-box-img">
-  </div>
+    <img src="hero-photo.jpg" alt="Hero Capoeira" class="section-img">
+  </section>
 
-  <div class="section-box" id="music">
-    <div>
-      <div class="section-box-title">Music & Culture</div>
-      <div class="section-box-content">
-        Music is at the heart of Capoeira. The berimbau sets the rhythm, atabaque and pandeiro add depth, and songs in Portuguese tell stories of struggle and joy. Every roda starts and ends with music, connecting players to Capoeira’s roots. In our classes, you’ll learn to play instruments, sing, and understand the meaning behind every song.
-      </div>
-      <div class="info-music">
-        <img src="capoeira-music.jpg" alt="Capoeira Music" style="max-width:120px;">
-        <img src="berimbau-icon.png" alt="Berimbau Icon" style="max-width:60px;">
-      </div>
+  <!-- Capoeira Section -->
+  <section id="what-is-capoeira">
+    <div class="section-title">What is Capoeira?</div>
+    <div class="section-content">
+      Capoeira is an art form combining elements of martial arts, dance, acrobatics, and music. Developed by enslaved Africans in Brazil, it’s played in a circle (roda), with two players exchanging movements to the rhythm of traditional instruments and songs. Capoeira is more than just a sport—it’s a celebration of freedom, community, and creativity.
     </div>
-    <img src="capoeira-illustration.png" alt="Capoeira Illustration" class="section-box-illustration">
-  </div>
-
-  <div class="section-box" id="movement">
-    <div>
-      <div class="section-box-title">Movement & Fitness</div>
-      <div class="section-box-content">
-        Capoeira teaches fluid movement, agility, strength, and balance. The “ginga” is the basic step, a rhythmic sway that forms the foundation for kicks, escapes, and acrobatics. Classes are designed for all levels, focusing on core strength, flexibility, and creative expression. Movement is adapted for kids, teens, and adults alike.
-      </div>
+    <img src="capoeira-history.jpg" alt="Historic Capoeira" class="section-img">
+  </section>
+  <section id="history-of-capoeira">
+    <div class="section-title">History of Capoeira</div>
+    <div class="section-content">
+      Capoeira originated in the 16th century as a form of resistance and cultural expression. Enslaved Africans disguised their training as dance to avoid punishment. Over centuries, Capoeira grew, survived bans, and became a symbol of resilience and unity. Today, it’s recognized worldwide as an important part of Brazil’s heritage.
     </div>
-    <img src="capoeira-movement.jpg" alt="Movement and Fitness" class="section-box-img">
-  </div>
-
-  <div class="section-box" id="benefits">
-    <div>
-      <div class="section-box-title">Benefits of Capoeira</div>
-      <div class="section-box-content">
-        <ul style="margin:8px 0 0 18px; padding:0;">
-          <li>Improves coordination, flexibility, and strength</li>
-          <li>Boosts confidence, discipline, and creativity</li>
-          <li>Encourages teamwork, friendship, and respect</li>
-          <li>Relieves stress through movement and music</li>
-          <li>Connects you to a vibrant, global community</li>
-          <li>Accessible and fun for kids, teens, and adults</li>
-        </ul>
-      </div>
+    <img src="capoeira-history2.jpg" alt="Capoeira History" class="section-img">
+  </section>
+  <section id="capoeira-in-pune">
+    <div class="section-title">Capoeira in Pune</div>
+    <div class="section-content">
+      Capoeira was introduced to Pune in the early 2010s. With regular classes, workshops, and annual Batizado events, the community has grown to welcome students of all ages. Led by Instrutor Arrepiado under Grupo Capoeira Brasil, Capoeira Pune is known for its inclusive spirit and cultural celebration.
     </div>
-    <img src="capoeira-benefits.jpg" alt="Benefits of Capoeira" class="section-box-img">
-  </div>
-
-  <div class="instructor-box" id="instructor">
-    <img src="capoeira-instructor.jpg" alt="Instrutor Arrepiado Photo" class="instructor-photo">
-    <div class="instructor-details">
-      <div class="instructor-title">Instrutor Arrepiado (Sagar Jain)</div>
-      <p>
-        With over 14 years of Capoeira experience and 12 years of teaching, Sagar Jain (Instrutor Arrepiado) is passionate about sharing the art and energy of Capoeira across Pune and India. He is a direct student of Mestre Caxias (Grupo Capoeira Brasil), and regularly trains with world-renowned masters.
-      </p>
-      <p>
-        Sagar’s classes focus on discipline, rhythm, creativity, and joy. He welcomes students of all ages—from children finding confidence and coordination, to adults seeking a new challenge and community. He organizes workshops, performances, and Batizado events, and is dedicated to building a vibrant, inclusive Capoeira family in Pune.
-      </p>
-      <p>
-        <b>Achievements:</b><br>
-        - Trained under Mestre Caxias and other senior Capoeira masters<br>
-        - Organized and led Pune’s first Batizado events<br>
-        - Awarded for spreading Capoeira in schools and colleges<br>
-        - Regularly invited for workshops and performances across India<br>
-      </p>
-      <img src="capoeira-instructor-action.jpg" alt="Instructor teaching Capoeira" style="max-width:250px; border-radius:12px; margin-top:12px; box-shadow:0 2px 12px #006B5B44;">
+    <img src="capoeira-pune.jpg" alt="Capoeira in Pune" class="section-img">
+  </section>
+  <section id="benefits-of-capoeira">
+    <div class="section-title">Benefits of Capoeira</div>
+    <div class="section-content">
+      <ul>
+        <li>Physical fitness: Strength, flexibility, and coordination</li>
+        <li>Mental well-being: Focus, discipline, and stress relief</li>
+        <li>Creativity: Improvisation, musicality, and self-expression</li>
+        <li>Community: Friendship, teamwork, and cultural appreciation</li>
+        <li>Accessible for all ages and abilities</li>
+      </ul>
     </div>
-  </div>
+    <img src="capoeira-benefits.jpg" alt="Benefits of Capoeira" class="section-img">
+  </section>
 
-  <div class="section-box" id="classes">
-    <div>
-      <div class="section-box-title">Our Classes</div>
-      <div class="section-box-content">
-        <b>Little Capoeiristas (Ages 3.5–6):</b> Playful games build rhythm, teamwork, and coordination. Children learn through movement and music in a safe, fun atmosphere.<br><br>
-        <b>Kids (Ages 7–12):</b> Develop strong fundamentals in balance, respect, and musicality. Classes improve focus, discipline, and self-confidence.<br><br>
-        <b>Teens & Adults:</b> Technique, acrobatics, and musical training—plus a welcoming community for all skill levels.<br><br>
-        <b>Schools & Colleges:</b> Capoeira for wellness, cultural festivals, and physical education. Workshops and classes for institutions.<br><br>
-        <b>Private & Group Sessions:</b> Customized classes for individuals, families, or groups—focused on fitness, movement, or music.
-      </div>
+  <!-- About Section -->
+  <section id="grupo-capoeira-brasil-pune">
+    <div class="section-title">Grupo Capoeira Brasil Pune</div>
+    <div class="section-content">
+      Grupo Capoeira Brasil Pune is part of one of the world’s largest Capoeira organizations. Founded in 1989 in Brazil, GCB is known for its strong lineage, innovative teaching, and vibrant global community. Pune’s branch welcomes everyone—children, adults, and families—to experience Capoeira’s rhythm and values.
     </div>
-    <img src="capoeira-class.jpg" alt="Capoeira Class" class="section-box-img">
-  </div>
+    <img src="grupo-pune.jpg" alt="Grupo Capoeira Brasil Pune" class="section-img">
+  </section>
+  <section id="mestre-caxias">
+    <div class="section-title">Mestre Caxias</div>
+    <div class="section-content">
+      Mestre Caxias is a senior master of Grupo Capoeira Brasil, recognized for his dedication to the art and his impact on Capoeira’s growth in India. He guides students and instructors across the country, emphasizing discipline, joy, and respect for tradition.
+    </div>
+    <img src="mestre-caxias.jpg" alt="Mestre Caxias" class="section-img">
+  </section>
+  <section id="instrutor-arrepiado">
+    <div class="section-title">Instrutor Arrepiado (Sagar Jain)</div>
+    <div class="section-content">
+      With over 14 years of Capoeira experience and 12 years of teaching, Sagar Jain (Instrutor Arrepiado) leads Capoeira Pune with energy and vision. He trains under Mestre Caxias, organizes workshops and Batizados, and welcomes students of all backgrounds.
+      <br><b>Achievements:</b>
+      <ul>
+        <li>Trained under senior Capoeira masters</li>
+        <li>Founded Capoeira Pune’s Batizado</li>
+        <li>Invited to workshops and performances across India</li>
+        <li>Promotes Capoeira in local schools and colleges</li>
+      </ul>
+    </div>
+    <img src="capoeira-instructor.jpg" alt="Instrutor Arrepiado" class="section-img">
+    <img src="capoeira-instructor-action.jpg" alt="Instructor teaching Capoeira" class="section-img" style="max-width:260px;">
+  </section>
+  <section id="lineage-philosophy">
+    <div class="section-title">Lineage & Philosophy</div>
+    <div class="section-content">
+      Grupo Capoeira Brasil’s philosophy blends tradition and innovation. The lineage traces back to Mestre Bimba and other legendary figures. The school emphasizes respect, discipline, open-mindedness, and the joy of sharing Capoeira with the world.
+    </div>
+    <img src="lineage.jpg" alt="Capoeira Lineage" class="section-img">
+  </section>
 
-  <div class="gallery-section" id="gallery">
-    <div class="gallery-title">Gallery</div>
+  <!-- Music Section -->
+  <section id="instruments-of-capoeira">
+    <div class="section-title">Instruments of Capoeira</div>
+    <div class="section-content">
+      Capoeira uses three main instruments: Berimbau (musical bow), Atabaque (drum), and Pandeiro (tambourine). The berimbau leads the rhythm, signaling changes in the game. Students learn to play and respect each instrument as part of their Capoeira journey.
+    </div>
+    <img src="berimbau.jpg" alt="Berimbau" class="section-img">
+    <img src="atabaque.jpg" alt="Atabaque" class="section-img">
+    <img src="pandeiro.jpg" alt="Pandeiro" class="section-img">
+  </section>
+  <section id="songs-lyrics">
+    <div class="section-title">Songs & Lyrics</div>
+    <div class="section-content">
+      Songs are sung in Portuguese, sharing stories of Capoeira’s roots, heroes, and philosophy. Lyrics encourage unity, respect, and joy. Common songs include “Paranauê,” “Zum Zum Zum,” and “Berimbau Metal.”
+    </div>
+    <img src="capoeira-music.jpg" alt="Capoeira Music" class="section-img">
+  </section>
+  <section id="capoeira-rhythms">
+    <div class="section-title">Capoeira Rhythms</div>
+    <div class="section-content">
+      Capoeira rhythms (toques) set the energy and style of the roda. The berimbau plays different patterns: Angola (slow, playful), São Bento Grande (fast, athletic), and others. Learning to recognize and follow these rhythms is part of becoming a Capoeirista.
+    </div>
+    <img src="capoeira-rhythm.jpg" alt="Capoeira Rhythm" class="section-img">
+  </section>
+
+  <!-- Classes Section -->
+  <section id="toddlers">
+    <div class="section-title">Toddlers (3–5 yrs)</div>
+    <div class="section-content">
+      Capoeira for toddlers focuses on fun, movement, and music. Classes include games, simple steps, and songs, helping children develop motor skills and confidence in a playful environment.
+    </div>
+    <img src="toddlers.jpg" alt="Capoeira Toddlers" class="section-img">
+  </section>
+  <section id="kids">
+    <div class="section-title">Kids (6–12 yrs)</div>
+    <div class="section-content">
+      Kids classes teach rhythm, kicks, acrobatics, and teamwork. They learn discipline, musicality, and self-expression through movement and song.
+    </div>
+    <img src="kids.jpg" alt="Capoeira Kids" class="section-img">
+  </section>
+  <section id="teens-adults">
+    <div class="section-title">Teens & Adults</div>
+    <div class="section-content">
+      Classes for teens and adults include advanced movement, music, and cultural learning. Students build fitness, resilience, and connection in a supportive community.
+    </div>
+    <img src="teens-adults.jpg" alt="Capoeira Teens & Adults" class="section-img">
+  </section>
+  <section id="schools-colleges">
+    <div class="section-title">Schools & Colleges</div>
+    <div class="section-content">
+      Capoeira programs can be tailored for schools and colleges, focusing on physical wellness, culture, and teamwork. Workshops and regular classes are available for institutions.
+    </div>
+    <img src="schools-colleges.jpg" alt="Capoeira in Schools & Colleges" class="section-img">
+  </section>
+  <section id="private-lessons">
+    <div class="section-title">Private Lessons</div>
+    <div class="section-content">
+      Private and small group sessions offer personalized learning. Perfect for families, friends, or individuals seeking focused attention and flexible scheduling.
+    </div>
+    <img src="private-lessons.jpg" alt="Private Capoeira Lessons" class="section-img">
+  </section>
+  <section id="workshops-events">
+    <div class="section-title">Workshops & Events</div>
+    <div class="section-content">
+      We host Capoeira workshops, Batizado (graduation ceremony), and participate in cultural events and performances. Stay tuned for upcoming workshops and summer camps!
+    </div>
+    <img src="workshops-events.jpg" alt="Capoeira Workshops" class="section-img">
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <div class="section-title">Gallery — Photos & Videos</div>
     <div class="gallery-grid">
       <img src="image1.jpg" alt="Capoeira Gallery Image 1" class="gallery-img">
       <img src="image2.jpg" alt="Capoeira Gallery Image 2" class="gallery-img">
@@ -420,17 +458,48 @@
       <video src="video1.mp4" controls class="gallery-video"></video>
       <video src="video2.mp4" controls class="gallery-video"></video>
     </div>
-  </div>
+  </section>
 
+  <!-- Blog Section -->
+  <section id="blog">
+    <div class="section-title">Blog / News / Updates</div>
+    <div class="section-content">
+      <b>Why kids love Capoeira</b><br>
+      Capoeira helps kids build confidence, coordination, and friendships while having fun.<br><br>
+      <b>Capoeira as fitness for adults</b><br>
+      It’s a full-body workout, mixing strength, flexibility, and rhythm.<br><br>
+      <b>Highlights from our latest Batizado</b><br>
+      Read about our annual graduation event, student stories, and community celebration.
+    </div>
+  </section>
+
+  <!-- Contact Section -->
   <div class="contact-card" id="contact">
     <p><strong>Grupo Capoeira Brasil Pune</strong></p>
     <p>📧 Email: <a href="mailto:arrepiado@capoeirapune.com">arrepiado@capoeirapune.com</a></p>
     <p>📞 Phone: <a href="tel:+919766481796">+91 9766481796</a></p>
     <p>📸 Instagram: <a href="https://instagram.com/capoeirapune.india" target="_blank">@capoeirapune.india</a></p>
-    <p>For class timings, collaborations, or questions — message us on Instagram or email us directly.</p>
+    <p>Find us on Google Maps or WhatsApp for directions and quick questions.</p>
   </div>
   <footer>
     <p>&copy; 2025 Grupo Capoeira Brasil Pune</p>
   </footer>
+  <script>
+    // Dropdown menu navigation
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({behavior: 'smooth', block: 'start'});
+      document.querySelectorAll('.nav-link, .dropdown-link').forEach(a => a.classList.remove('active'));
+      setTimeout(() => {
+        let link = document.querySelector(`.dropdown-link[onclick*="${id}"]`);
+        if (link) link.classList.add('active');
+      }, 200);
+    }
+    document.querySelectorAll('.nav-link').forEach(function(link){
+      link.addEventListener('click', function(e){
+        document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>

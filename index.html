@@ -108,104 +108,92 @@
       text-shadow: 1px 2px 8px var(--primary);
       max-width: 600px;
     }
-    /* Large Info Boxes (Single Visible) */
-    .info-boxes-container {
-      max-width: var(--box-width);
-      margin: 40px auto;
-      min-height: var(--box-height);
-      position: relative;
-    }
-    .info-nav {
-      display: flex;
-      justify-content: center;
-      gap: 22px;
-      margin-bottom: 16px;
-    }
-    .info-nav button {
-      background: var(--secondary);
-      color: var(--primary);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.12em;
-      font-weight: 600;
-      border: none;
-      border-radius: var(--radius);
-      padding: 12px 32px;
-      box-shadow: var(--shadow);
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s, transform 0.2s;
-    }
-    .info-nav button.active {
-      background: var(--primary);
-      color: #fff;
-      transform: scale(1.04);
-    }
-    .info-box {
-      display: none;
+    /* Section Boxes */
+    .section-box {
       background: var(--card);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 42px 42px 28px 42px;
-      min-height: var(--box-height);
-      height: var(--box-height);
       max-width: var(--box-width);
-      margin: 0 auto;
-      position: absolute;
-      left: 0; right: 0;
-      top: 0;
+      min-height: var(--box-height);
+      margin: 50px auto;
+      padding: 42px 42px 28px 42px;
       font-family: 'Lora', serif;
-      animation: fadeInBox 0.7s;
-      overflow-y: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      align-items: center;
+      position: relative;
     }
-    @keyframes fadeInBox {
-      from { opacity: 0; transform: translateY(40px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    .info-box.active { display: block; }
-    .info-box-title {
+    .section-box-title {
       font-size: 2em;
       font-family: 'Lora', serif;
       color: var(--primary);
       margin-bottom: 14px;
       font-weight: 700;
       letter-spacing: 2px;
+      flex: 1 1 300px;
+      min-width: 300px;
     }
-    .info-box-content {
+    .section-box-content {
       font-size: 1.14em;
       color: var(--text);
       margin-bottom: 20px;
       line-height: 1.65;
+      flex: 2 1 300px;
+      min-width: 300px;
     }
-    .info-box-img {
+    .section-box-img,
+    .section-box-illustration {
       max-width: 260px;
       display: block;
       margin: 18px auto 0 auto;
       border-radius: 15px;
       box-shadow: 0 2px 16px #5088A288;
+      flex: 1 1 180px;
     }
-    .info-box-illustration {
-      max-width: 130px;
-      display: block;
-      margin: 10px auto 0 auto;
-    }
-    .info-music {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 22px;
-      margin-top: 12px;
-    }
-    .info-music img {
-      max-height: 60px;
-      border-radius: 8px;
-    }
-    .info-box-video {
-      display: block;
-      margin: 24px auto 0 auto;
+    .section-box-video {
       max-width: 320px;
       border-radius: 16px;
       box-shadow: 0 2px 20px #5088A266;
+      margin: 24px auto 0 auto;
+      flex: 1 1 180px;
+      display: block;
     }
-    /* Gallery */
+    /* Instructor card */
+    .instructor-box {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      max-width: var(--box-width);
+      margin: 60px auto;
+      padding: 42px 42px 28px 42px;
+      display: flex;
+      gap: 36px;
+      align-items: flex-start;
+    }
+    .instructor-photo {
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 18px var(--primary);
+      border: none;
+    }
+    .instructor-details {
+      flex: 1;
+      font-size: 1.13em;
+      font-family: 'Lora', serif;
+      color: var(--text);
+    }
+    .instructor-title {
+      font-size: 1.55em;
+      color: var(--primary);
+      font-family: 'Lora', serif;
+      margin-bottom: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
     .gallery-section {
       max-width: var(--box-width);
       margin: 60px auto;
@@ -249,41 +237,6 @@
       margin-bottom: 0;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    /* Instructor card */
-    .instructor-box {
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      max-width: var(--box-width);
-      margin: 60px auto;
-      padding: 42px 42px 28px 42px;
-      display: flex;
-      gap: 36px;
-      align-items: flex-start;
-    }
-    .instructor-photo {
-      width: 170px;
-      height: 170px;
-      object-fit: cover;
-      border-radius: 20px;
-      margin-bottom: 10px;
-      box-shadow: 0 2px 18px var(--primary);
-      border: none;
-    }
-    .instructor-details {
-      flex: 1;
-      font-size: 1.13em;
-      font-family: 'Lora', serif;
-      color: var(--text);
-    }
-    .instructor-title {
-      font-size: 1.55em;
-      color: var(--primary);
-      font-family: 'Lora', serif;
-      margin-bottom: 14px;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
     .contact-card {
       background: var(--highlight);
       padding: 22px;
@@ -324,17 +277,18 @@
       nav { padding: 0 8px;}
       header { padding: 28px 4px 18px 4px;}
       .hero-title { font-size: 1.18em;}
-      .info-box, .instructor-box, .gallery-section {
+      .section-box, .instructor-box, .gallery-section {
         min-height: 220px;
         height: auto;
         max-width: 99vw;
         padding: 18px 4px;
+        flex-direction: column;
+        gap: 16px;
       }
-      .info-nav button { padding: 10px 8px; font-size: 1em;}
-      .info-box-title { font-size: 1.1em;}
-      .info-box-img, .info-box-video, .gallery-img, .gallery-video { max-width: 98vw; width: 98vw; height: auto;}
+      .section-box-title { font-size: 1.15em;}
+      .section-box-img, .section-box-illustration, .section-box-video, .gallery-img, .gallery-video { max-width: 98vw; width: 98vw; height: auto;}
       .instructor-photo { width: 98vw; height: 150px;}
-      .instructor-box { flex-direction: column; gap:14px;}
+      .gallery-grid { gap: 8px;}
       .contact-card {padding:12px;}
     }
   </style>
@@ -347,8 +301,12 @@
     </div>
     <ul>
       <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#info" >About</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#music">Music & Culture</a></li>
+      <li><a href="#movement">Movement & Fitness</a></li>
+      <li><a href="#benefits">Benefits</a></li>
       <li><a href="#instructor">Instructor</a></li>
+      <li><a href="#classes">Classes</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -361,42 +319,46 @@
       Beginners, kids, and adults all welcome!
     </div>
   </header>
-  <div class="info-boxes-container" id="info">
-    <div class="info-nav">
-      <button class="active" onclick="showInfoBox(0)">What is Capoeira?</button>
-      <button onclick="showInfoBox(1)">Music & Culture</button>
-      <button onclick="showInfoBox(2)">Movement & Fitness</button>
-      <button onclick="showInfoBox(3)">Benefits of Capoeira</button>
-    </div>
-    <div class="info-box active">
-      <div class="info-box-title">What is Capoeira?</div>
-      <div class="info-box-content">
-        Capoeira is an Afro-Brazilian art form that blends martial arts, dance, acrobatics, and music. Created by enslaved Africans in Brazil, Capoeira developed as a way to resist oppression and celebrate freedom. The game is played in a circle (roda), accompanied by music and singing, where two players exchange movements in dialogue, not combat. Capoeira is now celebrated worldwide for its creativity, community, and rich cultural heritage.
+
+  <div class="section-box" id="about">
+    <div>
+      <div class="section-box-title">What is Capoeira?</div>
+      <div class="section-box-content">
+        Capoeira is an Afro-Brazilian art form blending martial arts, dance, acrobatics, and music. Created by enslaved Africans in Brazil, Capoeira is about freedom, resilience, and creativity. Played in a circle (roda), two players exchange movements in a dialogue guided by music and song. More than a sport, Capoeira is a living tradition and a celebration of community.
       </div>
-      <img src="capoeira-history.jpg" alt="Historic Capoeira" class="info-box-img">
-      <img src="capoeira-illustration.png" alt="Capoeira Illustration" class="info-box-illustration">
     </div>
-    <div class="info-box">
-      <div class="info-box-title">Music & Culture</div>
-      <div class="info-box-content">
-        Music is the heartbeat of Capoeira. The berimbau leads, with atabaque and pandeiro creating rhythm. Songs in Portuguese tell stories of struggle, joy, and unity. Students learn to sing, clap, and play instruments, connecting with the language and history. The roda is a space of respect, tradition, and celebration.
+    <img src="capoeira-history.jpg" alt="Historic Capoeira" class="section-box-img">
+  </div>
+
+  <div class="section-box" id="music">
+    <div>
+      <div class="section-box-title">Music & Culture</div>
+      <div class="section-box-content">
+        Music is at the heart of Capoeira. The berimbau sets the rhythm, atabaque and pandeiro add depth, and songs in Portuguese tell stories of struggle and joy. Every roda starts and ends with music, connecting players to Capoeira’s roots. In our classes, you’ll learn to play instruments, sing, and understand the meaning behind every song.
       </div>
       <div class="info-music">
-        <img src="capoeira-music.jpg" alt="Capoeira Music">
-        <img src="berimbau-icon.png" alt="Berimbau Icon">
+        <img src="capoeira-music.jpg" alt="Capoeira Music" style="max-width:120px;">
+        <img src="berimbau-icon.png" alt="Berimbau Icon" style="max-width:60px;">
       </div>
     </div>
-    <div class="info-box">
-      <div class="info-box-title">Movement & Fitness</div>
-      <div class="info-box-content">
-        Capoeira teaches fluid movement, agility, and strength. The foundational step is the "ginga", a rhythmic sway. Players learn kicks, escapes, acrobatics, and floor movements, always improvising and responding to each other's creativity. Classes develop core strength, flexibility, balance, and endurance—making Capoeira a full-body workout that's fun and accessible for all ages.
+    <img src="capoeira-illustration.png" alt="Capoeira Illustration" class="section-box-illustration">
+  </div>
+
+  <div class="section-box" id="movement">
+    <div>
+      <div class="section-box-title">Movement & Fitness</div>
+      <div class="section-box-content">
+        Capoeira teaches fluid movement, agility, strength, and balance. The “ginga” is the basic step, a rhythmic sway that forms the foundation for kicks, escapes, and acrobatics. Classes are designed for all levels, focusing on core strength, flexibility, and creative expression. Movement is adapted for kids, teens, and adults alike.
       </div>
-      <img src="capoeira-movement.jpg" alt="Movement and Fitness" class="info-box-img">
     </div>
-    <div class="info-box">
-      <div class="info-box-title">Benefits of Capoeira</div>
-      <div class="info-box-content">
-        <ul>
+    <img src="capoeira-movement.jpg" alt="Movement and Fitness" class="section-box-img">
+  </div>
+
+  <div class="section-box" id="benefits">
+    <div>
+      <div class="section-box-title">Benefits of Capoeira</div>
+      <div class="section-box-content">
+        <ul style="margin:8px 0 0 18px; padding:0;">
           <li>Improves coordination, flexibility, and strength</li>
           <li>Boosts confidence, discipline, and creativity</li>
           <li>Encourages teamwork, friendship, and respect</li>
@@ -405,9 +367,10 @@
           <li>Accessible and fun for kids, teens, and adults</li>
         </ul>
       </div>
-      <img src="capoeira-benefits.jpg" alt="Benefits of Capoeira" class="info-box-img">
     </div>
+    <img src="capoeira-benefits.jpg" alt="Benefits of Capoeira" class="section-box-img">
   </div>
+
   <div class="instructor-box" id="instructor">
     <img src="capoeira-instructor.jpg" alt="Instrutor Arrepiado Photo" class="instructor-photo">
     <div class="instructor-details">
@@ -428,21 +391,37 @@
       <img src="capoeira-instructor-action.jpg" alt="Instructor teaching Capoeira" style="max-width:250px; border-radius:12px; margin-top:12px; box-shadow:0 2px 12px #006B5B44;">
     </div>
   </div>
+
+  <div class="section-box" id="classes">
+    <div>
+      <div class="section-box-title">Our Classes</div>
+      <div class="section-box-content">
+        <b>Little Capoeiristas (Ages 3.5–6):</b> Playful games build rhythm, teamwork, and coordination. Children learn through movement and music in a safe, fun atmosphere.<br><br>
+        <b>Kids (Ages 7–12):</b> Develop strong fundamentals in balance, respect, and musicality. Classes improve focus, discipline, and self-confidence.<br><br>
+        <b>Teens & Adults:</b> Technique, acrobatics, and musical training—plus a welcoming community for all skill levels.<br><br>
+        <b>Schools & Colleges:</b> Capoeira for wellness, cultural festivals, and physical education. Workshops and classes for institutions.<br><br>
+        <b>Private & Group Sessions:</b> Customized classes for individuals, families, or groups—focused on fitness, movement, or music.
+      </div>
+    </div>
+    <img src="capoeira-class.jpg" alt="Capoeira Class" class="section-box-img">
+  </div>
+
   <div class="gallery-section" id="gallery">
     <div class="gallery-title">Gallery</div>
     <div class="gallery-grid">
-      <img src="gallery1.jpg" alt="Capoeira Gallery Image 1" class="gallery-img">
-      <img src="gallery2.jpg" alt="Capoeira Gallery Image 2" class="gallery-img">
-      <img src="gallery3.jpg" alt="Capoeira Gallery Image 3" class="gallery-img">
-      <img src="gallery4.jpg" alt="Capoeira Gallery Image 4" class="gallery-img">
-      <img src="gallery5.jpg" alt="Capoeira Gallery Image 5" class="gallery-img">
-      <img src="gallery6.jpg" alt="Capoeira Gallery Image 6" class="gallery-img">
-      <img src="gallery7.jpg" alt="Capoeira Gallery Image 7" class="gallery-img">
-      <img src="gallery8.jpg" alt="Capoeira Gallery Image 8" class="gallery-img">
+      <img src="image1.jpg" alt="Capoeira Gallery Image 1" class="gallery-img">
+      <img src="image2.jpg" alt="Capoeira Gallery Image 2" class="gallery-img">
+      <img src="image3.jpg" alt="Capoeira Gallery Image 3" class="gallery-img">
+      <img src="image4.jpg" alt="Capoeira Gallery Image 4" class="gallery-img">
+      <img src="image5.jpg" alt="Capoeira Gallery Image 5" class="gallery-img">
+      <img src="image6.jpg" alt="Capoeira Gallery Image 6" class="gallery-img">
+      <img src="image7.jpg" alt="Capoeira Gallery Image 7" class="gallery-img">
+      <img src="image8.jpg" alt="Capoeira Gallery Image 8" class="gallery-img">
       <video src="video1.mp4" controls class="gallery-video"></video>
       <video src="video2.mp4" controls class="gallery-video"></video>
     </div>
   </div>
+
   <div class="contact-card" id="contact">
     <p><strong>Grupo Capoeira Brasil Pune</strong></p>
     <p>📧 Email: <a href="mailto:arrepiado@capoeirapune.com">arrepiado@capoeirapune.com</a></p>
@@ -453,44 +432,5 @@
   <footer>
     <p>&copy; 2025 Grupo Capoeira Brasil Pune</p>
   </footer>
-  <script>
-    // Smooth scroll for nav links
-    document.querySelectorAll('nav ul li a').forEach(function(link){
-      link.addEventListener('click', function(e){
-        document.querySelectorAll('nav ul li a').forEach(a => a.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-    // Info boxes
-    function showInfoBox(idx) {
-      document.querySelectorAll('.info-nav button').forEach((b,i)=>b.classList.toggle('active',i===idx));
-      document.querySelectorAll('.info-box').forEach((b,i)=>b.classList.toggle('active',i===idx));
-    }
-    // Carousel
-    let slideIndex = 1;
-    showSlides(slideIndex);
-    let slideTimer = setInterval(() => plusSlides(1), 4600);
-    function plusSlides(n) {
-      clearInterval(slideTimer);
-      showSlides(slideIndex += n);
-      slideTimer = setInterval(() => plusSlides(1), 4600);
-    }
-    function currentSlide(n) {
-      clearInterval(slideTimer);
-      showSlides(slideIndex = n);
-      slideTimer = setInterval(() => plusSlides(1), 4600);
-    }
-    function showSlides(n) {
-      let slides = document.querySelectorAll("#carousel .carousel-slide");
-      let dots = document.querySelectorAll("#carousel .carousel-dot");
-      if (slides.length === 0) return;
-      if (n > slides.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = slides.length}
-      slides.forEach(s => s.style.display = "none");
-      dots.forEach(d => d.classList.remove("active"));
-      slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].classList.add("active");
-    }
-  </script>
 </body>
 </html>

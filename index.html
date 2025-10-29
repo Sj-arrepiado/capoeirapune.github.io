@@ -25,7 +25,6 @@
       margin: 0;
       padding: 0;
     }
-    /* Top nav menu with dropdowns */
     nav {
       position: sticky;
       top: 0;
@@ -118,14 +117,12 @@
     .nav-item:focus-within .dropdown-content {
       display: flex;
     }
-    /* Responsive menu for mobile */
     @media (max-width: 800px) {
       .nav-menu { flex-wrap: wrap; gap: 2px;}
       nav { padding: 0 8px;}
       .logo-text { font-size: 0.95em;}
       .dropdown-content { left: auto; right: 0;}
     }
-    /* Section boxes */
     section {
       background: var(--card);
       border-radius: var(--radius);
@@ -248,40 +245,40 @@
     <ul class="nav-menu">
       <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
       <li class="nav-item">
-        <button class="nav-dropdown">Capoeira ▾</button>
+        <button class="nav-dropdown" data-section="capoeira">Capoeira ▾</button>
         <div class="dropdown-content">
-          <button class="dropdown-link" onclick="scrollToSection('what-is-capoeira')">What is Capoeira?</button>
-          <button class="dropdown-link" onclick="scrollToSection('history-of-capoeira')">History of Capoeira</button>
-          <button class="dropdown-link" onclick="scrollToSection('capoeira-in-pune')">Capoeira in Pune</button>
-          <button class="dropdown-link" onclick="scrollToSection('benefits-of-capoeira')">Benefits of Capoeira</button>
+          <button class="dropdown-link" data-section="what-is-capoeira">What is Capoeira?</button>
+          <button class="dropdown-link" data-section="history-of-capoeira">History of Capoeira</button>
+          <button class="dropdown-link" data-section="capoeira-in-pune">Capoeira in Pune</button>
+          <button class="dropdown-link" data-section="benefits-of-capoeira">Benefits of Capoeira</button>
         </div>
       </li>
       <li class="nav-item">
-        <button class="nav-dropdown">About ▾</button>
+        <button class="nav-dropdown" data-section="about">About ▾</button>
         <div class="dropdown-content">
-          <button class="dropdown-link" onclick="scrollToSection('grupo-capoeira-brasil-pune')">Grupo Capoeira Brasil Pune</button>
-          <button class="dropdown-link" onclick="scrollToSection('mestre-caxias')">Mestre Caxias</button>
-          <button class="dropdown-link" onclick="scrollToSection('instrutor-arrepiado')">Instrutor Arrepiado</button>
-          <button class="dropdown-link" onclick="scrollToSection('lineage-philosophy')">Lineage & Philosophy</button>
+          <button class="dropdown-link" data-section="grupo-capoeira-brasil-pune">Grupo Capoeira Brasil Pune</button>
+          <button class="dropdown-link" data-section="mestre-caxias">Mestre Caxias</button>
+          <button class="dropdown-link" data-section="instrutor-arrepiado">Instrutor Arrepiado</button>
+          <button class="dropdown-link" data-section="lineage-philosophy">Lineage & Philosophy</button>
         </div>
       </li>
       <li class="nav-item">
-        <button class="nav-dropdown">Music ▾</button>
+        <button class="nav-dropdown" data-section="music">Music ▾</button>
         <div class="dropdown-content">
-          <button class="dropdown-link" onclick="scrollToSection('instruments-of-capoeira')">Instruments of Capoeira</button>
-          <button class="dropdown-link" onclick="scrollToSection('songs-lyrics')">Songs & Lyrics</button>
-          <button class="dropdown-link" onclick="scrollToSection('capoeira-rhythms')">Capoeira Rhythms</button>
+          <button class="dropdown-link" data-section="instruments-of-capoeira">Instruments of Capoeira</button>
+          <button class="dropdown-link" data-section="songs-lyrics">Songs & Lyrics</button>
+          <button class="dropdown-link" data-section="capoeira-rhythms">Capoeira Rhythms</button>
         </div>
       </li>
       <li class="nav-item">
-        <button class="nav-dropdown">Classes ▾</button>
+        <button class="nav-dropdown" data-section="classes">Classes ▾</button>
         <div class="dropdown-content">
-          <button class="dropdown-link" onclick="scrollToSection('toddlers')">Toddlers (3–5 yrs)</button>
-          <button class="dropdown-link" onclick="scrollToSection('kids')">Kids (6–12 yrs)</button>
-          <button class="dropdown-link" onclick="scrollToSection('teens-adults')">Teens & Adults</button>
-          <button class="dropdown-link" onclick="scrollToSection('schools-colleges')">Schools & Colleges</button>
-          <button class="dropdown-link" onclick="scrollToSection('private-lessons')">Private Lessons</button>
-          <button class="dropdown-link" onclick="scrollToSection('workshops-events')">Workshops & Events</button>
+          <button class="dropdown-link" data-section="toddlers">Toddlers (3–5 yrs)</button>
+          <button class="dropdown-link" data-section="kids">Kids (6–12 yrs)</button>
+          <button class="dropdown-link" data-section="teens-adults">Teens & Adults</button>
+          <button class="dropdown-link" data-section="schools-colleges">Schools & Colleges</button>
+          <button class="dropdown-link" data-section="private-lessons">Private Lessons</button>
+          <button class="dropdown-link" data-section="workshops-events">Workshops & Events</button>
         </div>
       </li>
       <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
@@ -349,7 +346,7 @@
     <div class="section-content">
       Mestre Caxias is a senior master of Grupo Capoeira Brasil, recognized for his dedication to the art and his impact on Capoeira’s growth in India. He guides students and instructors across the country, emphasizing discipline, joy, and respect for tradition.
     </div>
-    <img src="mestre-caxias.jpg" alt="Mestre Caxias" class="section-img">
+    <img src="mestre.jpg" alt="Mestre Caxias" class="section-img">
   </section>
   <section id="instrutor-arrepiado">
     <div class="section-title">Instrutor Arrepiado (Sagar Jain)</div>
@@ -363,8 +360,8 @@
         <li>Promotes Capoeira in local schools and colleges</li>
       </ul>
     </div>
-    <img src="capoeira-instructor.jpg" alt="Instrutor Arrepiado" class="section-img">
-    <img src="capoeira-instructor-action.jpg" alt="Instructor teaching Capoeira" class="section-img" style="max-width:260px;">
+    <img src="instrutor1.jpg" alt="Instrutor Arrepiado" class="section-img">
+    <img src="instrutor2.jpg" alt="Instructor teaching Capoeira" class="section-img" style="max-width:260px;">
   </section>
   <section id="lineage-philosophy">
     <div class="section-title">Lineage & Philosophy</div>
@@ -485,19 +482,35 @@
     <p>&copy; 2025 Grupo Capoeira Brasil Pune</p>
   </footer>
   <script>
-    // Dropdown menu navigation
+    // Improved dropdown menu navigation
     function scrollToSection(id) {
-      document.getElementById(id).scrollIntoView({behavior: 'smooth', block: 'start'});
-      document.querySelectorAll('.nav-link, .dropdown-link').forEach(a => a.classList.remove('active'));
-      setTimeout(() => {
-        let link = document.querySelector(`.dropdown-link[onclick*="${id}"]`);
-        if (link) link.classList.add('active');
-      }, 200);
+      var el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({behavior: 'smooth', block: 'start'});
+        document.querySelectorAll('.nav-link, .dropdown-link').forEach(a => a.classList.remove('active'));
+        setTimeout(() => {
+          let link = document.querySelector(`.dropdown-link[data-section="${id}"]`);
+          if (link) link.classList.add('active');
+        }, 200);
+      }
     }
+    // Nav link active state
     document.querySelectorAll('.nav-link').forEach(function(link){
       link.addEventListener('click', function(e){
         document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
         link.classList.add('active');
+      });
+    });
+    // Dropdowns - scroll to section when clicked
+    document.querySelectorAll('.dropdown-link').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        scrollToSection(btn.getAttribute('data-section'));
+      });
+    });
+    document.querySelectorAll('.nav-dropdown').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        // If direct click (not hover), show dropdown
+        btn.parentElement.querySelector('.dropdown-content').style.display = 'flex';
       });
     });
   </script>

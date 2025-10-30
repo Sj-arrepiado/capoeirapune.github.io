@@ -62,7 +62,7 @@
       gap: 0px;
       margin-left: 40px;
     }
-    .tab-btn {
+    .tab-btn, .dropdown {
       background: none;
       border: none;
       color: var(--primary);
@@ -76,13 +76,50 @@
       letter-spacing: 1px;
       transition: background 0.2s, color 0.2s;
       outline: none;
+      position: relative;
     }
     .tab-btn.active,
-    .tab-btn:hover {
+    .tab-btn:hover,
+    .dropdown.active,
+    .dropdown:hover {
       background: var(--secondary);
       color: var(--primary);
     }
-    .nav-spacer { height: 42px; }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 45px;
+      left: 0;
+      min-width: 180px;
+      background: var(--background);
+      box-shadow: var(--shadow);
+      border-radius: 14px;
+      z-index: 10;
+      flex-direction: column;
+      padding: 8px 0;
+    }
+    .dropdown:hover .dropdown-content,
+    .dropdown.active .dropdown-content {
+      display: flex;
+    }
+    .dropdown-link {
+      background: none;
+      border: none;
+      color: var(--primary);
+      font-family: 'Patrick Hand', cursive;
+      font-size: 0.98em;
+      text-align: left;
+      padding: 9px 26px;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 0;
+      transition: background 0.2s, color 0.2s;
+    }
+    .dropdown-link:hover {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+    .nav-spacer { height: 44px; }
     /* Carousel styles */
     .carousel-container {
       width: 100vw;
@@ -239,61 +276,61 @@
       color: var(--primary);
       font-family: 'Fredoka', sans-serif;
       font-weight: 500;
-      font-size: 0.95em;
+      font-size: 0.75em;
       text-transform: uppercase;
       letter-spacing: 2px;
-      padding: 10px 22px;
-      border-radius: 30px;
+      padding: 6px 15px;
+      border-radius: 18px;
       border: none;
       cursor: pointer;
-      margin-top: 10px;
+      margin-top: 8px;
       box-shadow: var(--shadow);
       transition: background 0.2s, color 0.2s, transform 0.2s;
     }
     .read-more-btn:hover {
       background: var(--secondary);
       color: var(--primary);
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
     .subtopics {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.6s cubic-bezier(.4,0,.2,1);
       background: var(--secondary);
-      margin-top: 7px;
+      margin-top: 3px;
       border-radius: 18px;
       box-shadow: 0 2px 16px #0D948844;
-      padding: 0 16px;
+      padding: 0 8px;
       position: relative;
     }
     .main-section.active .subtopics {
       position: static;
-      max-height: 700px;
-      padding: 12px 16px 8px 16px;
-      margin-top: 10px;
+      max-height: 180px;
+      padding: 6px 8px 3px 8px;
+      margin-top: 6px;
     }
     .subtopic {
-      margin-bottom: 14px;
+      margin-bottom: 8px;
     }
     .subtopic-title {
       font-family: 'Fredoka', sans-serif;
       font-weight: 700;
       color: var(--accent);
-      font-size: 0.97em;
-      margin-bottom: 7px;
+      font-size: 0.76em;
+      margin-bottom: 3px;
       letter-spacing: 1px;
     }
     .subtopic-content {
-      font-size: 0.96em;
+      font-size: 0.72em;
       color: var(--text);
-      margin-bottom: 6px;
-      line-height: 1.6;
+      margin-bottom: 2px;
+      line-height: 1.4;
       font-family: 'Patrick Hand', cursive;
     }
     .subtopic-img {
-      max-width: 160px;
-      border-radius: 6px;
-      margin: 6px 0 0 0;
+      max-width: 90px;
+      border-radius: 4px;
+      margin: 3px 0 0 0;
       box-shadow: none;
       display: block;
     }
@@ -365,11 +402,12 @@
       color: var(--accent);
       margin-bottom: 8px;
     }
-    .contact-details a {
+    .contact-details a, .contact-details span {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
       transition: color 0.2s;
+      font-family: 'Patrick Hand', cursive;
     }
     .contact-details a:hover {
       color: var(--accent);
@@ -471,10 +509,43 @@
     </div>
     <div class="top-tabs">
       <button class="tab-btn active" onclick="scrollToSection('carousel-top')">Home</button>
-      <button class="tab-btn" onclick="scrollToSection('capoeira')">Capoeira</button>
-      <button class="tab-btn" onclick="scrollToSection('about')">About</button>
-      <button class="tab-btn" onclick="scrollToSection('music')">Music</button>
-      <button class="tab-btn" onclick="scrollToSection('classes')">Classes</button>
+      <div class="dropdown" tabindex="0">
+        <span class="tab-btn">Capoeira ▾</span>
+        <div class="dropdown-content">
+          <button class="dropdown-link" onclick="scrollToSection('capoeira')">Capoeira</button>
+          <button class="dropdown-link" onclick="scrollToSubtopic('capoeira',0)">What is Capoeira?</button>
+          <button class="dropdown-link" onclick="scrollToSubtopic('capoeira',1)">History</button>
+          <button class="dropdown-link" onclick="scrollToSubtopic('capoeira',2)">Capoeira in Pune</button>
+          <button class="dropdown-link" onclick="scrollToSubtopic('capoeira',3)">Philosophy</button>
+        </div>
+      </div>
+      <div class="dropdown" tabindex="0">
+        <span class="tab-btn">About ▾</span>
+        <div class="dropdown-content">
+          <button class="dropdown-link" onclick="scrollToSection('about')">About</button>
+          <button class="dropdown-link" onclick="scrollToSubtopic('about',0)">About the Group</button>
+          <button class="dropdown-link" onclick="scrollToSubtopic('about',1)">Mestre Caxias</button>
+          <button class="dropdown-link" onclick="scrollToSubtopic('about',2)">Instrutor Arrepiado</button>
+        </div>
+      </div>
+      <div class="dropdown" tabindex="0">
+        <span class="tab-btn">Music ▾</span>
+        <div class="dropdown-content">
+          <button class="dropdown-link" onclick="scrollToSection('music')">Music</button>
+          <button class="dropdown-link" onclick="scrollToSubtopic('music',0)">Instruments</button>
+          <button class="dropdown-link" onclick="scrollToSubtopic('music',1)">Common Songs</button>
+        </div>
+      </div>
+      <div class="dropdown" tabindex="0">
+        <span class="tab-btn">Classes ▾</span>
+        <div class="dropdown-content">
+          <button class="dropdown-link" onclick="scrollToSection('classes')">Classes</button>
+          <button class="dropdown-link" onclick="scrollToSubtopic('classes',0)">Toddlers</button>
+          <button class="dropdown-link" onclick="scrollToSubtopic('classes',1)">Kids & Teens</button>
+          <button class="dropdown-link" onclick="scrollToSubtopic('classes',2)">Adults</button>
+          <button class="dropdown-link" onclick="scrollToSubtopic('classes',3)">Private Lessons & Workshops</button>
+        </div>
+      </div>
       <button class="tab-btn" onclick="scrollToSection('gallery-section')">Gallery</button>
       <button class="tab-btn" onclick="scrollToSection('contact-section')">Contact</button>
     </div>
@@ -513,22 +584,22 @@
         </div>
         <button class="read-more-btn" onclick="toggleSubtopics(0)">Read more...</button>
         <div class="subtopics">
-          <div class="subtopic">
+          <div class="subtopic" id="capoeira-sub0">
             <div class="subtopic-title">What is Capoeira?</div>
             <div class="subtopic-content">Capoeira is an Afro-Brazilian art combining martial arts, dance, acrobatics, and music. Played in a circle (roda), two players exchange movements to the rhythm of traditional songs and instruments.</div>
             <img src="capoeira.jpg" class="subtopic-img" alt="Capoeira">
           </div>
-          <div class="subtopic">
+          <div class="subtopic" id="capoeira-sub1">
             <div class="subtopic-title">History</div>
             <div class="subtopic-content">Capoeira originated as a creative form of resistance. Enslaved Africans disguised their training as dance. Today, Capoeira is a symbol of freedom and culture worldwide.</div>
             <img src="history.jpg" class="subtopic-img" alt="Capoeira History">
           </div>
-          <div class="subtopic">
+          <div class="subtopic" id="capoeira-sub2">
             <div class="subtopic-title">Capoeira in Pune</div>
             <div class="subtopic-content">Capoeira arrived in Pune in the early 2010s, growing into a vibrant community. Regular classes, workshops, and Batizado events welcome students of all ages.</div>
             <img src="capoeira-pune.jpg" class="subtopic-img" alt="Capoeira Pune">
           </div>
-          <div class="subtopic">
+          <div class="subtopic" id="capoeira-sub3">
             <div class="subtopic-title">Philosophy</div>
             <div class="subtopic-content">Capoeira is about respect, discipline, and joy. It connects people across backgrounds, teaching cultural appreciation and creative expression.</div>
             <img src="philosophy.jpg" class="subtopic-img" alt="Capoeira Philosophy">
@@ -548,17 +619,17 @@
         </div>
         <button class="read-more-btn" onclick="toggleSubtopics(1)">Read more...</button>
         <div class="subtopics">
-          <div class="subtopic">
+          <div class="subtopic" id="about-sub0">
             <div class="subtopic-title">About the Group</div>
             <div class="subtopic-content">Grupo Capoeira Brasil is a global organization founded in Brazil. The Pune branch welcomes everyone—children, adults, and families—to join Capoeira’s rhythm and values.</div>
             <img src="grupo.jpg" class="subtopic-img" alt="Grupo Capoeira Brasil">
           </div>
-          <div class="subtopic">
+          <div class="subtopic" id="about-sub1">
             <div class="subtopic-title">Mestre Caxias</div>
             <div class="subtopic-content">Mestre Caxias is a senior master and mentor to the Indian Capoeira community. He inspires students and instructors, emphasizing joy, discipline, and respect for tradition.</div>
             <img src="mestre.jpg" class="subtopic-img" alt="Mestre Caxias">
           </div>
-          <div class="subtopic">
+          <div class="subtopic" id="about-sub2">
             <div class="subtopic-title">Instrutor Arrepiado</div>
             <div class="subtopic-content">With over 14 years of Capoeira experience and 12 years teaching, Sagar Jain leads Capoeira Pune. He organizes workshops, Batizados, and spreads Capoeira in schools and colleges.<br>
             <b>Achievements:</b>
@@ -586,12 +657,12 @@
         </div>
         <button class="read-more-btn" onclick="toggleSubtopics(2)">Read more...</button>
         <div class="subtopics">
-          <div class="subtopic">
+          <div class="subtopic" id="music-sub0">
             <div class="subtopic-title">Instruments</div>
             <div class="subtopic-content">Capoeira uses Berimbau, Atabaque, and Pandeiro. The berimbau leads, signaling rhythm and changes in the game. Students learn to play and respect each instrument.</div>
             <img src="instruments.jpg" class="subtopic-img" alt="Capoeira Instruments">
           </div>
-          <div class="subtopic">
+          <div class="subtopic" id="music-sub1">
             <div class="subtopic-title">Common Songs</div>
             <div class="subtopic-content">Songs are sung in Portuguese, sharing stories of Capoeira’s roots and heroes. Lyrics encourage unity and joy. Common songs include “Paranauê” and “Zum Zum Zum.”</div>
             <img src="songs.jpg" class="subtopic-img" alt="Capoeira Songs">
@@ -611,22 +682,22 @@
         </div>
         <button class="read-more-btn" onclick="toggleSubtopics(3)">Read more...</button>
         <div class="subtopics">
-          <div class="subtopic">
+          <div class="subtopic" id="classes-sub0">
             <div class="subtopic-title">Toddlers</div>
             <div class="subtopic-content">Classes for toddlers focus on fun, movement, and music. Simple games and steps help children develop motor skills and confidence.</div>
             <img src="toddlers.jpg" class="subtopic-img" alt="Capoeira Toddlers">
           </div>
-          <div class="subtopic">
+          <div class="subtopic" id="classes-sub1">
             <div class="subtopic-title">Kids & Teens</div>
             <div class="subtopic-content">Kids and teens learn rhythm, kicks, acrobatics, and teamwork. Classes build discipline, musicality, and self-expression.</div>
             <img src="kids-teens.jpg" class="subtopic-img" alt="Capoeira Kids & Teens">
           </div>
-          <div class="subtopic">
+          <div class="subtopic" id="classes-sub2">
             <div class="subtopic-title">Adults</div>
             <div class="subtopic-content">Classes for adults include advanced movement, music, and cultural learning. Students build fitness, resilience, and connection in a supportive community.</div>
             <img src="adults.jpg" class="subtopic-img" alt="Capoeira Adults">
           </div>
-          <div class="subtopic">
+          <div class="subtopic" id="classes-sub3">
             <div class="subtopic-title">Private Lessons & Workshops</div>
             <div class="subtopic-content">Private and small group sessions offer personalized learning for families, friends, or individuals. Workshops and Batizado events throughout the year.</div>
             <img src="workshops.jpg" class="subtopic-img" alt="Capoeira Workshops">
@@ -718,6 +789,13 @@
       let tabs = ['carousel-top','capoeira','about','music','classes','gallery-section','contact-section'];
       let idx = tabs.indexOf(id);
       if (idx > -1) document.querySelectorAll('.tab-btn')[idx].classList.add('active');
+    }
+    // Dropdown subtopic scroll
+    function scrollToSubtopic(section, subidx) {
+      let el = document.getElementById(section + "-sub" + subidx);
+      if (el) {
+        el.scrollIntoView({behavior: 'smooth', block: 'center'});
+      }
     }
     function sendContact(e) {
       e.preventDefault();

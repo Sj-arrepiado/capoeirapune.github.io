@@ -16,6 +16,7 @@
       --shadow: 0 4px 24px #0D948822;
       --radius: 32px;
       --max-width: 1080px;
+      --nav-height: 68px;
     }
     html { scroll-behavior: smooth; }
     body {
@@ -26,22 +27,18 @@
       padding: 0;
     }
     nav {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
+      width: 100vw;
+      min-height: var(--nav-height);
       background: var(--background);
       box-shadow: var(--shadow);
       position: sticky;
       top: 0;
       z-index: 100;
       border-bottom: 2px solid var(--primary);
-    }
-    .nav-top-row {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      padding: 0 28px;
-      min-height: 64px;
+      justify-content: space-between;
+      padding: 0 32px;
     }
     .logo-title {
       display: flex;
@@ -59,16 +56,11 @@
       border-radius: 11px;
       margin-right: 5px;
     }
-    .nav-spacer {
-      height: 32px;
-      width: 100%;
-    }
     .top-tabs {
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 0px;
-      padding-bottom: 8px;
+      margin-left: 40px;
     }
     .tab-btn {
       background: none;
@@ -90,10 +82,11 @@
       background: var(--secondary);
       color: var(--primary);
     }
+    .nav-spacer { height: 42px; }
     /* Carousel styles */
     .carousel-container {
       width: 100vw;
-      margin: 0 auto 48px auto;
+      margin: 44px auto 54px auto;
       position: relative;
       box-shadow: var(--shadow);
       border-radius: 0;
@@ -152,7 +145,6 @@
     }
     .carousel-arrow.left { left: 10px; }
     .carousel-arrow.right { right: 10px; }
-
     .carousel-dots {
       position: absolute;
       bottom: 10px;
@@ -176,11 +168,11 @@
       opacity: 1;
       border-color: var(--primary);
     }
-    /* Alternating main topics layout */
+    /* Alternating main topics layout; flowing page */
     .main-section {
       width: 100vw;
       max-width: var(--max-width);
-      margin: 18px auto;
+      margin: 8px auto;
       display: flex;
       align-items: stretch;
       background: none;
@@ -195,7 +187,7 @@
     }
     .main-photo {
       width: 40vw;
-      min-width: 240px;
+      min-width: 200px;
       max-width: 40vw;
       display: flex;
       align-items: center;
@@ -229,16 +221,16 @@
     .main-heading {
       font-family: 'Fredoka', sans-serif;
       font-weight: 700;
-      font-size: 1.4em;
+      font-size: 1.28em;
       color: var(--primary);
-      margin-bottom: 8px;
+      margin-bottom: 7px;
       letter-spacing: 2px;
     }
     .main-summary {
-      font-size: 1.02em;
-      margin-bottom: 10px;
+      font-size: 0.99em;
+      margin-bottom: 8px;
       color: var(--text);
-      min-height: 36px;
+      min-height: 34px;
       font-family: 'Patrick Hand', cursive;
     }
     .read-more-btn {
@@ -247,7 +239,7 @@
       color: var(--primary);
       font-family: 'Fredoka', sans-serif;
       font-weight: 500;
-      font-size: 0.98em;
+      font-size: 0.95em;
       text-transform: uppercase;
       letter-spacing: 2px;
       padding: 10px 22px;
@@ -268,7 +260,7 @@
       overflow: hidden;
       transition: max-height 0.6s cubic-bezier(.4,0,.2,1);
       background: var(--secondary);
-      margin-top: 8px;
+      margin-top: 7px;
       border-radius: 18px;
       box-shadow: 0 2px 16px #0D948844;
       padding: 0 16px;
@@ -277,30 +269,30 @@
     .main-section.active .subtopics {
       position: static;
       max-height: 700px;
-      padding: 14px 16px 10px 16px;
-      margin-top: 14px;
+      padding: 12px 16px 8px 16px;
+      margin-top: 10px;
     }
     .subtopic {
-      margin-bottom: 17px;
+      margin-bottom: 14px;
     }
     .subtopic-title {
       font-family: 'Fredoka', sans-serif;
       font-weight: 700;
       color: var(--accent);
-      font-size: 1.01em;
+      font-size: 0.97em;
       margin-bottom: 7px;
       letter-spacing: 1px;
     }
     .subtopic-content {
-      font-size: 0.99em;
+      font-size: 0.96em;
       color: var(--text);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       line-height: 1.6;
       font-family: 'Patrick Hand', cursive;
     }
     .subtopic-img {
-      max-width: 180px;
-      border-radius: 8px;
+      max-width: 160px;
+      border-radius: 6px;
       margin: 6px 0 0 0;
       box-shadow: none;
       display: block;
@@ -308,53 +300,44 @@
     /* Gallery */
     .gallery-section {
       width: 100vw;
-      margin: 36px 0 12px 0;
+      margin: 28px 0 8px 0;
       background: none;
-      padding: 12px 0 18px 0;
+      padding: 4px 0 8px 0;
       box-shadow: none;
     }
     .gallery-title {
       font-family: 'Fredoka', sans-serif;
-      font-size: 1.15em;
+      font-size: 1.12em;
       color: var(--primary);
       text-align: center;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
       letter-spacing: 2px;
     }
     .gallery-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
+      gap: 14px;
       justify-content: center;
       margin-top: 0px;
     }
-    .gallery-img {
-      width: 220px;
-      height: 145px;
+    .gallery-img, .gallery-video {
+      width: 210px;
+      height: 135px;
       object-fit: cover;
       border-radius: 0;
       box-shadow: none;
       border: none;
       background: none;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s;
       cursor: pointer;
     }
-    .gallery-img:hover {
+    .gallery-img:hover, .gallery-video:hover {
       transform: scale(1.03) rotate(-2deg);
-      box-shadow: 0 8px 36px var(--primary);
-    }
-    .gallery-video {
-      width: 220px;
-      height: 145px;
-      border-radius: 0;
-      background: none;
-      margin-bottom: 0;
-      transition: transform 0.2s, box-shadow 0.2s;
     }
     /* Contact */
     .contact-section {
       max-width: var(--max-width);
-      margin: 38px auto 8px auto;
+      margin: 32px auto 4px auto;
       display: flex;
       background: var(--card);
       border-radius: var(--radius);
@@ -369,11 +352,11 @@
       width: 50%;
       background: var(--primary);
       color: #fff;
-      padding: 40px 28px;
+      padding: 32px 22px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      font-size: 1.06em;
+      font-size: 1.02em;
       font-family: 'Patrick Hand', cursive;
     }
     .contact-details strong {
@@ -382,9 +365,19 @@
       color: var(--accent);
       margin-bottom: 8px;
     }
+    .contact-details a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+    .contact-details a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
     .contact-form {
       width: 50%;
-      padding: 40px 28px;
+      padding: 32px 22px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -453,10 +446,11 @@
       .main-section, .main-section.reverse { flex-direction: column; }
       .main-photo, .main-desc { width: 100vw; min-width: 0; max-width: 100vw;}
       .main-photo img { max-height: 320px; }
-      .main-desc { padding: 24px 14px;}
+      .main-desc { padding: 18px 8px;}
       .gallery-img, .gallery-video { width: 99vw; max-width: 99vw; height: auto;}
       .contact-section { flex-direction: column; }
-      .contact-details, .contact-form { width: 100%; padding: 24px 12px;}
+      .contact-details, .contact-form { width: 100%; padding: 18px 8px;}
+      nav { flex-direction: column; }
     }
     @media (max-width: 700px) {
       nav { padding: 0 6px;}
@@ -465,18 +459,16 @@
       .main-heading { font-size: 1.09em;}
       .main-photo img { max-height: 160px;}
       .contact-details, .contact-form { padding: 8px;}
+      .tab-btn { font-size: 0.84em; padding: 10px 10px;}
     }
   </style>
 </head>
 <body>
   <nav>
-    <div class="nav-top-row">
-      <div class="logo-title">
-        <img src="logo.png" alt="Grupo Capoeira Brasil Pune Logo">
-        Grupo Capoeira Brasil Pune, India
-      </div>
+    <div class="logo-title">
+      <img src="logo.png" alt="Grupo Capoeira Brasil Pune Logo">
+      Grupo Capoeira Brasil Pune, India
     </div>
-    <div class="nav-spacer"></div>
     <div class="top-tabs">
       <button class="tab-btn active" onclick="scrollToSection('carousel-top')">Home</button>
       <button class="tab-btn" onclick="scrollToSection('capoeira')">Capoeira</button>
@@ -487,6 +479,7 @@
       <button class="tab-btn" onclick="scrollToSection('contact-section')">Contact</button>
     </div>
   </nav>
+  <div class="nav-spacer"></div>
   <!-- Carousel at top -->
   <div class="carousel-container" id="carousel-top">
     <div class="carousel-slide">
@@ -664,9 +657,9 @@
     <div class="contact-section" id="contact-section">
       <div class="contact-details">
         <strong>Grupo Capoeira Brasil Pune</strong>
-        <p>📧 Email: <a href="mailto:arrepiado@capoeirapune.com">arrepiado@capoeirapune.com</a></p>
-        <p>📞 Phone: <a href="tel:+919766481796">+91 9766481796</a></p>
-        <p>📸 Instagram: <a href="https://instagram.com/capoeirapune.india" target="_blank">@capoeirapune.india</a></p>
+        <p>📧 Email: <span>arrepiado@capoeirapune.com</span></p>
+        <p>📞 Phone: <span>+91 9766481796</span></p>
+        <p>📸 Instagram: <span>@capoeirapune.india</span></p>
         <p>Find us on Google Maps or WhatsApp for directions and quick questions.</p>
       </div>
       <form class="contact-form" id="quick-question-form" onsubmit="sendContact(event)">
@@ -719,7 +712,7 @@
     function scrollToSection(id) {
       let el = document.getElementById(id);
       if (el) {
-        window.scrollTo({top: el.offsetTop - 64, behavior: 'smooth'});
+        window.scrollTo({top: el.offsetTop - 80, behavior: 'smooth'});
       }
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       let tabs = ['carousel-top','capoeira','about','music','classes','gallery-section','contact-section'];

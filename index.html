@@ -6,6 +6,10 @@
   <title>Grupo Capoeira Brasil Pune, India</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700;500&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <!-- Bootstrap Carousel CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
   <style>
     :root {
       --background: #FAF8F1;
@@ -120,90 +124,42 @@
       color: var(--primary);
     }
     .nav-spacer { height: 44px; }
-    /* Carousel styles */
+    /* Bootstrap Carousel overrides for full width, label style */
     .carousel-container {
       width: 100vw;
       margin: 44px auto 54px auto;
-      position: relative;
-      box-shadow: var(--shadow);
       border-radius: 0;
-      overflow: hidden;
       background: var(--background);
     }
-    .carousel-slide {
-      display: none;
-      position: absolute;
-      width: 100vw;
-      height: 370px;
-      left: 0; top: 0;
-      text-align: center;
-      animation: fadeIn 1s;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0;}
-      to { opacity: 1;}
-    }
-    .carousel-slide img {
+    .carousel-inner { border-radius: 0; }
+    .carousel-item img {
       width: 100vw;
       height: 370px;
       object-fit: cover;
       border-radius: 0;
       box-shadow: none;
-      display: block;
+      background: #eee;
     }
-    .carousel-label {
-      position: absolute;
-      left: 50%;
+    .carousel-caption {
       bottom: 18px;
-      transform: translateX(-50%);
-      background: rgba(13,148,136,0.85);
+    }
+    .carousel-caption h5 {
+      font-family:'Fredoka',sans-serif;
+      font-size:2em;
+      background:rgba(13,148,136,0.7);
+      display:inline-block;
+      padding:5px 28px;
+      border-radius:12px;
       color: #fff;
-      font-family: 'Fredoka', sans-serif;
-      font-size: 1.6em;
-      font-weight: 700;
-      letter-spacing: 2px;
-      border-radius: 14px;
-      padding: 10px 38px;
-      box-shadow: 0 2px 16px #0D948844;
       text-shadow: 1px 2px 10px #22222244;
     }
-    .carousel-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2.2em;
-      color: var(--accent);
-      background: var(--secondary);
-      border: none;
-      cursor: pointer;
-      padding: 7px 14px;
+    .carousel-indicators li {
+      background-color: var(--accent);
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: var(--accent);
       border-radius: 10px;
-      z-index: 10;
-    }
-    .carousel-arrow.left { left: 10px; }
-    .carousel-arrow.right { right: 10px; }
-    .carousel-dots {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 11px;
-    }
-    .carousel-dot {
-      height: 13px;
-      width: 13px;
-      border-radius: 50%;
-      background: var(--accent);
-      opacity: 0.4;
-      cursor: pointer;
-      transition: background 0.2s, opacity 0.2s;
-      border: 2px solid var(--background);
-    }
-    .carousel-dot.active {
-      background: var(--primary);
-      opacity: 1;
-      border-color: var(--primary);
     }
     /* Alternating main topics layout; flowing page */
     .main-section {
@@ -296,10 +252,10 @@
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.6s cubic-bezier(.4,0,.2,1);
-      background: var(--secondary);
+      background: var(--background);  /* No yellow! */
       margin-top: 3px;
       border-radius: 18px;
-      box-shadow: 0 2px 16px #0D948844;
+      box-shadow: none;
       padding: 0 8px;
       position: relative;
     }
@@ -316,20 +272,20 @@
       font-family: 'Fredoka', sans-serif;
       font-weight: 700;
       color: var(--accent);
-      font-size: 0.76em;
-      margin-bottom: 3px;
+      font-size: 0.84em; /* Increased by 10% */
+      margin-bottom: 4px;
       letter-spacing: 1px;
     }
     .subtopic-content {
-      font-size: 0.72em;
+      font-size: 0.79em; /* Increased by 10% */
       color: var(--text);
-      margin-bottom: 2px;
-      line-height: 1.4;
+      margin-bottom: 4px;
+      line-height: 1.5;
       font-family: 'Patrick Hand', cursive;
     }
     .subtopic-img {
-      max-width: 90px;
-      border-radius: 4px;
+      max-width: 100px;
+      border-radius: 5px;
       margin: 3px 0 0 0;
       box-shadow: none;
       display: block;
@@ -402,16 +358,11 @@
       color: var(--accent);
       margin-bottom: 8px;
     }
-    .contact-details a, .contact-details span {
+    .contact-details span {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.2s;
       font-family: 'Patrick Hand', cursive;
-    }
-    .contact-details a:hover {
-      color: var(--accent);
-      text-decoration: underline;
     }
     .contact-form {
       width: 50%;
@@ -551,26 +502,42 @@
     </div>
   </nav>
   <div class="nav-spacer"></div>
-  <!-- Carousel at top -->
-  <div class="carousel-container" id="carousel-top">
-    <div class="carousel-slide">
-      <img src="carousel1.jpg" alt="Carousel 1">
-      <div class="carousel-label">Community</div>
-    </div>
-    <div class="carousel-slide">
-      <img src="carousel2.jpg" alt="Carousel 2">
-      <div class="carousel-label">Movement</div>
-    </div>
-    <div class="carousel-slide">
-      <img src="carousel3.jpg" alt="Carousel 3">
-      <div class="carousel-label">Energy</div>
-    </div>
-    <button class="carousel-arrow left" onclick="plusSlides(-1)">&#10094;</button>
-    <button class="carousel-arrow right" onclick="plusSlides(1)">&#10095;</button>
-    <div class="carousel-dots">
-      <span class="carousel-dot" onclick="currentSlide(1)"></span>
-      <span class="carousel-dot" onclick="currentSlide(2)"></span>
-      <span class="carousel-dot" onclick="currentSlide(3)"></span>
+  <!-- Bootstrap Carousel at top -->
+  <div id="carousel-top" class="carousel-container">
+    <div id="homepageCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#homepageCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#homepageCarousel" data-slide-to="1"></li>
+        <li data-target="#homepageCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="carousel1.jpg" class="d-block w-100" alt="Community">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Community</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="carousel2.jpg" class="d-block w-100" alt="Movement">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Movement</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="carousel3.jpg" class="d-block w-100" alt="Energy">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Energy</h5>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#homepageCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#homepageCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   </div>
   <!-- Main topics scroll -->
@@ -579,9 +546,7 @@
     <div class="main-section" id="capoeira">
       <div class="main-desc">
         <div class="main-heading">Capoeira</div>
-        <div class="main-summary">
-          Capoeira is the art of movement, music, and community. Discover its story, roots, philosophy, and vibrant tradition in Pune.
-        </div>
+        <div class="main-summary">Capoeira is the art of movement, music, and community. Discover its story, roots, philosophy, and vibrant tradition in Pune.</div>
         <button class="read-more-btn" onclick="toggleSubtopics(0)">Read more...</button>
         <div class="subtopics">
           <div class="subtopic" id="capoeira-sub0">
@@ -746,31 +711,8 @@
     <div class="footer-year">2011 Grupo Capoeira Brasil Pune, India</div>
   </footer>
   <script>
-    // Carousel logic
-    let slideIndex = 1;
-    showSlides(slideIndex);
-    let slideTimer = setInterval(() => plusSlides(1), 4600);
-    function plusSlides(n) {
-      clearInterval(slideTimer);
-      showSlides(slideIndex += n);
-      slideTimer = setInterval(() => plusSlides(1), 4600);
-    }
-    function currentSlide(n) {
-      clearInterval(slideTimer);
-      showSlides(slideIndex = n);
-      slideTimer = setInterval(() => plusSlides(1), 4600);
-    }
-    function showSlides(n) {
-      let slides = document.querySelectorAll("#carousel-top .carousel-slide");
-      let dots = document.querySelectorAll("#carousel-top .carousel-dot");
-      if (slides.length === 0) return;
-      if (n > slides.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = slides.length}
-      slides.forEach(s => s.style.display = "none");
-      dots.forEach(d => d.classList.remove("active"));
-      slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].classList.add("active");
-    }
+    // Bootstrap Carousel: No changes needed, handled by Bootstrap JS
+
     // Toggle subtopics inline, only one open at a time
     function toggleSubtopics(idx) {
       let sections = document.querySelectorAll('.main-section');
@@ -804,7 +746,8 @@
       form.reset();
     }
     document.addEventListener('DOMContentLoaded',function(){
-      showSlides(slideIndex);
+      // Bootstrap carousel auto-init
+      $('.carousel').carousel();
     });
   </script>
 </body>

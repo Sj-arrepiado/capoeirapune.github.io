@@ -8,16 +8,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700;500&family=Patrick+Hand&display=swap" rel="stylesheet">
   <style>
     :root {
-      --background: #FAF7F0;
-      --primary: #006B5B;
-      --secondary: #F0A500;
-      --highlight: #5088A2;
-      --text: #2F2F2F;
-      --card: #fff;
-      --shadow: 0 4px 24px #006B5B22;
+      --background: #FAF8F1;
+      --primary: #0D9488;
+      --accent: #FFC107;
+      --secondary: #004D40;
+      --text: #2E2E2E;
+      --shadow: 0 4px 24px #0D948822;
       --radius: 32px;
-      --max-width: 1050px;
-      --gallery-gap: 18px;
+      --max-width: 1080px;
     }
     html { scroll-behavior: smooth; }
     body {
@@ -31,13 +29,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 32px;
-      min-height: 82px;
-      background: #fff;
+      padding: 0 28px;
+      min-height: 64px;
+      background: var(--background);
       box-shadow: var(--shadow);
       position: sticky;
       top: 0;
       z-index: 100;
+      border-bottom: 2px solid var(--primary);
     }
     .logo-title {
       display: flex;
@@ -45,14 +44,14 @@
       gap: 18px;
       font-family: 'Fredoka', sans-serif;
       font-weight: 700;
-      font-size: 1.6em;
+      font-size: 1.28em; /* 20% smaller */
       color: var(--primary);
       letter-spacing: 2px;
     }
     .logo-title img {
-      height: 54px;
+      height: 43px;
       width: auto;
-      border-radius: 14px;
+      border-radius: 11px;
       margin-right: 5px;
     }
     .top-tabs {
@@ -66,8 +65,8 @@
       color: var(--primary);
       font-family: 'Fredoka', sans-serif;
       font-weight: 500;
-      font-size: 1.05em;
-      padding: 18px 32px;
+      font-size: 0.84em; /* 20% smaller */
+      padding: 14px 28px;
       cursor: pointer;
       text-transform: uppercase;
       border-radius: var(--radius);
@@ -77,10 +76,9 @@
     }
     .tab-btn.active,
     .tab-btn:hover {
-      background: var(--primary);
-      color: #fff;
+      background: var(--secondary);
+      color: var(--primary);
     }
-
     /* Carousel styles */
     .carousel-container {
       max-width: var(--max-width);
@@ -89,7 +87,7 @@
       box-shadow: var(--shadow);
       border-radius: var(--radius);
       overflow: hidden;
-      background: var(--card);
+      background: var(--background);
     }
     .carousel-slide {
       display: none;
@@ -117,37 +115,33 @@
       left: 50%;
       bottom: 18px;
       transform: translateX(-50%);
-      background: rgba(0,107,91,0.85);
+      background: rgba(13,148,136,0.85);
       color: #fff;
       font-family: 'Fredoka', sans-serif;
-      font-size: 2em;
+      font-size: 1.6em;
       font-weight: 700;
       letter-spacing: 2px;
-      border-radius: 16px;
-      padding: 10px 40px;
-      box-shadow: 0 2px 16px #006B5B44;
-      text-shadow: 1px 2px 10px #00000066;
+      border-radius: 14px;
+      padding: 10px 38px;
+      box-shadow: 0 2px 16px #0D948844;
+      text-shadow: 1px 2px 10px #22222244;
     }
     .carousel-arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 2.4em;
-      color: var(--highlight);
-      background: rgba(250,247,240,0.7);
+      font-size: 2.2em;
+      color: var(--accent);
+      background: var(--secondary);
       border: none;
       cursor: pointer;
-      padding: 8px 16px;
+      padding: 7px 14px;
       border-radius: 10px;
       z-index: 10;
-      transition: background 0.2s;
     }
     .carousel-arrow.left { left: 10px; }
     .carousel-arrow.right { right: 10px; }
-    .carousel-arrow:hover {
-      background: var(--secondary);
-      color: var(--primary);
-    }
+
     .carousel-dots {
       position: absolute;
       bottom: 10px;
@@ -157,31 +151,31 @@
       gap: 11px;
     }
     .carousel-dot {
-      height: 15px;
-      width: 15px;
+      height: 13px;
+      width: 13px;
       border-radius: 50%;
-      background: var(--highlight);
+      background: var(--accent);
       opacity: 0.4;
       cursor: pointer;
       transition: background 0.2s, opacity 0.2s;
       border: 2px solid var(--background);
     }
     .carousel-dot.active {
-      background: var(--secondary);
+      background: var(--primary);
       opacity: 1;
       border-color: var(--primary);
     }
     /* Alternating main topics layout */
     .main-section {
       max-width: var(--max-width);
-      margin: 48px auto;
+      margin: 44px auto;
       display: flex;
       align-items: stretch;
-      background: var(--card);
+      background: none;
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      min-height: 340px;
+      box-shadow: none;
+      overflow: visible;
+      min-height: 320px;
       flex-wrap: nowrap;
     }
     .main-section.reverse {
@@ -190,7 +184,6 @@
     .main-photo {
       width: 50%;
       min-width: 260px;
-      background: #eee;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -198,31 +191,33 @@
       padding: 0;
     }
     .main-photo img {
-      width: 100%;
-      height: 100%;
+      width: 95%;
+      height: 330px;
       object-fit: cover;
-      border-radius: 0;
-      box-shadow: none;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
       display: block;
+      background: #eee;
     }
     .main-desc {
       width: 50%;
-      padding: 36px 38px;
+      padding: 24px 38px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       position: relative;
+      background: none;
     }
     .main-heading {
       font-family: 'Fredoka', sans-serif;
       font-weight: 700;
-      font-size: 2em;
+      font-size: 1.6em;
       color: var(--primary);
       margin-bottom: 10px;
       letter-spacing: 2px;
     }
     .main-summary {
-      font-size: 1.18em;
+      font-size: 1.09em;
       margin-bottom: 20px;
       color: var(--text);
       min-height: 40px;
@@ -230,86 +225,79 @@
     }
     .read-more-btn {
       display: inline-block;
-      background: var(--secondary);
+      background: var(--accent);
       color: var(--primary);
       font-family: 'Fredoka', sans-serif;
       font-weight: 500;
       font-size: 1em;
       text-transform: uppercase;
       letter-spacing: 2px;
-      padding: 13px 36px;
+      padding: 12px 26px;
       border-radius: 30px;
       border: none;
       cursor: pointer;
-      margin-top: 8px;
+      margin-top: 10px;
       box-shadow: var(--shadow);
       transition: background 0.2s, color 0.2s, transform 0.2s;
-      position: absolute;
-      bottom: 18px;
-      left: 0;
     }
     .read-more-btn:hover {
-      background: var(--highlight);
-      color: #fff;
+      background: var(--secondary);
+      color: var(--primary);
       transform: scale(1.06);
     }
-    /* Subtopics accordion */
     .subtopics {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.6s cubic-bezier(.4,0,.2,1);
-      background: #FAF7F0;
+      background: var(--secondary);
       margin-top: 10px;
       border-radius: 20px;
-      box-shadow: 0 2px 16px #006B5B18;
+      box-shadow: 0 2px 16px #0D948844;
       padding: 0 18px;
-      position: absolute;
-      left: 0; right: 0; bottom: 0;
-      z-index: 1;
+      position: relative;
     }
     .main-section.active .subtopics {
       position: static;
-      max-height: 800px;
-      padding: 22px 18px 12px 18px;
+      max-height: 700px;
+      padding: 18px 18px 12px 18px;
       margin-top: 18px;
     }
     .subtopic {
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
     .subtopic-title {
       font-family: 'Fredoka', sans-serif;
       font-weight: 700;
-      color: var(--secondary);
-      font-size: 1.1em;
-      margin-bottom: 9px;
+      color: var(--accent);
+      font-size: 1.07em;
+      margin-bottom: 8px;
       letter-spacing: 1px;
     }
     .subtopic-content {
-      font-size: 1.07em;
+      font-size: 1.03em;
       color: var(--text);
       margin-bottom: 10px;
       line-height: 1.7;
       font-family: 'Patrick Hand', cursive;
     }
     .subtopic-img {
-      max-width: 230px;
-      border-radius: 14px;
+      max-width: 220px;
+      border-radius: 12px;
       margin: 8px 0 0 0;
-      box-shadow: 0 2px 16px #5088A288;
+      box-shadow: 0 2px 16px #0D948844;
       display: block;
     }
     /* Gallery */
     .gallery-section {
       max-width: 100vw;
       margin: 60px auto 0 auto;
-      background: var(--card);
-      border-radius: var(--radius);
+      background: none;
       padding: 32px 0 24px 0;
-      box-shadow: var(--shadow);
+      box-shadow: none;
     }
     .gallery-title {
       font-family: 'Fredoka', sans-serif;
-      font-size: 2em;
+      font-size: 1.37em;
       color: var(--primary);
       text-align: center;
       margin-bottom: 24px;
@@ -318,7 +306,7 @@
     .gallery-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: var(--gallery-gap);
+      gap: 18px;
       justify-content: center;
       margin-top: 28px;
     }
@@ -326,22 +314,22 @@
       width: 220px;
       height: 145px;
       object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 2px 12px #5088A210;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px #0D948822;
       border: none;
       background: none;
       transition: transform 0.2s, box-shadow 0.2s;
       cursor: pointer;
     }
     .gallery-img:hover {
-      transform: scale(1.08) rotate(-2.5deg);
+      transform: scale(1.06) rotate(-2.5deg);
       box-shadow: 0 8px 36px var(--primary);
     }
     .gallery-video {
       width: 220px;
       height: 145px;
-      border-radius: 15px;
-      box-shadow: 0 2px 12px #5088A210;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px #0D948822;
       background: none;
       margin-bottom: 0;
       transition: transform 0.2s, box-shadow 0.2s;
@@ -363,7 +351,7 @@
     }
     .contact-details {
       width: 50%;
-      background: var(--highlight);
+      background: var(--primary);
       color: #fff;
       padding: 48px 38px;
       display: flex;
@@ -374,8 +362,8 @@
     }
     .contact-details strong {
       font-family: 'Fredoka', sans-serif;
-      font-size: 1.2em;
-      color: var(--secondary);
+      font-size: 1.18em;
+      color: var(--accent);
       margin-bottom: 10px;
     }
     .contact-form {
@@ -390,7 +378,7 @@
     .contact-form input, .contact-form textarea {
       font-family: 'Patrick Hand', cursive;
       font-size: 1em;
-      border: 1.5px solid var(--secondary);
+      border: 1.5px solid var(--accent);
       border-radius: 8px;
       padding: 9px;
       outline: none;
@@ -400,7 +388,7 @@
     }
     .contact-form textarea { min-height: 62px; }
     .contact-form button {
-      background: var(--secondary);
+      background: var(--accent);
       color: var(--primary);
       font-family: 'Fredoka', sans-serif;
       font-weight: 500;
@@ -416,8 +404,8 @@
       transition: background 0.2s, color 0.2s, transform 0.2s;
     }
     .contact-form button:hover {
-      background: var(--primary);
-      color: #fff;
+      background: var(--secondary);
+      color: var(--primary);
       transform: scale(1.05);
     }
     .contact-success {
@@ -472,8 +460,9 @@
       Grupo Capoeira Brasil Pune, India
     </div>
     <div class="top-tabs">
-      <button class="tab-btn active" onclick="scrollToSection('main-topics')">Home</button>
-      <button class="tab-btn" onclick="scrollToSection('about')">About</button>
+      <button class="tab-btn active" onclick="scrollToSection('carousel-top')">Home</button>
+      <button class="tab-btn" onclick="scrollToSection('capoeira')">Capoeira</button>
+      <button class="tab-btn" onclick="scrollToSection('about')">Grupo Capoeira Brasil</button>
       <button class="tab-btn" onclick="scrollToSection('music')">Music</button>
       <button class="tab-btn" onclick="scrollToSection('classes')">Classes</button>
       <button class="tab-btn" onclick="scrollToSection('gallery-section')">Gallery</button>
@@ -502,6 +491,7 @@
       <span class="carousel-dot" onclick="currentSlide(3)"></span>
     </div>
   </div>
+  <!-- Main topics scroll -->
   <div id="main-topics">
     <!-- Capoeira -->
     <div class="main-section" id="capoeira">
@@ -538,17 +528,17 @@
         </div>
       </div>
     </div>
-    <!-- About -->
+    <!-- Grupo Capoeira Brasil -->
     <div class="main-section reverse" id="about">
       <div class="main-desc">
-        <div class="main-heading">About</div>
+        <div class="main-heading">Grupo Capoeira Brasil</div>
         <div class="main-summary">
           Meet our group, our lineage, and the people who brought Capoeira Brasil to Pune. 
         </div>
         <button class="read-more-btn" onclick="toggleSubtopics(1)">Read more...</button>
         <div class="subtopics">
           <div class="subtopic">
-            <div class="subtopic-title">Grupo Capoeira Brasil</div>
+            <div class="subtopic-title">About the Group</div>
             <div class="subtopic-content">Grupo Capoeira Brasil is a global organization founded in Brazil. The Pune branch welcomes everyone—children, adults, and families—to join Capoeira’s rhythm and values.</div>
             <img src="grupo.jpg" class="subtopic-img" alt="Grupo Capoeira Brasil">
           </div>
@@ -714,7 +704,7 @@
         window.scrollTo({top: el.offsetTop - 64, behavior: 'smooth'});
       }
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      let tabs = ['main-topics','about','music','classes','gallery-section','contact-section'];
+      let tabs = ['carousel-top','capoeira','about','music','classes','gallery-section','contact-section'];
       let idx = tabs.indexOf(id);
       if (idx > -1) document.querySelectorAll('.tab-btn')[idx].classList.add('active');
     }
@@ -726,7 +716,6 @@
       form.reset();
       // Use Formspree/EmailJS for real delivery
     }
-    // On load, show first carousel slide
     document.addEventListener('DOMContentLoaded',function(){
       showSlides(slideIndex);
     });

@@ -261,8 +261,8 @@
     }
     .main-section.active .subtopics {
       position: static;
-      max-height: 180px;
-      padding: 6px 8px 3px 8px;
+      max-height: 700px;
+      padding: 12px 8px 7px 8px;
       margin-top: 6px;
     }
     .subtopic {
@@ -272,15 +272,15 @@
       font-family: 'Fredoka', sans-serif;
       font-weight: 700;
       color: var(--accent);
-      font-size: 0.84em; /* Increased by 10% */
+      font-size: 0.93em; /* Increased by 10% */
       margin-bottom: 4px;
       letter-spacing: 1px;
     }
     .subtopic-content {
-      font-size: 0.79em; /* Increased by 10% */
+      font-size: 0.87em; /* Increased by 10% */
       color: var(--text);
       margin-bottom: 4px;
-      line-height: 1.5;
+      line-height: 1.6;
       font-family: 'Patrick Hand', cursive;
     }
     .subtopic-img {
@@ -468,13 +468,14 @@
           <button class="dropdown-link" onclick="scrollToSubtopic('capoeira',1)">History</button>
           <button class="dropdown-link" onclick="scrollToSubtopic('capoeira',2)">Capoeira in Pune</button>
           <button class="dropdown-link" onclick="scrollToSubtopic('capoeira',3)">Philosophy</button>
+          <button class="dropdown-link" onclick="scrollToSubtopic('capoeira',4)">Benefits of Capoeira</button>
         </div>
       </div>
       <div class="dropdown" tabindex="0">
         <span class="tab-btn">About ▾</span>
         <div class="dropdown-content">
           <button class="dropdown-link" onclick="scrollToSection('about')">About</button>
-          <button class="dropdown-link" onclick="scrollToSubtopic('about',0)">About the Group</button>
+          <button class="dropdown-link" onclick="scrollToSubtopic('about',0)">Grupo Capoeira Brasil</button>
           <button class="dropdown-link" onclick="scrollToSubtopic('about',1)">Mestre Caxias</button>
           <button class="dropdown-link" onclick="scrollToSubtopic('about',2)">Instrutor Arrepiado</button>
         </div>
@@ -494,7 +495,8 @@
           <button class="dropdown-link" onclick="scrollToSubtopic('classes',0)">Toddlers</button>
           <button class="dropdown-link" onclick="scrollToSubtopic('classes',1)">Kids & Teens</button>
           <button class="dropdown-link" onclick="scrollToSubtopic('classes',2)">Adults</button>
-          <button class="dropdown-link" onclick="scrollToSubtopic('classes',3)">Private Lessons & Workshops</button>
+          <button class="dropdown-link" onclick="scrollToSubtopic('classes',3)">Schools</button>
+          <button class="dropdown-link" onclick="scrollToSubtopic('classes',4)">Private Lessons & Workshops</button>
         </div>
       </div>
       <button class="tab-btn" onclick="scrollToSection('gallery-section')">Gallery</button>
@@ -512,21 +514,21 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="carousel1.jpg" class="d-block w-100" alt="Community">
+          <img src="carousel1.jpg" class="d-block w-100" alt="Comunidade">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Community</h5>
+            <h5>Comunidade</h5>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="carousel2.jpg" class="d-block w-100" alt="Movement">
+          <img src="carousel2.jpg" class="d-block w-100" alt="Camaradas">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Movement</h5>
+            <h5>Camaradas</h5>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="carousel3.jpg" class="d-block w-100" alt="Energy">
+          <img src="carousel3.jpg" class="d-block w-100" alt="Movimento e Brincadeira">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Energy</h5>
+            <h5>Movimento e Brincadeira</h5>
           </div>
         </div>
       </div>
@@ -546,28 +548,44 @@
     <div class="main-section" id="capoeira">
       <div class="main-desc">
         <div class="main-heading">Capoeira</div>
-        <div class="main-summary">Capoeira is the art of movement, music, and community. Discover its story, roots, philosophy, and vibrant tradition in Pune.</div>
+        <div class="main-summary">Capoeira is a beautiful fusion of martial art, dance, music, and culture. Born in Brazil, it’s a rhythmic game of movement, self-expression, and connection. Every kick, defense, and acrobatic flow is guided by live music, energy, and respect. Capoeira teaches not just agility or strength, but awareness, creativity, and community. It’s a space where people of all ages can discover balance—between discipline and play, body and mind. In Capoeira, we don’t just train; we celebrate life, movement, and freedom.</div>
         <button class="read-more-btn" onclick="toggleSubtopics(0)">Read more...</button>
         <div class="subtopics">
           <div class="subtopic" id="capoeira-sub0">
             <div class="subtopic-title">What is Capoeira?</div>
-            <div class="subtopic-content">Capoeira is an Afro-Brazilian art combining martial arts, dance, acrobatics, and music. Played in a circle (roda), two players exchange movements to the rhythm of traditional songs and instruments.</div>
+            <div class="subtopic-content">Capoeira is more than a martial art—it’s a living dialogue of movement, rhythm, and expression. Practiced in a circle called the roda, two players exchange movements through kicks, defenses, and playful tricks while musicians play instruments like the berimbau and atabaque. Every gesture in Capoeira has purpose, every rhythm carries emotion.
+Capoeira builds agility, coordination, balance, and self-confidence, but it also cultivates empathy and respect. It teaches us to flow with challenges instead of fighting against them. Whether you’re a child discovering movement or an adult rediscovering joy through motion, Capoeira welcomes everyone into its rhythm. It’s not just about fighting—it’s about connection, culture, and community.</div>
             <img src="capoeira.jpg" class="subtopic-img" alt="Capoeira">
           </div>
           <div class="subtopic" id="capoeira-sub1">
             <div class="subtopic-title">History</div>
-            <div class="subtopic-content">Capoeira originated as a creative form of resistance. Enslaved Africans disguised their training as dance. Today, Capoeira is a symbol of freedom and culture worldwide.</div>
+            <div class="subtopic-content">Capoeira was born in Brazil over 400 years ago, created by African slaves who disguised their self-defense training as dance to protect themselves from oppression. Under the watchful eyes of their masters, they turned resistance into rhythm, struggle into song, and survival into art. Over time, Capoeira grew from the streets into a global expression of freedom, identity, and resilience.
+Today, it represents unity and heritage. Through the songs, movements, and rituals passed down from one generation to another, Capoeira tells a story of courage and transformation. It reminds us that strength isn’t just in power—it’s in adaptability, creativity, and community. Every roda today is a living echo of that history, keeping the spirit of resistance and joy alive.</div>
             <img src="history.jpg" class="subtopic-img" alt="Capoeira History">
           </div>
           <div class="subtopic" id="capoeira-sub2">
             <div class="subtopic-title">Capoeira in Pune</div>
-            <div class="subtopic-content">Capoeira arrived in Pune in the early 2010s, growing into a vibrant community. Regular classes, workshops, and Batizado events welcome students of all ages.</div>
+            <div class="subtopic-content">Capoeira found its rhythm in Pune through Grupo Capoeira Brasil Pune, led by Instrutor Arrepiado. What began as a small group of passionate students has grown into a thriving community that celebrates movement, music, and connection.
+Classes are filled with energy, laughter, and learning—where children, teens, and adults train side by side. From weekly sessions to workshops, performances, and the annual Batizado (grading ceremony), Capoeira in Pune has become a vibrant cultural exchange that bridges Brazil and India.
+Beyond fitness and flexibility, it offers students a sense of belonging and confidence. In every class, the rhythm of the berimbau brings people together, reminding us that Capoeira is not just a martial art—it’s a way of life.</div>
             <img src="capoeira-pune.jpg" class="subtopic-img" alt="Capoeira Pune">
           </div>
           <div class="subtopic" id="capoeira-sub3">
             <div class="subtopic-title">Philosophy</div>
-            <div class="subtopic-content">Capoeira is about respect, discipline, and joy. It connects people across backgrounds, teaching cultural appreciation and creative expression.</div>
+            <div class="subtopic-content">Capoeira is built on balance—between attack and defense, strength and gentleness, discipline and joy. Its philosophy teaches that life, like Capoeira, is a dance of adaptability. You learn to move with awareness, to respond rather than react.
+In Capoeira, every fall is a chance to rise with grace. Every movement carries respect for yourself, your partner, and the community around you. The music guides the rhythm, but the heart gives it meaning.
+At Grupo Capoeira Brasil Pune, we believe Capoeira is not about being the best—it’s about becoming your best self. It’s a journey of body, mind, and spirit that celebrates freedom, resilience, and togetherness.</div>
             <img src="philosophy.jpg" class="subtopic-img" alt="Capoeira Philosophy">
+          </div>
+          <div class="subtopic" id="capoeira-sub4">
+            <div class="subtopic-title">Benefits of Capoeira</div>
+            <div class="subtopic-content">Capoeira offers a unique blend of physical, mental, and emotional benefits for people of all ages.
+For Children: Builds coordination, rhythm, confidence, and focus through playful learning.
+For Teens: Enhances strength, discipline, creativity, and teamwork while building cultural awareness.
+For Adults: Improves flexibility, balance, endurance, and stress relief—while reconnecting with joy and rhythm.
+For Everyone: Promotes self-expression, community spirit, and mindfulness.
+Capoeira develops both body and mind—it teaches awareness, respect, and resilience. Every movement, song, and rhythm nurtures confidence, creativity, and connection. It’s not just exercise; it’s empowerment through art, music, and movement.
+“In Capoeira, we don’t compete—we complete each other through movement and music.”</div>
           </div>
         </div>
       </div>
@@ -580,31 +598,30 @@
       <div class="main-desc">
         <div class="main-heading">About</div>
         <div class="main-summary">
-          Meet our group, our lineage, and the people who brought Capoeira Brasil to Pune. 
+          Grupo Capoeira Brasil Pune is a space where movement, culture, and community come together. Founded by Instrutor Arrepiado under the guidance of Mestre Caxias, it brings the rich traditions of Brazilian Capoeira to India. Through classes, workshops, and events, the school helps students of all ages build strength, rhythm, confidence, and connection.
+It’s more than a place to train—it’s a family that moves, learns, and grows together through the rhythm of Capoeira.
         </div>
         <button class="read-more-btn" onclick="toggleSubtopics(1)">Read more...</button>
         <div class="subtopics">
           <div class="subtopic" id="about-sub0">
-            <div class="subtopic-title">About the Group</div>
-            <div class="subtopic-content">Grupo Capoeira Brasil is a global organization founded in Brazil. The Pune branch welcomes everyone—children, adults, and families—to join Capoeira’s rhythm and values.</div>
+            <div class="subtopic-title">Grupo Capoeira Brasil</div>
+            <div class="subtopic-content">Grupo Capoeira Brasil was founded in 1989 in Rio de Janeiro by Mestres Paulão Ceará, Boneco, and Paulinho Sabiá. The group quickly became known worldwide for its dynamic style, strong lineage, and deep respect for Capoeira’s roots. With schools in over 40 countries, Grupo Capoeira Brasil continues to spread the art’s essence—discipline, respect, and community.
+Its philosophy blends tradition with evolution, maintaining the old songs, rituals, and values while embracing Capoeira’s global growth.
+In Pune, the group’s teachings live on through Instrutor Arrepiado and Mestre Caxias, keeping alive the same passion, authenticity, and energy that define Grupo Capoeira Brasil.</div>
             <img src="grupo.jpg" class="subtopic-img" alt="Grupo Capoeira Brasil">
           </div>
           <div class="subtopic" id="about-sub1">
             <div class="subtopic-title">Mestre Caxias</div>
-            <div class="subtopic-content">Mestre Caxias is a senior master and mentor to the Indian Capoeira community. He inspires students and instructors, emphasizing joy, discipline, and respect for tradition.</div>
+            <div class="subtopic-content">Mestre Caxias is one of the key figures of Grupo Capoeira Brasil, known for his charisma, deep knowledge, and lifelong dedication to the art. With decades of experience, he has taught thousands of students around the world, inspiring generations to live through Capoeira’s values of respect, humility, and discipline.
+His teaching goes beyond movement—he helps students understand the culture, rhythm, and philosophy behind every gesture.
+In Pune, Mestre Caxias plays a guiding role in the school’s growth, visiting regularly for workshops and the annual Batizado. His presence brings wisdom, inspiration, and connection to the global Capoeira community.</div>
             <img src="mestre.jpg" class="subtopic-img" alt="Mestre Caxias">
           </div>
           <div class="subtopic" id="about-sub2">
             <div class="subtopic-title">Instrutor Arrepiado</div>
-            <div class="subtopic-content">With over 14 years of Capoeira experience and 12 years teaching, Sagar Jain leads Capoeira Pune. He organizes workshops, Batizados, and spreads Capoeira in schools and colleges.<br>
-            <b>Achievements:</b>
-            <ul>
-              <li>Trained under senior Capoeira masters</li>
-              <li>Founded Batizado in Pune</li>
-              <li>Invited for workshops and performances</li>
-              <li>Promotes Capoeira in schools & colleges</li>
-            </ul>
-            </div>
+            <div class="subtopic-content">Instrutor Arrepiado has been practicing Capoeira for over 14 years and has dedicated his life to sharing its energy with others. Trained under Mestre Caxias, he represents Grupo Capoeira Brasil in Pune, India.
+His teaching focuses on more than just movement—it’s about building character, confidence, and community. From young children to adults, his classes inspire discipline, rhythm, and joy.
+Over the years, Arrepiado has organized numerous workshops, community events, and annual Batizados, creating a growing family of capoeiristas who embody respect, creativity, and passion. His mission is to make Capoeira accessible to everyone—one movement, one rhythm, one smile at a time.</div>
             <img src="instrutor1.jpg" class="subtopic-img" alt="Instrutor Arrepiado">
           </div>
         </div>
@@ -618,18 +635,31 @@
       <div class="main-desc">
         <div class="main-heading">Music</div>
         <div class="main-summary">
-          The heartbeat of Capoeira—the berimbau, drums, and songs that bring the roda to life.
+          Music is the heartbeat of Capoeira. Every class, every roda, and every ceremony begins with rhythm. The berimbau leads the energy, supported by the atabaque, pandeiro, and agogo. Together, they set the tempo and mood for the game.
+Capoeira songs tell stories of history, heroes, and life lessons. They carry messages of resilience, playfulness, and community. Singing and playing together teaches rhythm, language, and connection—it transforms training into celebration.
+At Grupo Capoeira Brasil Pune, music is taught with as much importance as movement. Students learn to play instruments, sing in Portuguese, and understand the meaning behind the songs. Because in Capoeira, when you sing, you don’t just make music—you share spirit.
         </div>
         <button class="read-more-btn" onclick="toggleSubtopics(2)">Read more...</button>
         <div class="subtopics">
           <div class="subtopic" id="music-sub0">
             <div class="subtopic-title">Instruments</div>
-            <div class="subtopic-content">Capoeira uses Berimbau, Atabaque, and Pandeiro. The berimbau leads, signaling rhythm and changes in the game. Students learn to play and respect each instrument.</div>
+            <div class="subtopic-content">Capoeira’s instruments bring its soul to life. The berimbau, a single-stringed bow, leads the rhythm and controls the energy of the game. Its deep tones command the players to speed up, slow down, or change their movement style.
+The atabaque, a tall drum, adds strength and heartbeat to the rhythm. The pandeiro (tambourine) brings playfulness and swing, while the agogo (double bell) and reco-reco add texture to the sound.
+Each instrument has its role, but together they form harmony. Learning to play them teaches patience, timing, and teamwork. In Capoeira, music isn’t separate from the movement—it is the movement’s pulse.</div>
             <img src="instruments.jpg" class="subtopic-img" alt="Capoeira Instruments">
           </div>
           <div class="subtopic" id="music-sub1">
             <div class="subtopic-title">Common Songs</div>
-            <div class="subtopic-content">Songs are sung in Portuguese, sharing stories of Capoeira’s roots and heroes. Lyrics encourage unity and joy. Common songs include “Paranauê” and “Zum Zum Zum.”</div>
+            <div class="subtopic-content">Parana ê<br>
+Zum Zum Zum<br>
+Berimbau tocou<br>
+Sim Sim Sim, Não Não Não<br>
+A ladeira é minha<br>
+São Bento Pequeno<br>
+Volta do Mundo<br>
+Iê Camará<br>
+Eu vim da Bahia<br>
+Zum Zum Zum Capoeira mata um</div>
             <img src="songs.jpg" class="subtopic-img" alt="Capoeira Songs">
           </div>
         </div>
@@ -643,28 +673,44 @@
       <div class="main-desc">
         <div class="main-heading">Classes</div>
         <div class="main-summary">
-          Capoeira for every age and experience level—toddlers, kids, adults, and private workshops.
+          Capoeira classes are designed for everyone—regardless of age, fitness, or background. Each class brings together movement, rhythm, and culture in a way that strengthens both body and mind. Students learn kicks, defenses, acrobatics, and music while building confidence, coordination, and awareness.
+“Capoeira isn’t about being the best. It’s about becoming better—together.”
+Whether you’re a child discovering rhythm, a teen exploring strength, or an adult rediscovering movement, Capoeira adapts to you. Every class is filled with music, energy, and connection—a space where you can challenge yourself, learn freely, and grow within a supportive community.
         </div>
         <button class="read-more-btn" onclick="toggleSubtopics(3)">Read more...</button>
         <div class="subtopics">
           <div class="subtopic" id="classes-sub0">
-            <div class="subtopic-title">Toddlers</div>
-            <div class="subtopic-content">Classes for toddlers focus on fun, movement, and music. Simple games and steps help children develop motor skills and confidence.</div>
+            <div class="subtopic-title">Toddlers Program (Ages 3.5–6)</div>
+            <div class="subtopic-content">Our toddlers’ Capoeira program introduces movement through imagination, rhythm, and play. Children learn coordination, balance, and focus using simple Capoeira movements woven into fun games and songs. The classes are joyful, musical, and nurturing—helping little ones build confidence and social skills in a friendly group setting.
+We focus on developing gross motor skills, spatial awareness, and rhythm through engaging activities that feel like play but teach discipline and teamwork. The toddlers learn to listen, move, and express themselves through music and motion—laying the foundation for a lifelong love of movement.
+Each child is encouraged to move at their own pace, making classes inclusive, fun, and safe.</div>
             <img src="toddlers.jpg" class="subtopic-img" alt="Capoeira Toddlers">
           </div>
           <div class="subtopic" id="classes-sub1">
-            <div class="subtopic-title">Kids & Teens</div>
-            <div class="subtopic-content">Kids and teens learn rhythm, kicks, acrobatics, and teamwork. Classes build discipline, musicality, and self-expression.</div>
+            <div class="subtopic-title">Kids & Teens (Ages 7–16)</div>
+            <div class="subtopic-content">Capoeira for kids and teens combines physical fitness, rhythm, and creativity in an environment full of energy and respect. Students learn kicks, defenses, and acrobatics, along with songs and instruments. They also develop discipline, teamwork, and cultural awareness.
+Each class encourages self-expression and confidence through structured practice and games. Children learn to work together while celebrating individuality—a vital lesson both inside and outside the roda.
+For teens, Capoeira offers a powerful outlet for energy, focus, and leadership. It improves coordination, balance, and posture while nurturing a positive mindset. Beyond movement, they learn values of respect, perseverance, and community—skills that last a lifetime.</div>
             <img src="kids-teens.jpg" class="subtopic-img" alt="Capoeira Kids & Teens">
           </div>
           <div class="subtopic" id="classes-sub2">
-            <div class="subtopic-title">Adults</div>
-            <div class="subtopic-content">Classes for adults include advanced movement, music, and cultural learning. Students build fitness, resilience, and connection in a supportive community.</div>
+            <div class="subtopic-title">Adults (Ages 17 & above)</div>
+            <div class="subtopic-content">Capoeira for adults is a holistic workout for the body and mind. It combines martial arts, dance, music, and acrobatics, offering strength, flexibility, and endurance in a single training. But beyond fitness, it’s a journey of rhythm, resilience, and rediscovery.
+Classes are designed to challenge you while respecting your pace. You’ll learn powerful movements, fluid transitions, and musical expression—all within an inclusive, supportive group. Capoeira helps reduce stress, improve posture, and build confidence through mindful movement.
+Whether you’re a beginner or returning to physical activity, Capoeira adapts to your level. Every session leaves you stronger, lighter, and more connected—with yourself and with the group.</div>
             <img src="adults.jpg" class="subtopic-img" alt="Capoeira Adults">
           </div>
           <div class="subtopic" id="classes-sub3">
-            <div class="subtopic-title">Private Lessons & Workshops</div>
-            <div class="subtopic-content">Private and small group sessions offer personalized learning for families, friends, or individuals. Workshops and Batizado events throughout the year.</div>
+            <div class="subtopic-title">Schools</div>
+            <div class="subtopic-content">Introducing Capoeira in schools nurtures creativity, discipline, and teamwork among children. It’s an art form that blends play with purpose—improving coordination, rhythm, and focus while instilling respect and self-control.
+School Capoeira programs help students express themselves through movement and music, encouraging active participation and cultural curiosity. Lessons are carefully structured to build physical literacy, emotional intelligence, and cooperative learning.
+Capoeira also promotes inclusivity, as every child, regardless of athletic ability, can find their rhythm and role within the roda. It creates joyful, memorable experiences that stay long after the class ends—connecting movement, music, and mindfulness in one beautiful form.</div>
+          </div>
+          <div class="subtopic" id="classes-sub4">
+            <div class="subtopic-title">Private Sessions & Workshops</div>
+            <div class="subtopic-content">Private Capoeira sessions offer a personalized approach to learning—whether you’re a beginner wanting to build a foundation or an advanced student refining technique. These sessions focus on your specific goals: movement, music, rhythm, or overall fitness.
+Workshops are available for schools, fitness studios, and cultural organizations. They provide an immersive experience into Capoeira’s history, movements, and instruments. Each workshop is interactive and engaging, leaving participants inspired and energized.
+Private sessions and workshops are ideal for individuals or small groups who prefer focused attention, flexible timing, and faster progress. Every class is tailored to suit your rhythm, pace, and passion.</div>
             <img src="workshops.jpg" class="subtopic-img" alt="Capoeira Workshops">
           </div>
         </div>
@@ -708,7 +754,7 @@
     </div>
   </div>
   <footer>
-    <div class="footer-year">2011 Grupo Capoeira Brasil Pune, India</div>
+    <div class="footer-year">2011 @ Grupo Capoeira Brasil Pune, India</div>
   </footer>
   <script>
     // Bootstrap Carousel: No changes needed, handled by Bootstrap JS

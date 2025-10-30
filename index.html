@@ -10,8 +10,8 @@
     :root {
       --background: #FAF8F1;
       --primary: #0D9488;
-      --accent: #FFC107;
-      --secondary: #004D40;
+      --accent: #FFB100;
+      --secondary: #FFE29A;
       --text: #2E2E2E;
       --shadow: 0 4px 24px #0D948822;
       --radius: 32px;
@@ -27,10 +27,8 @@
     }
     nav {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 28px;
-      min-height: 64px;
+      flex-direction: column;
+      align-items: stretch;
       background: var(--background);
       box-shadow: var(--shadow);
       position: sticky;
@@ -38,13 +36,20 @@
       z-index: 100;
       border-bottom: 2px solid var(--primary);
     }
+    .nav-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 28px;
+      min-height: 64px;
+    }
     .logo-title {
       display: flex;
       align-items: center;
       gap: 18px;
       font-family: 'Fredoka', sans-serif;
       font-weight: 700;
-      font-size: 1.28em; /* 20% smaller */
+      font-size: 1.28em;
       color: var(--primary);
       letter-spacing: 2px;
     }
@@ -54,10 +59,16 @@
       border-radius: 11px;
       margin-right: 5px;
     }
+    .nav-spacer {
+      height: 32px;
+      width: 100%;
+    }
     .top-tabs {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 0px;
+      padding-bottom: 8px;
     }
     .tab-btn {
       background: none;
@@ -65,7 +76,7 @@
       color: var(--primary);
       font-family: 'Fredoka', sans-serif;
       font-weight: 500;
-      font-size: 0.84em; /* 20% smaller */
+      font-size: 0.84em;
       padding: 14px 28px;
       cursor: pointer;
       text-transform: uppercase;
@@ -81,18 +92,18 @@
     }
     /* Carousel styles */
     .carousel-container {
-      max-width: var(--max-width);
-      margin: 30px auto 48px auto;
+      width: 100vw;
+      margin: 0 auto 48px auto;
       position: relative;
       box-shadow: var(--shadow);
-      border-radius: var(--radius);
+      border-radius: 0;
       overflow: hidden;
       background: var(--background);
     }
     .carousel-slide {
       display: none;
       position: absolute;
-      width: 100%;
+      width: 100vw;
       height: 370px;
       left: 0; top: 0;
       text-align: center;
@@ -103,10 +114,10 @@
       to { opacity: 1;}
     }
     .carousel-slide img {
-      width: 100%;
+      width: 100vw;
       height: 370px;
       object-fit: cover;
-      border-radius: var(--radius);
+      border-radius: 0;
       box-shadow: none;
       display: block;
     }
@@ -167,60 +178,67 @@
     }
     /* Alternating main topics layout */
     .main-section {
+      width: 100vw;
       max-width: var(--max-width);
-      margin: 44px auto;
+      margin: 18px auto;
       display: flex;
       align-items: stretch;
       background: none;
-      border-radius: var(--radius);
+      border-radius: 0;
       box-shadow: none;
-      overflow: visible;
       min-height: 320px;
       flex-wrap: nowrap;
+      gap: 0;
     }
     .main-section.reverse {
       flex-direction: row-reverse;
     }
     .main-photo {
-      width: 50%;
-      min-width: 260px;
+      width: 40vw;
+      min-width: 240px;
+      max-width: 40vw;
       display: flex;
       align-items: center;
-      justify-content: center;
-      overflow: hidden;
+      justify-content: flex-end;
+      overflow: visible;
       padding: 0;
+      margin: 0;
     }
+    .main-section.reverse .main-photo { justify-content: flex-start; }
     .main-photo img {
-      width: 95%;
+      width: 100%;
       height: 330px;
       object-fit: cover;
-      border-radius: 24px;
-      box-shadow: var(--shadow);
+      border-radius: 0;
+      box-shadow: none;
       display: block;
       background: #eee;
+      margin: 0;
     }
     .main-desc {
-      width: 50%;
-      padding: 24px 38px;
+      width: 60vw;
+      max-width: 60vw;
+      padding: 24px 38px 24px 38px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       position: relative;
       background: none;
+      min-width: 300px;
     }
     .main-heading {
       font-family: 'Fredoka', sans-serif;
       font-weight: 700;
-      font-size: 1.6em;
+      font-size: 1.4em;
       color: var(--primary);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       letter-spacing: 2px;
     }
     .main-summary {
-      font-size: 1.09em;
-      margin-bottom: 20px;
+      font-size: 1.02em;
+      margin-bottom: 10px;
       color: var(--text);
-      min-height: 40px;
+      min-height: 36px;
       font-family: 'Patrick Hand', cursive;
     }
     .read-more-btn {
@@ -229,10 +247,10 @@
       color: var(--primary);
       font-family: 'Fredoka', sans-serif;
       font-weight: 500;
-      font-size: 1em;
+      font-size: 0.98em;
       text-transform: uppercase;
       letter-spacing: 2px;
-      padding: 12px 26px;
+      padding: 10px 22px;
       border-radius: 30px;
       border: none;
       cursor: pointer;
@@ -243,64 +261,64 @@
     .read-more-btn:hover {
       background: var(--secondary);
       color: var(--primary);
-      transform: scale(1.06);
+      transform: scale(1.05);
     }
     .subtopics {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.6s cubic-bezier(.4,0,.2,1);
       background: var(--secondary);
-      margin-top: 10px;
-      border-radius: 20px;
+      margin-top: 8px;
+      border-radius: 18px;
       box-shadow: 0 2px 16px #0D948844;
-      padding: 0 18px;
+      padding: 0 16px;
       position: relative;
     }
     .main-section.active .subtopics {
       position: static;
       max-height: 700px;
-      padding: 18px 18px 12px 18px;
-      margin-top: 18px;
+      padding: 14px 16px 10px 16px;
+      margin-top: 14px;
     }
     .subtopic {
-      margin-bottom: 24px;
+      margin-bottom: 17px;
     }
     .subtopic-title {
       font-family: 'Fredoka', sans-serif;
       font-weight: 700;
       color: var(--accent);
-      font-size: 1.07em;
-      margin-bottom: 8px;
+      font-size: 1.01em;
+      margin-bottom: 7px;
       letter-spacing: 1px;
     }
     .subtopic-content {
-      font-size: 1.03em;
+      font-size: 0.99em;
       color: var(--text);
-      margin-bottom: 10px;
-      line-height: 1.7;
+      margin-bottom: 8px;
+      line-height: 1.6;
       font-family: 'Patrick Hand', cursive;
     }
     .subtopic-img {
-      max-width: 220px;
-      border-radius: 12px;
-      margin: 8px 0 0 0;
-      box-shadow: 0 2px 16px #0D948844;
+      max-width: 180px;
+      border-radius: 8px;
+      margin: 6px 0 0 0;
+      box-shadow: none;
       display: block;
     }
     /* Gallery */
     .gallery-section {
-      max-width: 100vw;
-      margin: 60px auto 0 auto;
+      width: 100vw;
+      margin: 36px 0 12px 0;
       background: none;
-      padding: 32px 0 24px 0;
+      padding: 12px 0 18px 0;
       box-shadow: none;
     }
     .gallery-title {
       font-family: 'Fredoka', sans-serif;
-      font-size: 1.37em;
+      font-size: 1.15em;
       color: var(--primary);
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
       letter-spacing: 2px;
     }
     .gallery-grid {
@@ -308,28 +326,27 @@
       flex-wrap: wrap;
       gap: 18px;
       justify-content: center;
-      margin-top: 28px;
+      margin-top: 0px;
     }
     .gallery-img {
       width: 220px;
       height: 145px;
       object-fit: cover;
-      border-radius: 14px;
-      box-shadow: 0 2px 12px #0D948822;
+      border-radius: 0;
+      box-shadow: none;
       border: none;
       background: none;
       transition: transform 0.2s, box-shadow 0.2s;
       cursor: pointer;
     }
     .gallery-img:hover {
-      transform: scale(1.06) rotate(-2.5deg);
+      transform: scale(1.03) rotate(-2deg);
       box-shadow: 0 8px 36px var(--primary);
     }
     .gallery-video {
       width: 220px;
       height: 145px;
-      border-radius: 14px;
-      box-shadow: 0 2px 12px #0D948822;
+      border-radius: 0;
       background: none;
       margin-bottom: 0;
       transition: transform 0.2s, box-shadow 0.2s;
@@ -337,9 +354,8 @@
     /* Contact */
     .contact-section {
       max-width: var(--max-width);
-      margin: 70px auto;
+      margin: 38px auto 8px auto;
       display: flex;
-      gap: 0;
       background: var(--card);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -353,22 +369,22 @@
       width: 50%;
       background: var(--primary);
       color: #fff;
-      padding: 48px 38px;
+      padding: 40px 28px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      font-size: 1.13em;
+      font-size: 1.06em;
       font-family: 'Patrick Hand', cursive;
     }
     .contact-details strong {
       font-family: 'Fredoka', sans-serif;
-      font-size: 1.18em;
+      font-size: 1.05em;
       color: var(--accent);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .contact-form {
       width: 50%;
-      padding: 48px 38px;
+      padding: 40px 28px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -419,9 +435,8 @@
       text-align: center;
       background: var(--primary);
       color: #fff;
-      padding: 18px 0;
+      padding: 14px 0 10px 0;
       font-size: 1.05em;
-      margin-top: 46px;
       border-radius: 0;
       box-shadow: none;
       letter-spacing: 2px;
@@ -431,38 +446,41 @@
       font-family: 'Fredoka', sans-serif;
       font-size: 1.05em;
       color: #fff;
-      margin-top: 10px;
+      margin-top: 2px;
       letter-spacing: 2px;
     }
     @media (max-width: 900px) {
       .main-section, .main-section.reverse { flex-direction: column; }
-      .main-photo, .main-desc { width: 100%; min-width: 0;}
+      .main-photo, .main-desc { width: 100vw; min-width: 0; max-width: 100vw;}
       .main-photo img { max-height: 320px; }
-      .main-desc { padding: 24px 18px;}
+      .main-desc { padding: 24px 14px;}
       .gallery-img, .gallery-video { width: 99vw; max-width: 99vw; height: auto;}
       .contact-section { flex-direction: column; }
-      .contact-details, .contact-form { width: 100%; padding: 24px 18px;}
+      .contact-details, .contact-form { width: 100%; padding: 24px 12px;}
     }
     @media (max-width: 700px) {
       nav { padding: 0 6px;}
       .logo-title { font-size: 1em;}
-      .main-section { min-height: 220px;}
-      .main-heading { font-size: 1.15em;}
-      .main-photo img { max-height: 180px;}
-      .contact-details, .contact-form { padding: 10px;}
+      .main-section { min-height: 180px;}
+      .main-heading { font-size: 1.09em;}
+      .main-photo img { max-height: 160px;}
+      .contact-details, .contact-form { padding: 8px;}
     }
   </style>
 </head>
 <body>
   <nav>
-    <div class="logo-title">
-      <img src="logo.png" alt="Grupo Capoeira Brasil Pune Logo">
-      Grupo Capoeira Brasil Pune, India
+    <div class="nav-top-row">
+      <div class="logo-title">
+        <img src="logo.png" alt="Grupo Capoeira Brasil Pune Logo">
+        Grupo Capoeira Brasil Pune, India
+      </div>
     </div>
+    <div class="nav-spacer"></div>
     <div class="top-tabs">
       <button class="tab-btn active" onclick="scrollToSection('carousel-top')">Home</button>
       <button class="tab-btn" onclick="scrollToSection('capoeira')">Capoeira</button>
-      <button class="tab-btn" onclick="scrollToSection('about')">Grupo Capoeira Brasil</button>
+      <button class="tab-btn" onclick="scrollToSection('about')">About</button>
       <button class="tab-btn" onclick="scrollToSection('music')">Music</button>
       <button class="tab-btn" onclick="scrollToSection('classes')">Classes</button>
       <button class="tab-btn" onclick="scrollToSection('gallery-section')">Gallery</button>
@@ -495,9 +513,6 @@
   <div id="main-topics">
     <!-- Capoeira -->
     <div class="main-section" id="capoeira">
-      <div class="main-photo">
-        <img src="home.jpg" alt="Home Capoeira">
-      </div>
       <div class="main-desc">
         <div class="main-heading">Capoeira</div>
         <div class="main-summary">
@@ -527,11 +542,14 @@
           </div>
         </div>
       </div>
+      <div class="main-photo">
+        <img src="home.jpg" alt="Home Capoeira">
+      </div>
     </div>
-    <!-- Grupo Capoeira Brasil -->
+    <!-- About -->
     <div class="main-section reverse" id="about">
       <div class="main-desc">
-        <div class="main-heading">Grupo Capoeira Brasil</div>
+        <div class="main-heading">About</div>
         <div class="main-summary">
           Meet our group, our lineage, and the people who brought Capoeira Brasil to Pune. 
         </div>
@@ -568,9 +586,6 @@
     </div>
     <!-- Music -->
     <div class="main-section" id="music">
-      <div class="main-photo">
-        <img src="music.jpg" alt="Music Capoeira">
-      </div>
       <div class="main-desc">
         <div class="main-heading">Music</div>
         <div class="main-summary">
@@ -589,6 +604,9 @@
             <img src="songs.jpg" class="subtopic-img" alt="Capoeira Songs">
           </div>
         </div>
+      </div>
+      <div class="main-photo">
+        <img src="music.jpg" alt="Music Capoeira">
       </div>
     </div>
     <!-- Classes -->
@@ -708,13 +726,11 @@
       let idx = tabs.indexOf(id);
       if (idx > -1) document.querySelectorAll('.tab-btn')[idx].classList.add('active');
     }
-    // Contact form - placeholder logic
     function sendContact(e) {
       e.preventDefault();
       let form = document.getElementById('quick-question-form');
       document.getElementById('contact-success').textContent = "Your message has been sent!";
       form.reset();
-      // Use Formspree/EmailJS for real delivery
     }
     document.addEventListener('DOMContentLoaded',function(){
       showSlides(slideIndex);

@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Grupo Capoeira Brasil Pune</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <title>Grupo Capoeira Brasil Pune, India</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700;500&family=Patrick+Hand&display=swap" rel="stylesheet">
   <style>
     :root {
       --background: #FAF7F0;
@@ -14,174 +15,300 @@
       --text: #2F2F2F;
       --card: #fff;
       --shadow: 0 4px 24px #006B5B22;
-      --radius: 28px;
-      --max-width: 900px;
+      --radius: 32px;
+      --max-width: 1050px;
+      --gallery-gap: 18px;
     }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Lora', serif;
       background: var(--background);
       color: var(--text);
+      font-family: 'Patrick Hand', cursive;
       margin: 0;
       padding: 0;
     }
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: #fff;
-      box-shadow: var(--shadow);
-      display: flex;
-      align-items: center;
-      padding: 0 24px;
-      min-height: 68px;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 500;
-    }
-    .logo-container {
-      display: flex;
-      align-items: center;
-      margin-right: 18px;
-    }
-    .logo-img {
-      height: 38px;
-      margin-right: 10px;
-    }
-    .logo-text {
-      font-size: 1.1em;
-      font-weight: bold;
-      letter-spacing: 2px;
-      color: var(--primary);
-      font-family: 'Montserrat', sans-serif;
-    }
-    .nav-menu {
-      display: flex;
-      margin-left: auto;
-      padding: 0;
-      list-style: none;
-      gap: 6px;
-    }
-    .nav-link {
-      color: var(--primary);
-      font-weight: bold;
-      text-decoration: none;
-      padding: 8px 18px;
-      border-radius: var(--radius);
-      transition: background 0.2s, color 0.2s;
-      font-family: 'Montserrat', sans-serif;
-      cursor: pointer;
-      background: none;
-      border: none;
-      font-size: 1em;
-      outline: none;
-    }
-    .nav-link:hover, .nav-link.active {
-      background: var(--primary);
-      color: #fff;
-    }
-    @media (max-width: 800px) {
-      .nav-menu { flex-wrap: wrap; gap: 2px;}
-      nav { padding: 0 8px;}
-      .logo-text { font-size: 0.95em;}
-    }
-
-    /* Accordion styles */
-    .accordion-container {
-      max-width: var(--max-width);
-      margin: 40px auto;
-    }
-    .accordion-section {
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      margin-bottom: 30px;
-      font-family: 'Lora', serif;
-      overflow: hidden;
-      transition: box-shadow 0.2s;
-    }
-    .accordion-header {
-      font-size: 1.6em;
-      font-family: 'Lora', serif;
-      font-weight: 700;
-      color: var(--primary);
-      padding: 32px 36px;
-      cursor: pointer;
-      letter-spacing: 1.5px;
-      border-bottom: 1px solid #eee;
-      background: #fff;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 0 32px;
+      min-height: 82px;
+      background: #fff;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 700;
+      font-size: 1.6em;
+      color: var(--primary);
+      letter-spacing: 2px;
+    }
+    .logo-title img {
+      height: 54px;
+      width: auto;
+      border-radius: 14px;
+      margin-right: 5px;
+    }
+    .top-tabs {
+      display: flex;
+      align-items: center;
+      gap: 0px;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      color: var(--primary);
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 500;
+      font-size: 1.05em;
+      padding: 18px 32px;
+      cursor: pointer;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      letter-spacing: 1px;
+      transition: background 0.2s, color 0.2s;
+      outline: none;
+    }
+    .tab-btn.active,
+    .tab-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+    /* Carousel styles */
+    .carousel-container {
+      max-width: var(--max-width);
+      margin: 30px auto 48px auto;
+      position: relative;
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--card);
+    }
+    .carousel-slide {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 370px;
+      left: 0; top: 0;
+      text-align: center;
+      animation: fadeIn 1s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0;}
+      to { opacity: 1;}
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 370px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: none;
+      display: block;
+    }
+    .carousel-label {
+      position: absolute;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      background: rgba(0,107,91,0.85);
+      color: #fff;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 2em;
+      font-weight: 700;
+      letter-spacing: 2px;
+      border-radius: 16px;
+      padding: 10px 40px;
+      box-shadow: 0 2px 16px #006B5B44;
+      text-shadow: 1px 2px 10px #00000066;
+    }
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.4em;
+      color: var(--highlight);
+      background: rgba(250,247,240,0.7);
+      border: none;
+      cursor: pointer;
+      padding: 8px 16px;
+      border-radius: 10px;
+      z-index: 10;
       transition: background 0.2s;
     }
-    .accordion-header:hover {
-      background: #f2f6f4;
+    .carousel-arrow.left { left: 10px; }
+    .carousel-arrow.right { right: 10px; }
+    .carousel-arrow:hover {
+      background: var(--secondary);
+      color: var(--primary);
     }
-    .accordion-header .arrow {
-      font-size: 1.4em;
-      color: var(--highlight);
-      margin-left: 12px;
-      transition: transform 0.3s;
+    .carousel-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 11px;
     }
-    .accordion-section.active {
-      box-shadow: 0 8px 36px var(--primary)22;
+    .carousel-dot {
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      background: var(--highlight);
+      opacity: 0.4;
+      cursor: pointer;
+      transition: background 0.2s, opacity 0.2s;
+      border: 2px solid var(--background);
     }
-    .accordion-content {
+    .carousel-dot.active {
+      background: var(--secondary);
+      opacity: 1;
+      border-color: var(--primary);
+    }
+    /* Main topic sections */
+    .main-section {
+      max-width: var(--max-width);
+      margin: 48px auto;
+      display: flex;
+      align-items: stretch;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      min-height: 340px;
+      flex-wrap: wrap;
+    }
+    .main-section.reverse {
+      flex-direction: row-reverse;
+    }
+    .main-photo {
+      width: 46%;
+      min-width: 260px;
+      background: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 0;
+    }
+    .main-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0;
+      box-shadow: none;
+      display: block;
+    }
+    .main-desc {
+      width: 54%;
+      padding: 36px 38px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .main-heading {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 700;
+      font-size: 2em;
+      color: var(--primary);
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+    .main-summary {
+      font-size: 1.18em;
+      margin-bottom: 20px;
+      color: var(--text);
+      min-height: 40px;
+      font-family: 'Patrick Hand', cursive;
+    }
+    .read-more-btn {
+      display: inline-block;
+      background: var(--secondary);
+      color: var(--primary);
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 500;
+      font-size: 1em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 13px 36px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      margin-top: 8px;
+      box-shadow: var(--shadow);
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+    .read-more-btn:hover {
+      background: var(--highlight);
+      color: #fff;
+      transform: scale(1.06);
+    }
+    /* Subtopics accordion */
+    .subtopics {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.7s cubic-bezier(.4,0,.2,1);
+      transition: max-height 0.6s cubic-bezier(.4,0,.2,1);
       background: #FAF7F0;
-      padding: 0 36px;
+      margin-top: 10px;
+      border-radius: 20px;
+      box-shadow: 0 2px 16px #006B5B18;
+      padding: 0 18px;
     }
-    .accordion-section.active .accordion-content {
-      padding: 28px 36px 36px 36px;
-      max-height: 1200px;
-      /* enough for content */
-    }
-    .accordion-section.active .accordion-header .arrow {
-      transform: rotate(90deg);
+    .main-section.active .subtopics {
+      padding: 22px 18px 12px 18px;
+      max-height: 800px;
     }
     .subtopic {
       margin-bottom: 28px;
     }
     .subtopic-title {
-      font-size: 1.15em;
-      color: var(--secondary);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Fredoka', sans-serif;
       font-weight: 700;
-      margin-bottom: 12px;
+      color: var(--secondary);
+      font-size: 1.1em;
+      margin-bottom: 9px;
+      letter-spacing: 1px;
     }
     .subtopic-content {
       font-size: 1.07em;
       color: var(--text);
       margin-bottom: 10px;
       line-height: 1.7;
+      font-family: 'Patrick Hand', cursive;
     }
     .subtopic-img {
-      max-width: 260px;
-      border-radius: 15px;
-      margin: 16px 0;
+      max-width: 230px;
+      border-radius: 14px;
+      margin: 8px 0 0 0;
       box-shadow: 0 2px 16px #5088A288;
       display: block;
     }
     /* Gallery */
     .gallery-section {
-      max-width: var(--max-width);
-      margin: 60px auto;
-      font-family: 'Lora', serif;
+      max-width: 100vw;
+      margin: 60px auto 0 auto;
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 32px 0 24px 0;
+      box-shadow: var(--shadow);
     }
     .gallery-title {
+      font-family: 'Fredoka', sans-serif;
       font-size: 2em;
       color: var(--primary);
       text-align: center;
-      font-family: 'Lora', serif;
       margin-bottom: 24px;
       letter-spacing: 2px;
     }
     .gallery-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
+      gap: var(--gallery-gap);
       justify-content: center;
       margin-top: 28px;
     }
@@ -212,17 +339,16 @@
     /* Contact */
     .contact-card {
       background: var(--highlight);
-      padding: 22px;
+      padding: 32px;
       border-radius: var(--radius);
-      margin-top: 40px;
+      margin: 60px auto 0 auto;
       box-shadow: var(--shadow);
       color: #fff;
       font-weight: 600;
-      font-size: 1.08em;
-      font-family: 'Lora', serif;
+      font-size: 1.2em;
+      font-family: 'Patrick Hand', cursive;
       max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      text-align: center;
     }
     .contact-card a {
       color: var(--secondary);
@@ -234,272 +360,359 @@
       color: var(--primary);
       text-decoration: underline;
     }
+    .contact-form {
+      margin: 28px auto 0 auto;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      background: #fff;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 2px 16px #006B5B18;
+      font-family: 'Patrick Hand', cursive;
+    }
+    .contact-form input, .contact-form textarea {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1em;
+      border: 1.5px solid var(--secondary);
+      border-radius: 8px;
+      padding: 9px;
+      outline: none;
+      margin-bottom: 6px;
+      resize: vertical;
+    }
+    .contact-form textarea { min-height: 62px; }
+    .contact-form button {
+      background: var(--secondary);
+      color: var(--primary);
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 500;
+      font-size: 1em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 11px 28px;
+      border-radius: 26px;
+      border: none;
+      cursor: pointer;
+      margin-top: 8px;
+      box-shadow: var(--shadow);
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+    .contact-form button:hover {
+      background: var(--highlight);
+      color: #fff;
+      transform: scale(1.05);
+    }
+    .contact-success {
+      color: var(--primary);
+      font-size: 1em;
+      margin-top: 14px;
+      font-family: 'Fredoka', sans-serif;
+      text-align: center;
+    }
     footer {
       text-align: center;
       background: var(--primary);
       color: #fff;
       padding: 18px 0;
-      font-size: 1.1em;
+      font-size: 1.05em;
       margin-top: 46px;
       border-radius: 0;
       box-shadow: none;
       letter-spacing: 2px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Fredoka', sans-serif;
+    }
+    .footer-year {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.05em;
+      color: #fff;
+      margin-top: 10px;
+      letter-spacing: 2px;
+    }
+    @media (max-width: 900px) {
+      .main-section, .main-section.reverse { flex-direction: column; }
+      .main-photo, .main-desc { width: 100%; min-width: 0;}
+      .main-photo img { max-height: 320px; }
+      .main-desc { padding: 24px 18px;}
+      .gallery-img, .gallery-video { width: 99vw; max-width: 99vw; height: auto;}
     }
     @media (max-width: 700px) {
-      .accordion-header { padding: 22px 14px;}
-      .accordion-content, .accordion-section.active .accordion-content { padding: 18px 10px;}
-      .subtopic-img, .gallery-img, .gallery-video { max-width: 98vw; width: 98vw; height: auto;}
-      .gallery-section { padding: 0 4px;}
-      .contact-card { padding:12px;}
+      nav { padding: 0 6px;}
+      .logo-title { font-size: 1em;}
+      .main-section { min-height: 220px;}
+      .main-heading { font-size: 1.15em;}
+      .main-photo img { max-height: 180px;}
+      .contact-card { padding:14px;}
+      .contact-form { padding:10px;}
     }
   </style>
 </head>
 <body>
   <nav>
-    <div class="logo-container">
-      <img src="logo.png" alt="Grupo Capoeira Brasil Pune Logo" class="logo-img">
-      <span class="logo-text">Grupo Capoeira Brasil Pune</span>
+    <div class="logo-title">
+      <img src="logo.png" alt="Grupo Capoeira Brasil Pune Logo">
+      Grupo Capoeira Brasil Pune, India
     </div>
-    <ul class="nav-menu">
-      <li><button class="nav-link" onclick="scrollToAccordion(0)">Capoeira</button></li>
-      <li><button class="nav-link" onclick="scrollToAccordion(1)">About</button></li>
-      <li><button class="nav-link" onclick="scrollToAccordion(2)">Music</button></li>
-      <li><button class="nav-link" onclick="scrollToAccordion(3)">Classes</button></li>
-      <li><a href="#gallery" class="nav-link">Gallery</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
+    <div class="top-tabs">
+      <button class="tab-btn active" onclick="showTopic(0)">Home</button>
+      <button class="tab-btn" onclick="showTopic(1)">About</button>
+      <button class="tab-btn" onclick="showTopic(2)">Music</button>
+      <button class="tab-btn" onclick="showTopic(3)">Classes</button>
+      <button class="tab-btn" onclick="showTopic(4)">Gallery</button>
+      <button class="tab-btn" onclick="showTopic(5)">Contact</button>
+    </div>
   </nav>
-
-  <header>
-    <img src="logo.png" alt="Grupo Capoeira Brasil Pune Logo" class="logo-img" style="max-width:110px; margin-bottom:16px;">
-    <h1 style="font-family:'Lora',serif;font-size:2.3em;color:var(--primary);margin:0;">Capoeira Brasil Pune</h1>
-    <div style="font-size:1.25em;color:var(--highlight);font-family:'Montserrat',sans-serif;margin:14px 0 28px 0;">
-      Movement. Music. Community. <br>
-      <span style="color:var(--primary);font-size:0.95em;">Start your Capoeira journey!</span>
+  <!-- Carousel at top -->
+  <div class="carousel-container" id="carousel-top">
+    <div class="carousel-slide">
+      <img src="carousel1.jpg" alt="Carousel 1">
+      <div class="carousel-label">Community</div>
     </div>
-  </header>
-
-  <div class="accordion-container">
-    <!-- Capoeira -->
-    <div class="accordion-section" id="accordion-capoeira">
-      <div class="accordion-header" onclick="toggleAccordion(this)">
-        Capoeira
-        <span class="arrow">&#9654;</span>
+    <div class="carousel-slide">
+      <img src="carousel2.jpg" alt="Carousel 2">
+      <div class="carousel-label">Movement</div>
+    </div>
+    <div class="carousel-slide">
+      <img src="carousel3.jpg" alt="Carousel 3">
+      <div class="carousel-label">Energy</div>
+    </div>
+    <button class="carousel-arrow left" onclick="plusSlides(-1)">&#10094;</button>
+    <button class="carousel-arrow right" onclick="plusSlides(1)">&#10095;</button>
+    <div class="carousel-dots">
+      <span class="carousel-dot" onclick="currentSlide(1)"></span>
+      <span class="carousel-dot" onclick="currentSlide(2)"></span>
+      <span class="carousel-dot" onclick="currentSlide(3)"></span>
+    </div>
+  </div>
+  <div id="main-topics">
+    <!-- Home / Capoeira -->
+    <div class="main-section" id="topic-0">
+      <div class="main-photo">
+        <img src="home.jpg" alt="Home Capoeira">
       </div>
-      <div class="accordion-content">
-        <div class="subtopic">
-          <div class="subtopic-title">What is Capoeira?</div>
-          <div class="subtopic-content">
-            Capoeira is an Afro-Brazilian art combining martial arts, dance, acrobatics, and music. Played in a circle (roda), two players exchange movements to the rhythm of traditional songs and instruments.
-          </div>
-          <img src="capoeira-history.jpg" alt="Historic Capoeira" class="subtopic-img">
+      <div class="main-desc">
+        <div class="main-heading">Capoeira</div>
+        <div class="main-summary">
+          Capoeira is the art of movement, music, and community. Discover its story, roots, philosophy, and vibrant tradition in Pune.
         </div>
-        <div class="subtopic">
-          <div class="subtopic-title">History of Capoeira</div>
-          <div class="subtopic-content">
-            Capoeira originated in the 16th century as a creative form of resistance. Enslaved Africans disguised their training as dance. Today, Capoeira is a symbol of freedom, community, and culture worldwide.
+        <button class="read-more-btn" onclick="toggleSubtopics(0)">Read more...</button>
+        <div class="subtopics">
+          <div class="subtopic">
+            <div class="subtopic-title">What is Capoeira?</div>
+            <div class="subtopic-content">Capoeira is an Afro-Brazilian art combining martial arts, dance, acrobatics, and music. Played in a circle (roda), two players exchange movements to the rhythm of traditional songs and instruments.</div>
+            <img src="capoeira.jpg" class="subtopic-img" alt="Capoeira">
           </div>
-          <img src="capoeira-history2.jpg" alt="Capoeira History" class="subtopic-img">
-        </div>
-        <div class="subtopic">
-          <div class="subtopic-title">Capoeira in Pune</div>
-          <div class="subtopic-content">
-            Capoeira arrived in Pune in the early 2010s, growing into a vibrant community. Regular classes, workshops, and Batizado events welcome students of all ages under Grupo Capoeira Brasil.
+          <div class="subtopic">
+            <div class="subtopic-title">History</div>
+            <div class="subtopic-content">Capoeira originated as a creative form of resistance. Enslaved Africans disguised their training as dance. Today, Capoeira is a symbol of freedom and culture worldwide.</div>
+            <img src="history.jpg" class="subtopic-img" alt="Capoeira History">
           </div>
-          <img src="capoeira-pune.jpg" alt="Capoeira in Pune" class="subtopic-img">
-        </div>
-        <div class="subtopic">
-          <div class="subtopic-title">Benefits of Capoeira</div>
-          <div class="subtopic-content">
-            <ul>
-              <li>Fitness: strength, flexibility, coordination</li>
-              <li>Well-being: discipline, focus, stress relief</li>
-              <li>Creativity: improvisation, musicality, self-expression</li>
-              <li>Community: friendship, teamwork, culture</li>
-              <li>Accessible for all ages and abilities</li>
-            </ul>
+          <div class="subtopic">
+            <div class="subtopic-title">Capoeira in Pune</div>
+            <div class="subtopic-content">Capoeira arrived in Pune in the early 2010s, growing into a vibrant community. Regular classes, workshops, and Batizado events welcome students of all ages.</div>
+            <img src="capoeira-pune.jpg" class="subtopic-img" alt="Capoeira Pune">
           </div>
-          <img src="capoeira-benefits.jpg" alt="Benefits of Capoeira" class="subtopic-img">
+          <div class="subtopic">
+            <div class="subtopic-title">Philosophy</div>
+            <div class="subtopic-content">Capoeira is about respect, discipline, and joy. It connects people across backgrounds, teaching cultural appreciation and creative expression.</div>
+            <img src="philosophy.jpg" class="subtopic-img" alt="Capoeira Philosophy">
+          </div>
         </div>
       </div>
     </div>
     <!-- About -->
-    <div class="accordion-section" id="accordion-about">
-      <div class="accordion-header" onclick="toggleAccordion(this)">
-        About
-        <span class="arrow">&#9654;</span>
-      </div>
-      <div class="accordion-content">
-        <div class="subtopic">
-          <div class="subtopic-title">Grupo Capoeira Brasil Pune</div>
-          <div class="subtopic-content">
-            Grupo Capoeira Brasil Pune is part of a global organization founded in Brazil. The Pune branch welcomes everyone—children, adults, and families—to join Capoeira’s rhythm and values.
-          </div>
-          <img src="grupo-pune.jpg" alt="Grupo Capoeira Brasil Pune" class="subtopic-img">
+    <div class="main-section reverse" id="topic-1">
+      <div class="main-desc">
+        <div class="main-heading">About</div>
+        <div class="main-summary">
+          Meet our group, our lineage, and the people who brought Capoeira Brasil to Pune. 
         </div>
-        <div class="subtopic">
-          <div class="subtopic-title">Mestre Caxias</div>
-          <div class="subtopic-content">
-            Mestre Caxias is a senior master and mentor to the Indian Capoeira community. He inspires students and instructors, emphasizing joy, discipline, and respect for tradition.
+        <button class="read-more-btn" onclick="toggleSubtopics(1)">Read more...</button>
+        <div class="subtopics">
+          <div class="subtopic">
+            <div class="subtopic-title">Grupo Capoeira Brasil</div>
+            <div class="subtopic-content">Grupo Capoeira Brasil is a global organization founded in Brazil. The Pune branch welcomes everyone—children, adults, and families—to join Capoeira’s rhythm and values.</div>
+            <img src="grupo.jpg" class="subtopic-img" alt="Grupo Capoeira Brasil">
           </div>
-          <img src="mestre.jpg" alt="Mestre Caxias" class="subtopic-img">
-        </div>
-        <div class="subtopic">
-          <div class="subtopic-title">Instrutor Arrepiado (Sagar Jain)</div>
-          <div class="subtopic-content">
-            With over 14 years of Capoeira experience and 12 years teaching, Sagar Jain leads Capoeira Pune. He organizes workshops, Batizados, and spreads Capoeira in schools and colleges.
-            <br><b>Achievements:</b>
+          <div class="subtopic">
+            <div class="subtopic-title">Mestre Caxias</div>
+            <div class="subtopic-content">Mestre Caxias is a senior master and mentor to the Indian Capoeira community. He inspires students and instructors, emphasizing joy, discipline, and respect for tradition.</div>
+            <img src="mestre.jpg" class="subtopic-img" alt="Mestre Caxias">
+          </div>
+          <div class="subtopic">
+            <div class="subtopic-title">Instrutor Arrepiado</div>
+            <div class="subtopic-content">With over 14 years of Capoeira experience and 12 years teaching, Sagar Jain leads Capoeira Pune. He organizes workshops, Batizados, and spreads Capoeira in schools and colleges.<br>
+            <b>Achievements:</b>
             <ul>
               <li>Trained under senior Capoeira masters</li>
               <li>Founded Batizado in Pune</li>
               <li>Invited for workshops and performances</li>
               <li>Promotes Capoeira in schools & colleges</li>
             </ul>
+            </div>
+            <img src="instrutor1.jpg" class="subtopic-img" alt="Instrutor Arrepiado">
           </div>
-          <img src="instrutor1.jpg" alt="Instrutor Arrepiado" class="subtopic-img">
-          <img src="instrutor2.jpg" alt="Instructor teaching Capoeira" class="subtopic-img" style="max-width:260px;">
         </div>
-        <div class="subtopic">
-          <div class="subtopic-title">Lineage & Philosophy</div>
-          <div class="subtopic-content">
-            Grupo Capoeira Brasil blends tradition and innovation. The lineage traces back to Mestre Bimba and other legends. The school emphasizes respect, discipline, and joy.
-          </div>
-          <img src="lineage.jpg" alt="Capoeira Lineage" class="subtopic-img">
-        </div>
+      </div>
+      <div class="main-photo">
+        <img src="about.jpg" alt="About Capoeira Brasil">
       </div>
     </div>
     <!-- Music -->
-    <div class="accordion-section" id="accordion-music">
-      <div class="accordion-header" onclick="toggleAccordion(this)">
-        Music
-        <span class="arrow">&#9654;</span>
+    <div class="main-section" id="topic-2">
+      <div class="main-photo">
+        <img src="music.jpg" alt="Music Capoeira">
       </div>
-      <div class="accordion-content">
-        <div class="subtopic">
-          <div class="subtopic-title">Instruments of Capoeira</div>
-          <div class="subtopic-content">
-            Capoeira uses Berimbau, Atabaque, and Pandeiro. The berimbau leads, signaling rhythm and changes in the game. Students learn to play and respect each instrument.
-          </div>
-          <img src="berimbau.jpg" alt="Berimbau" class="subtopic-img">
-          <img src="atabaque.jpg" alt="Atabaque" class="subtopic-img">
-          <img src="pandeiro.jpg" alt="Pandeiro" class="subtopic-img">
+      <div class="main-desc">
+        <div class="main-heading">Music</div>
+        <div class="main-summary">
+          The heartbeat of Capoeira—the berimbau, drums, and songs that bring the roda to life.
         </div>
-        <div class="subtopic">
-          <div class="subtopic-title">Songs & Lyrics</div>
-          <div class="subtopic-content">
-            Songs are sung in Portuguese, sharing stories of Capoeira’s roots, values, and heroes. Lyrics encourage unity, respect, and joy. Common songs include “Paranauê” and “Zum Zum Zum.”
+        <button class="read-more-btn" onclick="toggleSubtopics(2)">Read more...</button>
+        <div class="subtopics">
+          <div class="subtopic">
+            <div class="subtopic-title">Instruments</div>
+            <div class="subtopic-content">Capoeira uses Berimbau, Atabaque, and Pandeiro. The berimbau leads, signaling rhythm and changes in the game. Students learn to play and respect each instrument.</div>
+            <img src="instruments.jpg" class="subtopic-img" alt="Capoeira Instruments">
           </div>
-          <img src="capoeira-music.jpg" alt="Capoeira Music" class="subtopic-img">
-        </div>
-        <div class="subtopic">
-          <div class="subtopic-title">Capoeira Rhythms</div>
-          <div class="subtopic-content">
-            Capoeira rhythms (toques) set the energy and style of the roda. Berimbau patterns include Angola (slow), São Bento Grande (fast), and more.
+          <div class="subtopic">
+            <div class="subtopic-title">Common Songs</div>
+            <div class="subtopic-content">Songs are sung in Portuguese, sharing stories of Capoeira’s roots and heroes. Lyrics encourage unity and joy. Common songs include “Paranauê” and “Zum Zum Zum.”</div>
+            <img src="songs.jpg" class="subtopic-img" alt="Capoeira Songs">
           </div>
-          <img src="capoeira-rhythm.jpg" alt="Capoeira Rhythm" class="subtopic-img">
         </div>
       </div>
     </div>
     <!-- Classes -->
-    <div class="accordion-section" id="accordion-classes">
-      <div class="accordion-header" onclick="toggleAccordion(this)">
-        Classes
-        <span class="arrow">&#9654;</span>
-      </div>
-      <div class="accordion-content">
-        <div class="subtopic">
-          <div class="subtopic-title">Toddlers (3–5 yrs)</div>
-          <div class="subtopic-content">
-            Classes for toddlers focus on fun, movement, and music. Simple games and steps help children develop motor skills and confidence.
-          </div>
-          <img src="toddlers.jpg" alt="Capoeira Toddlers" class="subtopic-img">
+    <div class="main-section reverse" id="topic-3">
+      <div class="main-desc">
+        <div class="main-heading">Classes</div>
+        <div class="main-summary">
+          Capoeira for every age and experience level—toddlers, kids, adults, and private workshops.
         </div>
-        <div class="subtopic">
-          <div class="subtopic-title">Kids (6–12 yrs)</div>
-          <div class="subtopic-content">
-            Kids learn rhythm, kicks, acrobatics, and teamwork. Classes build discipline, musicality, and self-expression.
+        <button class="read-more-btn" onclick="toggleSubtopics(3)">Read more...</button>
+        <div class="subtopics">
+          <div class="subtopic">
+            <div class="subtopic-title">Toddlers</div>
+            <div class="subtopic-content">Classes for toddlers focus on fun, movement, and music. Simple games and steps help children develop motor skills and confidence.</div>
+            <img src="toddlers.jpg" class="subtopic-img" alt="Capoeira Toddlers">
           </div>
-          <img src="kids.jpg" alt="Capoeira Kids" class="subtopic-img">
-        </div>
-        <div class="subtopic">
-          <div class="subtopic-title">Teens & Adults</div>
-          <div class="subtopic-content">
-            Classes include advanced movement, music, and cultural learning. Students build fitness, resilience, and connection in a supportive community.
+          <div class="subtopic">
+            <div class="subtopic-title">Kids & Teens</div>
+            <div class="subtopic-content">Kids and teens learn rhythm, kicks, acrobatics, and teamwork. Classes build discipline, musicality, and self-expression.</div>
+            <img src="kids-teens.jpg" class="subtopic-img" alt="Capoeira Kids & Teens">
           </div>
-          <img src="teens-adults.jpg" alt="Capoeira Teens & Adults" class="subtopic-img">
-        </div>
-        <div class="subtopic">
-          <div class="subtopic-title">Schools & Colleges</div>
-          <div class="subtopic-content">
-            Capoeira programs for schools and colleges focus on wellness, culture, and teamwork. Workshops and classes available.
+          <div class="subtopic">
+            <div class="subtopic-title">Adults</div>
+            <div class="subtopic-content">Classes for adults include advanced movement, music, and cultural learning. Students build fitness, resilience, and connection in a supportive community.</div>
+            <img src="adults.jpg" class="subtopic-img" alt="Capoeira Adults">
           </div>
-          <img src="schools-colleges.jpg" alt="Capoeira in Schools & Colleges" class="subtopic-img">
-        </div>
-        <div class="subtopic">
-          <div class="subtopic-title">Private Lessons</div>
-          <div class="subtopic-content">
-            Private and small group sessions offer personalized learning for families, friends, or individuals.
+          <div class="subtopic">
+            <div class="subtopic-title">Private Lessons & Workshops</div>
+            <div class="subtopic-content">Private and small group sessions offer personalized learning for families, friends, or individuals. Workshops and Batizado events throughout the year.</div>
+            <img src="workshops.jpg" class="subtopic-img" alt="Capoeira Workshops">
           </div>
-          <img src="private-lessons.jpg" alt="Private Capoeira Lessons" class="subtopic-img">
-        </div>
-        <div class="subtopic">
-          <div class="subtopic-title">Workshops & Events</div>
-          <div class="subtopic-content">
-            We host workshops, Batizado ceremonies, and community events. Stay tuned for new sessions and summer camps!
-          </div>
-          <img src="workshops-events.jpg" alt="Capoeira Workshops" class="subtopic-img">
         </div>
       </div>
+      <div class="main-photo">
+        <img src="classes.jpg" alt="Capoeira Classes">
+      </div>
     </div>
-  </div>
-
-  <!-- Gallery -->
-  <div class="gallery-section" id="gallery">
-    <div class="gallery-title">Gallery — Photos & Videos</div>
-    <div class="gallery-grid">
-      <img src="image1.jpg" alt="Capoeira Gallery Image 1" class="gallery-img">
-      <img src="image2.jpg" alt="Capoeira Gallery Image 2" class="gallery-img">
-      <img src="image3.jpg" alt="Capoeira Gallery Image 3" class="gallery-img">
-      <img src="image4.jpg" alt="Capoeira Gallery Image 4" class="gallery-img">
-      <img src="image5.jpg" alt="Capoeira Gallery Image 5" class="gallery-img">
-      <img src="image6.jpg" alt="Capoeira Gallery Image 6" class="gallery-img">
-      <img src="image7.jpg" alt="Capoeira Gallery Image 7" class="gallery-img">
-      <img src="image8.jpg" alt="Capoeira Gallery Image 8" class="gallery-img">
-      <video src="video1.mp4" controls class="gallery-video"></video>
-      <video src="video2.mp4" controls class="gallery-video"></video>
+    <!-- Gallery -->
+    <div class="gallery-section" id="topic-4">
+      <div class="gallery-title">Gallery — Photos & Videos</div>
+      <div class="gallery-grid">
+        <img src="image1.jpg" alt="Capoeira Gallery Image 1" class="gallery-img">
+        <img src="image2.jpg" alt="Capoeira Gallery Image 2" class="gallery-img">
+        <img src="image3.jpg" alt="Capoeira Gallery Image 3" class="gallery-img">
+        <img src="image4.jpg" alt="Capoeira Gallery Image 4" class="gallery-img">
+        <img src="image5.jpg" alt="Capoeira Gallery Image 5" class="gallery-img">
+        <img src="image6.jpg" alt="Capoeira Gallery Image 6" class="gallery-img">
+        <img src="image7.jpg" alt="Capoeira Gallery Image 7" class="gallery-img">
+        <img src="image8.jpg" alt="Capoeira Gallery Image 8" class="gallery-img">
+        <video src="video1.mp4" controls class="gallery-video"></video>
+        <video src="video2.mp4" controls class="gallery-video"></video>
+      </div>
     </div>
-  </div>
-
-  <!-- Contact -->
-  <div class="contact-card" id="contact">
-    <p><strong>Grupo Capoeira Brasil Pune</strong></p>
-    <p>📧 Email: <a href="mailto:arrepiado@capoeirapune.com">arrepiado@capoeirapune.com</a></p>
-    <p>📞 Phone: <a href="tel:+919766481796">+91 9766481796</a></p>
-    <p>📸 Instagram: <a href="https://instagram.com/capoeirapune.india" target="_blank">@capoeirapune.india</a></p>
-    <p>Find us on Google Maps or WhatsApp for directions and quick questions.</p>
+    <!-- Contact -->
+    <div class="contact-card" id="topic-5">
+      <p><strong>Grupo Capoeira Brasil Pune</strong></p>
+      <p>📧 Email: <a href="mailto:arrepiado@capoeirapune.com">arrepiado@capoeirapune.com</a></p>
+      <p>📞 Phone: <a href="tel:+919766481796">+91 9766481796</a></p>
+      <p>📸 Instagram: <a href="https://instagram.com/capoeirapune.india" target="_blank">@capoeirapune.india</a></p>
+      <p>Find us on Google Maps or WhatsApp for directions and quick questions.</p>
+      <form class="contact-form" id="quick-question-form" onsubmit="sendContact(event)">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="question" placeholder="Your Question" required></textarea>
+        <button type="submit">Send</button>
+        <div class="contact-success" id="contact-success"></div>
+      </form>
+    </div>
   </div>
   <footer>
-    <p>&copy; 2025 Grupo Capoeira Brasil Pune</p>
+    <div class="footer-year">2011 Grupo Capoeira Brasil Pune, India</div>
   </footer>
   <script>
-    // Accordion logic - only one open at a time
-    function toggleAccordion(header) {
-      document.querySelectorAll('.accordion-section').forEach(function(section){
-        section.classList.remove('active');
-      });
-      header.parentElement.classList.add('active');
+    // Carousel logic
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    let slideTimer = setInterval(() => plusSlides(1), 4600);
+    function plusSlides(n) {
+      clearInterval(slideTimer);
+      showSlides(slideIndex += n);
+      slideTimer = setInterval(() => plusSlides(1), 4600);
     }
-    // Nav to accordion section
-    function scrollToAccordion(idx) {
-      var sections = document.querySelectorAll('.accordion-section');
-      if (sections[idx]) {
-        sections.forEach(function(section){section.classList.remove('active');});
-        sections[idx].classList.add('active');
-        sections[idx].scrollIntoView({behavior: 'smooth', block: 'start'});
-      }
-      document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
-      document.querySelectorAll('.nav-link')[idx].classList.add('active');
+    function currentSlide(n) {
+      clearInterval(slideTimer);
+      showSlides(slideIndex = n);
+      slideTimer = setInterval(() => plusSlides(1), 4600);
+    }
+    function showSlides(n) {
+      let slides = document.querySelectorAll("#carousel-top .carousel-slide");
+      let dots = document.querySelectorAll("#carousel-top .carousel-dot");
+      if (slides.length === 0) return;
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      slides.forEach(s => s.style.display = "none");
+      dots.forEach(d => d.classList.remove("active"));
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].classList.add("active");
+    }
+    // Show only one main topic at a time
+    function showTopic(idx) {
+      document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', i===idx));
+      document.querySelectorAll('.main-section, .gallery-section, .contact-card').forEach((el,i) => {
+        if (i===idx) {
+          el.style.display = (el.classList.contains('gallery-section') || el.classList.contains('contact-card')) ? 'block' : 'flex';
+        } else {
+          el.style.display = 'none';
+          if (el.classList.contains('main-section')) el.classList.remove('active');
+        }
+      });
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+    // Toggle subtopics in each section with only one open at a time
+    function toggleSubtopics(idx) {
+      let sections = document.querySelectorAll('.main-section');
+      sections.forEach((s,i) => {
+        if (i!==idx) s.classList.remove('active');
+      });
+      sections[idx].classList.toggle('active');
+    }
+    // Show home section on load
+    document.addEventListener('DOMContentLoaded',function(){
+      showTopic(0);
+    });
+
+    // Contact form - placeholder logic
+    function sendContact(e) {
+      e.preventDefault();
+      let form = document.getElementById('quick-question-form');
+      document.getElementById('contact-success').textContent = "Your message has been sent!";
+      form.reset();
+      // In production, use an email service like Formspree or EmailJS to deliver messages to arrepiado@capoeirapune.com
     }
   </script>
 </body>

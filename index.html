@@ -1,7 +1,13 @@
 <head>
-  <!-- ...other tags... -->
-  <!-- Google Fonts -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grupo Capoeira Brasil Pune, India</title>
+  <!-- Google Fonts: Fredoka for headings, Poppins Medium for subheadings, Quicksand for body text -->
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Poppins:wght@500&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Bootstrap Carousel CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
   <style>
     :root {
       --background: #FAF8F1;
@@ -13,9 +19,9 @@
       --radius: 32px;
       --max-width: 1080px;
       --nav-height: 68px;
-      --heading-size: 34px;
-      --subheading-size: 24px;
-      --body-size: 18px;
+      --heading-size: 32px;      /* Reduced by 2 from 34px */
+      --subheading-size: 22px;   /* Reduced by 2 from 24px */
+      --body-size: 16px;         /* Reduced by 2 from 18px */
       --body-line: 1.6;
     }
     html { scroll-behavior: smooth; }
@@ -166,7 +172,7 @@
     }
     .carousel-caption h5 {
       font-family:'Fredoka',sans-serif;
-      font-size:34px;
+      font-size:32px;
       font-weight:700;
       letter-spacing:-0.5px;
       background:rgba(13,148,136,0.7);
@@ -435,12 +441,12 @@
     }
     @media (max-width: 700px) {
       nav { padding: 0 6px;}
-      .logo-title { font-size: 26px;}
+      .logo-title { font-size: 1em;}
       .main-section { min-height: 180px;}
-      .main-heading { font-size: 28px;}
+      .main-heading { font-size: 1.09em;}
       .main-photo img { max-height: 160px;}
       .contact-details, .contact-form { padding: 8px;}
-      .tab-btn { font-size: 18px; padding: 10px 10px;}
+      .tab-btn { font-size: 0.84em; padding: 10px 10px;}
     }
   </style>
 </head>
@@ -535,8 +541,58 @@
     </div>
   </div>
   <!-- Main topics scroll -->
-  <!-- ... Capoeira, About, Music (with updated Instrument section), Classes, Gallery, Contact ... -->
-  <!-- ... All content should follow the font and structure above ... -->
+  <div id="main-topics">
+    <!-- Capoeira ... About ... -->
+    <!-- Music -->
+    <div class="main-section" id="music">
+      <div class="main-desc">
+        <div class="main-heading">Music</div>
+        <div class="main-summary">
+          Music is the heartbeat of Capoeira. Every class, every roda, and every ceremony begins with rhythm. The berimbau leads the energy, supported by the atabaque, pandeiro, agogo, and reco-reco. Together, they set the tempo and mood for the game.
+          Capoeira songs tell stories of history, heroes, and life lessons. They carry messages of resilience, playfulness, and community. Singing and playing together teaches rhythm, language, and connection—it transforms training into celebration.
+          At Grupo Capoeira Brasil Pune, music is taught with as much importance as movement. Students learn to play instruments, sing in Portuguese, and understand the meaning behind the songs. Because in Capoeira, when you sing, you don’t just make music—you share spirit.
+        </div>
+        <button class="read-more-btn" onclick="toggleSubtopics(2)">Read more...</button>
+        <div class="subtopics">
+          <div class="subtopic" id="music-sub0">
+            <div class="subtopic-title">Instruments</div>
+            <div class="subtopic-content">
+              Capoeira’s instruments bring its soul to life.<br><br>
+              <strong>Berimbau</strong><br>
+              The berimbau is the heart and soul of Capoeira. A single-stringed musical bow, it leads the rhythm and dictates the energy of the game. The berimbau’s sound comes from a steel string stretched over a wooden bow with a gourd resonator. Played with a stick (baqueta), a stone or coin (dobrão), and a shaker (caxixi), it produces a unique, hypnotic tone. There are usually three types—gunga, medio, and viola—each with a distinct pitch and role. The berimbau controls the tempo, mood, and even the style of play, guiding capoeiristas inside the roda with rhythm and intention.<br><br>
+              <strong>Atabaque</strong><br>
+              The atabaque is the tall hand drum that gives Capoeira its heartbeat. Standing upright, it provides a steady pulse that grounds the rhythm created by the berimbau. Its deep, resonant sound connects players and musicians, keeping the energy cohesive and powerful. Traditionally made of wood and animal skin, the atabaque is played with the hands, creating both strength and warmth in its tone. Beyond rhythm, it carries a spiritual weight—its sound is said to awaken the axé, or energy, within the roda. Without the atabaque, Capoeira would lose its grounding force and emotional depth.<br><br>
+              <strong>Pandeiro</strong><br>
+              The pandeiro—similar to a tambourine—is one of Capoeira’s most playful instruments. Lightweight and versatile, it adds swing, joy, and rhythmic color to the music. Played with a mix of slaps, finger rolls, and shakes, it can produce a wide range of tones. The pandeiro keeps time, complements the berimbau’s rhythm, and fills the roda with energy. Its cheerful sound invites movement and spontaneity, reflecting the playful side of Capoeira. While it may look simple, mastering the pandeiro requires precision and feel—it’s an instrument that truly dances in the hands of the musician.<br><br>
+              <strong>Reco-reco</strong><br>
+              The reco-reco adds texture and character to Capoeira’s rhythm. Made of metal or bamboo, it’s played by scraping a stick across its ridged surface, creating a rasping, syncopated sound. Though subtle, its presence enriches the ensemble, connecting the groove between the main instruments and the voices in the roda.<br><br>
+              <strong>Agogô</strong><br>
+              The agogô consists of two metal bells joined together, played with a stick to create bright, ringing tones. It brings melody and sparkle to the rhythm, adding contrast to the deeper sounds of the atabaque and berimbau. The agogô’s cheerful chime uplifts the music and energizes the roda.
+            </div>
+            <img src="instruments.jpg" class="subtopic-img" alt="Capoeira Instruments">
+          </div>
+          <div class="subtopic" id="music-sub1">
+            <div class="subtopic-title">Common Songs</div>
+            <div class="subtopic-content">Parana ê<br>
+Zum Zum Zum<br>
+Berimbau tocou<br>
+Sim Sim Sim, Não Não Não<br>
+A ladeira é minha<br>
+São Bento Pequeno<br>
+Volta do Mundo<br>
+Iê Camará<br>
+Eu vim da Bahia<br>
+Zum Zum Zum Capoeira mata um</div>
+            <img src="songs.jpg" class="subtopic-img" alt="Capoeira Songs">
+          </div>
+        </div>
+      </div>
+      <div class="main-photo">
+        <img src="music.jpg" alt="Music Capoeira">
+      </div>
+    </div>
+    <!-- Classes, Gallery, Contact ... -->
+  </div>
   <footer>
     <div class="footer-year">2011 @ Grupo Capoeira Brasil Pune, India</div>
   </footer>

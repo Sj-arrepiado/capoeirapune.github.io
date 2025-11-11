@@ -28,69 +28,85 @@
     body { background: var(--background); color: var(--text); font-family: 'Lora', serif; font-size: var(--body-size); line-height: var(--body-line); letter-spacing: 0.5px; margin: 0; padding: 0;}
     h1, .main-heading { font-family: 'Montserrat', sans-serif; font-size: var(--heading-size); font-weight: 700; letter-spacing: -0.5px; color: var(--primary);}
     h2, h3, .subtopic-title, .gallery-title { font-family: 'Montserrat', sans-serif; font-size: var(--subheading-size); font-weight: 700; letter-spacing: -0.5px; color: var(--accent);}
-    nav { width: 100vw; min-height: var(--nav-height); background: var(--background); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--primary); display: flex; align-items: center; justify-content: space-between; padding: 0 32px;}
-    .logo-title { display: flex; align-items: center; gap: 18px; font-family: 'Montserrat', sans-serif; font-size: var(--heading-size); font-weight: 700; letter-spacing: -0.5px; color: var(--primary);}
-    .logo-title img { height: 43px; width: auto; border-radius: 11px; margin-right: 5px;}
-    .top-tabs { display: flex; align-items: center; gap: 0px; margin-left: 40px;}
-    .tab-btn, .dropdown { background: none; border: none; color: var(--primary); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: var(--body-size); padding: 14px 28px; cursor: pointer; text-transform: uppercase; border-radius: var(--radius); letter-spacing: -0.5px; transition: background 0.2s, color 0.2s; outline: none; position: relative;}
+    /* NAV */
+    nav { width: 100vw; min-height: var(--nav-height); background: var(--background); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--primary); display: flex; align-items: center; justify-content: space-between; padding: 0 16px;}
+    /* Reduce logo/title font so title + tabs fit on one line */
+    .logo-title { display: flex; align-items: center; gap: 12px; font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: -0.5px; color: var(--primary); }
+    .logo-title img { height: 38px; width: auto; border-radius: 8px; margin-right: 4px;}
+    .top-tabs { display: flex; align-items: center; gap: 4px; margin-left: 12px; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    /* Smaller tab font and padding so they stay on one line */
+    .tab-btn, .dropdown { background: none; border: none; color: var(--primary); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px; padding: 8px 12px; cursor: pointer; text-transform: uppercase; border-radius: 14px; letter-spacing: -0.5px; transition: background 0.2s, color 0.2s; outline: none; position: relative; white-space: nowrap; }
     .tab-btn.active, .tab-btn:hover, .dropdown.active, .dropdown:hover { background: var(--secondary); color: var(--primary);}
-    .dropdown-content { display: none; position: absolute; top: 45px; left: 0; min-width: 180px; background: var(--background); box-shadow: var(--shadow); border-radius: 14px; z-index: 10; flex-direction: column; padding: 8px 0;}
+    .dropdown-content { display: none; position: absolute; top: 40px; left: 0; min-width: 180px; background: var(--background); box-shadow: var(--shadow); border-radius: 12px; z-index: 10; flex-direction: column; padding: 6px 0;}
     .dropdown:hover .dropdown-content, .dropdown.active .dropdown-content { display: flex;}
-    .dropdown-link { background: none; border: none; color: var(--primary); font-family: 'Lora', serif; font-size: var(--body-size); text-align: left; padding: 9px 26px; width: 100%; cursor: pointer; border-radius: 0; transition: background 0.2s, color 0.2s; letter-spacing: 0.5px;}
+    .dropdown-link { background: none; border: none; color: var(--primary); font-family: 'Lora', serif; font-size: 15px; text-align: left; padding: 8px 18px; width: 100%; cursor: pointer; transition: background 0.2s, color 0.2s; }
     .dropdown-link:hover { background: var(--secondary); color: var(--primary);}
     .nav-spacer { height: 44px;}
-    /* ... carousel styles ... */
-    .carousel-container { width: 100vw; margin: 44px auto 54px auto; border-radius: 0; background: var(--background);}
-    .carousel-inner { border-radius: 0;}
-    .carousel-item img { width: 100vw; height: 370px; object-fit: cover; border-radius: 0; box-shadow: none; background: #eee;}
-    .carousel-caption { bottom: 18px;}
-    .carousel-caption h5 { font-family:'Montserrat',sans-serif; font-size:34px; font-weight:700; letter-spacing:-0.5px; background:rgba(13,148,136,0.7); display: inline-block; padding: 5px 28px; border-radius: 12px; color: #fff; text-shadow: 1px 2px 10px #22222244;}
+    /* carousel */
+    .carousel-container { width: 100vw; margin: 36px auto 44px auto; border-radius: 0; background: var(--background);}
+    .carousel-item img { width: 100vw; height: 320px; object-fit: cover; background: #eee;}
+    .carousel-caption h5 { font-family:'Montserrat',sans-serif; font-size:28px; font-weight:700; letter-spacing:-0.5px; background:rgba(13,148,136,0.7); display: inline-block; padding: 5px 18px; border-radius: 10px; color: #fff; text-shadow: 1px 2px 6px #22222244;}
     .carousel-indicators li { background-color: var(--accent);}
-    .carousel-control-prev-icon, .carousel-control-next-icon { background-color: var(--accent); border-radius: 10px;}
-    /* ... main sections ... */
+    .carousel-control-prev-icon, .carousel-control-next-icon { background-color: var(--accent); border-radius: 8px;}
+    /* main sections */
     .main-section { width: 100vw; max-width: var(--max-width); margin: 8px auto; display: flex; align-items: stretch; background: none; border-radius: 0; box-shadow: none; min-height: 320px; flex-wrap: nowrap; gap: 0;}
     .main-section.reverse { flex-direction: row-reverse;}
     .main-photo { width: 40vw; min-width: 200px; max-width: 40vw; display: flex; align-items: center; justify-content: flex-end; overflow: visible;}
-    .main-section.reverse .main-photo { justify-content: flex-start;}
-    .main-photo img { width: 100%; height: 330px; object-fit: cover; border-radius: 0; box-shadow: none; display: block; background: #eee;}
-    .main-desc { width: 60vw; max-width: 60vw; padding: 24px 38px; display: flex; flex-direction: column; justify-content: center; background: none; min-width: 300px;}
-    .main-summary, .subtopic-content { font-family: 'Lora', serif; font-size: 18px; line-height: 1.6; letter-spacing: 0.5px; margin-bottom: 8px; color: var(--text);}
-    .subtopics { max-height: 0; overflow: hidden; transition: max-height 0.6s cubic-bezier(.4,0,.2,1); background: var(--background); margin-top: 3px; border-radius: 18px; box-shadow: none; padding: 0 8px; position: relative;}
-    .main-section.active .subtopics { position: static; max-height: 700px; padding: 12px 8px 7px 8px; margin-top: 6px;}
-    .subtopic { margin-bottom: 8px;}
-    .subtopic-title { font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 700; color: var(--accent); letter-spacing: -0.5px; margin-bottom: 8px;}
-    .subtopic-img { max-width: 100px; border-radius: 5px; margin-top:3px; display:block;}
-    /* ... gallery ... */
-    .gallery-section { width: 100vw; margin: 28px 0 8px 0; background: none; padding: 4px 0 8px 0; box-shadow: none;}
-    .gallery-title { font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 700; color: var(--primary); text-align: center; margin-bottom: 14px; letter-spacing: -0.5px;}
-    .gallery-grid { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 0px;}
-    .gallery-img, .gallery-video { width: 210px; height: 135px; object-fit: cover; border-radius: 0; box-shadow: none; border: none; background: none; transition: transform 0.2s; cursor: pointer;}
-    .gallery-img:hover, .gallery-video:hover {transform:scale(1.03) rotate(-2deg);}
-    /* ... contact ... */
+    .main-photo img { width: 100%; height: 330px; object-fit: cover; border-radius: 6px; display: block; background: #eee;}
+    .main-desc { width: 60vw; max-width: 60vw; padding: 20px 28px; display: flex; flex-direction: column; justify-content: center; min-width: 260px;}
+    .main-summary, .subtopic-content { font-family: 'Lora', serif; font-size: 17px; line-height: 1.6; letter-spacing: 0.4px; margin-bottom: 8px; color: var(--text);}
+    .subtopics { max-height: 0; overflow: hidden; transition: max-height 0.45s ease, padding 0.3s ease; background: var(--background); margin-top: 3px; border-radius: 12px; padding: 0 6px; position: relative;}
+    .main-section.active .subtopics { position: static; max-height: 900px; padding: 12px 8px 10px 8px; margin-top: 8px;}
+    .subtopic { margin-bottom: 10px;}
+    .subtopic-title { font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; color: var(--accent); letter-spacing: -0.5px; margin-bottom: 8px;}
+    .subtopic-img { max-width: 120px; border-radius: 6px; margin-top:6px; display:block;}
+    /* gallery */
+    .gallery-section { width: 100vw; margin: 28px 0 8px 0; background: none; padding: 4px 0 8px 0;}
+    .gallery-title { font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; color: var(--primary); text-align: center; margin-bottom: 12px;}
+    .gallery-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 0px;}
+    .gallery-img, .gallery-video { width: 210px; height: 135px; object-fit: cover; border-radius: 6px; transition: transform 0.2s; cursor: pointer;}
+    .gallery-img:hover, .gallery-video:hover { transform: scale(1.03) rotate(-1deg); }
+    /* contact */
     .contact-section { max-width:var(--max-width); margin:32px auto 4px auto; display: flex; background: var(--background); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; min-height: 320px; align-items: stretch;}
-    .contact-details { width:50%; background: var(--primary); color: #fff; padding:32px 22px; display:flex; flex-direction:column; justify-content:center;}
-    .contact-details strong { font-family:'Montserrat',sans-serif; font-size:34px; color:var(--accent); margin-bottom:8px; letter-spacing:-0.5px;}
-    .contact-details span { color: #fff; text-decoration: none; font-weight: bold; font-family: 'Lora', serif; letter-spacing: 0.5px;}
-    .contact-form { width:50%; padding:32px 22px; display:flex; flex-direction:column; justify-content:center; background:#fff;}
-    .contact-form input, .contact-form textarea { font-family:'Lora',serif; font-size:18px; letter-spacing:0.5px; border:1.5px solid var(--accent); border-radius:8px; padding:9px; outline:none; margin-bottom:12px; resize:vertical; width:100%;}
+    .contact-details { width:50%; background: var(--primary); color: #fff; padding:28px 22px; display:flex; flex-direction:column; justify-content:center;}
+    .contact-details strong { font-family:'Montserrat',sans-serif; font-size:26px; color:var(--accent); margin-bottom:8px;}
+    .contact-details span { color: #fff; text-decoration: none; font-weight: bold; font-family: 'Lora', serif;}
+    .contact-form { width:50%; padding:26px 22px; display:flex; flex-direction:column; justify-content:center; background:#fff;}
+    .contact-form input, .contact-form textarea { font-family:'Lora',serif; font-size:16px; letter-spacing:0.4px; border:1.5px solid var(--accent); border-radius:8px; padding:9px; outline:none; margin-bottom:12px; resize:vertical; width:100%;}
     .contact-form textarea { min-height:62px;}
-    .contact-form button { background:var(--accent); color:var(--primary); font-family:'Montserrat',sans-serif; font-weight:700; font-size:18px; text-transform:uppercase; letter-spacing:-0.5px; padding:11px 28px; border-radius:26px; border:none; cursor:pointer; margin-top:8px; box-shadow:var(--shadow); transition:background 0.2s, color 0.2s, transform 0.2s;}
-    .contact-form button:hover { background:var(--secondary); color:var(--primary); transform:scale(1.05);}
-    .contact-success { color: var(--primary); font-size:18px; margin-top:14px; font-family:'Lora',serif; text-align:center; letter-spacing:0.5px;}
-    footer { text-align:center; background:var(--primary); color:#fff; padding:14px 0 10px 0; font-size:18px; border-radius:0; box-shadow:none; letter-spacing:0.5px; font-family:'Lora',serif;}
-    .footer-year { font-family:'Montserrat',sans-serif; font-size:18px; color:#fff; margin-top:2px; letter-spacing:-0.5px;}
-    @media (max-width:900px){ .main-section, .main-section.reverse{flex-direction:column;} .main-photo, .main-desc{width:100vw; min-width:0; max-width:100vw;} .main-photo img{max-height:320px;} .main-desc{padding:18px 8px;} .gallery-img, .gallery-video{width:99vw; max-width:99vw; height:auto;} .contact-section{flex-direction:column;} .contact-details, .contact-form{width:100%; padding:18px 8px;} nav{flex-direction:column;}}
-    @media (max-width:700px){ nav{padding:0 6px;} .logo-title{font-size:1em;} .main-section{min-height:180px;} .main-heading{font-size:1.09em;} .main-photo img{max-height:160px;} .contact-details, .contact-form{padding:8px;} .tab-btn{font-size:0.84em; padding:10px 10px;} }
+    .contact-form button { background:var(--accent); color:var(--primary); font-family:'Montserrat',sans-serif; font-weight:700; font-size:16px; padding:10px 22px; border-radius:22px; border:none; cursor:pointer; margin-top:8px; box-shadow:var(--shadow); }
+    .contact-form button:hover { background:var(--secondary); color:var(--primary); transform:scale(1.02);}
+    .contact-success { color: var(--primary); font-size:16px; margin-top:12px; font-family:'Lora',serif; text-align:center;}
+    footer { text-align:center; background:var(--primary); color:#fff; padding:12px 0 10px 0; font-size:16px; letter-spacing:0.5px; font-family:'Lora',serif;}
+    .footer-year { font-family:'Montserrat',sans-serif; font-size:14px; color:#fff; margin-top:2px;}
+    @media (max-width:900px){
+      .main-section, .main-section.reverse{flex-direction:column;}
+      .main-photo, .main-desc{width:100vw; min-width:0; max-width:100vw;}
+      .main-photo img{max-height:320px;}
+      .main-desc{padding:18px 12px;}
+      .gallery-img, .gallery-video{width:99vw; max-width:99vw; height:auto;}
+      .contact-section{flex-direction:column;}
+      .contact-details, .contact-form{width:100%; padding:18px 12px;}
+      nav{flex-direction:column; align-items:flex-start;}
+    }
+    @media (max-width:700px){
+      nav{padding:8px 10px;}
+      .logo-title img{ height:36px;}
+      .tab-btn{font-size:13px; padding:8px 10px;}
+      .main-heading{font-size:1.05rem;}
+      .main-photo img{max-height:180px;}
+      .contact-details, .contact-form{padding:8px;}
+    }
   </style>
 </head>
 <body>
   <!-- NAVBAR and TOP-TABS -->
   <nav>
     <div class="logo-title">
-      <img src="logo.png" alt="Grupo Capoeira Brasil Pune Logo">
+      <img src="logo.png" alt="Grupo Capoeira Brasil Pune logo - circular emblem with capoeira silhouette">
       Grupo Capoeira Brasil Pune, India
     </div>
-    <div class="top-tabs">
+    <div class="top-tabs" role="navigation" aria-label="Primary">
       <button class="tab-btn active" onclick="scrollToSection('carousel-top')">Home</button>
       <div class="dropdown" tabindex="0">
         <span class="tab-btn">Capoeira ▾</span>
@@ -135,9 +151,10 @@
       <button class="tab-btn" onclick="scrollToSection('contact-section')">Contact</button>
     </div>
   </nav>
-  <div class="nav-spacer"></div>
+  <div class="nav-spacer" aria-hidden="true"></div>
+
   <!-- Carousel -->
-  <div id="carousel-top" class="carousel-container">
+  <div id="carousel-top" class="carousel-container" role="region" aria-label="Featured images">
     <div id="homepageCarousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#homepageCarousel" data-slide-to="0" class="active"></li>
@@ -146,15 +163,15 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="carousel1.jpg" class="d-block w-100" alt="Comunidade">
+          <img src="carousel1.jpg" class="d-block w-100" alt="Capoeira community training outdoors in Pune">
           <div class="carousel-caption d-none d-md-block"><h5>Comunidade</h5></div>
         </div>
         <div class="carousel-item">
-          <img src="carousel2.jpg" class="d-block w-100" alt="Camaradas">
+          <img src="carousel2.jpg" class="d-block w-100" alt="Capoeira group together with instruments">
           <div class="carousel-caption d-none d-md-block"><h5>Camaradas</h5></div>
         </div>
         <div class="carousel-item">
-          <img src="carousel3.jpg" class="d-block w-100" alt="Movimento e Brincadeira">
+          <img src="carousel3.jpg" class="d-block w-100" alt="Capoeira students practicing movement and play">
           <div class="carousel-caption d-none d-md-block"><h5>Movimento e Brincadeira</h5></div>
         </div>
       </div>
@@ -168,6 +185,7 @@
       </a>
     </div>
   </div>
+
   <!-- Main topics scroll -->
   <div id="main-topics">
     <!-- CAPOEIRA SECTION -->
@@ -176,32 +194,32 @@
         <div class="main-heading">Capoeira</div>
         <div class="main-summary">Capoeira is a beautiful fusion of martial art, dance, music, and culture. Born in Brazil, it’s a rhythmic game of movement, self-expression, and connection. Every kick, defense, and acrobatic flow is guided by live music, energy, and respect. Capoeira teaches not just agility or strength, but awareness, creativity, and community. It’s a space where people of all ages can discover balance—between discipline and play, body and mind. In Capoeira, we don’t just train; we celebrate life, movement, and freedom.</div>
         <button class="read-more-btn" onclick="toggleSubtopics(0)">Read more...</button>
-        <div class="subtopics">
+        <div class="subtopics" aria-hidden="true">
           <div class="subtopic" id="capoeira-sub0">
             <div class="subtopic-title">What is Capoeira?</div>
             <div class="subtopic-content">Capoeira is more than a martial art—it’s a living dialogue of movement, rhythm, and expression. Practiced in a circle called the roda, two players exchange movements through kicks, defenses, and playful tricks while musicians play instruments like the berimbau and atabaque. Every gesture in Capoeira has purpose, every rhythm carries emotion.<br><br>
 Capoeira builds agility, coordination, balance, and self-confidence, but it also cultivates empathy and respect. It teaches us to flow with challenges instead of fighting against them. Whether you’re a child discovering movement or an adult rediscovering joy through motion, Capoeira welcomes everyone into its rhythm. It’s not just about fighting—it’s about connection, culture, and community.</div>
-            <img src="capoeira.jpg" class="subtopic-img" alt="Capoeira">
+            <img src="capoeira.jpg" class="subtopic-img" alt="Capoeira training session showing two students exchanging movements in a roda">
           </div>
           <div class="subtopic" id="capoeira-sub1">
             <div class="subtopic-title">History</div>
             <div class="subtopic-content">Capoeira was born in Brazil over 400 years ago, created by African slaves who disguised their self-defense training as dance to protect themselves from oppression. Under the watchful eyes of their masters, they turned resistance into rhythm, struggle into song, and survival into art. Over time, Capoeira grew from the streets into a global expression of freedom, identity, and resilience.<br><br>
 Today, it represents unity and heritage. Through the songs, movements, and rituals passed down from one generation to another, Capoeira tells a story of courage and transformation. It reminds us that strength isn’t just in power—it’s in adaptability, creativity, and community. Every roda today is a living echo of that history, keeping the spirit of resistance and joy alive.</div>
-            <img src="history.jpg" class="subtopic-img" alt="Capoeira History">
+            <img src="history.jpg" class="subtopic-img" alt="Historic image representing the roots of Capoeira">
           </div>
           <div class="subtopic" id="capoeira-sub2">
             <div class="subtopic-title">Capoeira in Pune</div>
             <div class="subtopic-content">Capoeira found its rhythm in Pune through Grupo Capoeira Brasil Pune, led by Instrutor Arrepiado. What began as a small group of passionate students has grown into a thriving community that celebrates movement, music, and connection.<br><br>
 Classes are filled with energy, laughter, and learning—where children, teens, and adults train side by side. From weekly sessions to workshops, performances, and the annual Batizado (grading ceremony), Capoeira in Pune has become a vibrant cultural exchange that bridges Brazil and India.<br><br>
 Beyond fitness and flexibility, it offers students a sense of belonging and confidence. In every class, the rhythm of the berimbau brings people together, reminding us that Capoeira is not just a martial art—it’s a way of life.</div>
-            <img src="capoeira-pune.jpg" class="subtopic-img" alt="Capoeira Pune">
+            <img src="capoeira-pune.jpg" class="subtopic-img" alt="Group photo of Capoeira students in Pune">
           </div>
           <div class="subtopic" id="capoeira-sub3">
             <div class="subtopic-title">Philosophy</div>
             <div class="subtopic-content">Capoeira is built on balance—between attack and defense, strength and gentleness, discipline and joy. Its philosophy teaches that life, like Capoeira, is a dance of adaptability. You learn to move with awareness, to respond rather than react.<br><br>
 In Capoeira, every fall is a chance to rise with grace. Every movement carries respect for yourself, your partner, and the community around you. The music guides the rhythm, but the heart gives it meaning.<br><br>
 At Grupo Capoeira Brasil Pune, we believe Capoeira is not about being the best—it’s about becoming your best self. It’s a journey of body, mind, and spirit that celebrates freedom, resilience, and togetherness.</div>
-            <img src="philosophy.jpg" class="subtopic-img" alt="Capoeira Philosophy">
+            <img src="philosophy.jpg" class="subtopic-img" alt="Instructor demonstrating a graceful Capoeira movement">
           </div>
           <div class="subtopic" id="capoeira-sub4">
             <div class="subtopic-title">Benefits of Capoeira</div>
@@ -215,9 +233,10 @@ Capoeira develops both body and mind—it teaches awareness, respect, and resili
           </div>
         </div>
       </div>
-      <div class="main-photo"><img src="home.jpg" alt="Home Capoeira"></div>
+      <div class="main-photo"><img src="home.jpg" alt="Students practicing Capoeira at Grupo Capoeira Brasil Pune"></div>
     </div>
-    <!-- ABOUT SECTION block as previously detailed -->
+
+    <!-- ABOUT SECTION -->
     <div class="main-section reverse" id="about">
       <div class="main-desc">
         <div class="main-heading">About</div>
@@ -231,27 +250,28 @@ Capoeira develops both body and mind—it teaches awareness, respect, and resili
             <div class="subtopic-content">
               Grupo Capoeira Brasil was founded in 1989 in Rio de Janeiro by Mestres Paulão Ceará, Boneco, and Paulinho Sabiá. The group quickly became known worldwide for its dynamic style, strong lineage, and deep respect for Capoeira’s roots. With schools in over 40 countries, Grupo Capoeira Brasil continues to spread the art’s essence—discipline, respect, and community. Its philosophy blends tradition with evolution, maintaining the old songs, rituals, and values while embracing Capoeira’s global growth. In Pune, the group’s teachings live on through Instrutor Arrepiado and Mestre Caxias, keeping alive the same passion, authenticity, and energy that define Grupo Capoeira Brasil.
             </div>
-            <img src="grupo.jpg" class="subtopic-img" alt="Grupo Capoeira Brasil">
+            <img src="grupo.jpg" class="subtopic-img" alt="Grupo Capoeira Brasil group photo">
           </div>
           <div class="subtopic" id="about-sub1">
             <div class="subtopic-title">Mestre Caxias</div>
             <div class="subtopic-content">
               Mestre Caxias is one of the key figures of Grupo Capoeira Brasil, known for his charisma, deep knowledge, and lifelong dedication to the art. With decades of experience, he has taught thousands of students around the world, inspiring generations to live through Capoeira’s values of respect, humility, and discipline. His teaching goes beyond movement—he helps students understand the culture, rhythm, and philosophy behind every gesture. In Pune, Mestre Caxias plays a guiding role in the school’s growth, visiting regularly for workshops and the annual Batizado. His presence brings wisdom, inspiration, and connection to the global Capoeira community.
             </div>
-            <img src="mestre.jpg" class="subtopic-img" alt="Mestre Caxias">
+            <img src="mestre.jpg" class="subtopic-img" alt="Mestre Caxias teaching during a workshop">
           </div>
           <div class="subtopic" id="about-sub2">
             <div class="subtopic-title">Instrutor Arrepiado</div>
             <div class="subtopic-content">
               Instrutor Arrepiado has been practicing Capoeira for over 14 years and has dedicated his life to sharing its energy with others. Trained under Mestre Caxias, he represents Grupo Capoeira Brasil in Pune, India. His teaching focuses on more than just movement—it’s about building character, confidence, and community. From young children to adults, his classes inspire discipline, rhythm, and joy. Over the years, Arrepiado has organized numerous workshops, community events, and annual Batizados, creating a growing family of capoeiristas who embody respect, creativity, and passion. His mission is to make Capoeira accessible to everyone—one movement, one rhythm, one smile at a time.
             </div>
-            <img src="instrutor1.jpg" class="subtopic-img" alt="Instrutor Arrepiado">
+            <img src="instrutor1.jpg" class="subtopic-img" alt="Instrutor Arrepiado instructing students">
           </div>
         </div>
       </div>
-      <div class="main-photo"><img src="about.jpg" alt="About Capoeira Brasil"></div>
+      <div class="main-photo"><img src="about.jpg" alt="About Grupo Capoeira Brasil Pune - class scene"></div>
     </div>
-    <!-- MUSIC SECTION FULLY EXPANDED -->
+
+    <!-- MUSIC SECTION -->
     <div class="main-section" id="music">
       <div class="main-desc">
         <div class="main-heading">Music</div>
@@ -277,7 +297,7 @@ Capoeira develops both body and mind—it teaches awareness, respect, and resili
               <strong>Agogô:</strong><br>
               The agogô consists of two metal bells joined together, played with a stick to create bright, ringing tones. It brings melody and sparkle to the rhythm, adding contrast to the deeper sounds of the atabaque and berimbau. The agogô’s cheerful chime uplifts the music and energizes the roda.
             </div>
-            <img src="instruments.jpg" class="subtopic-img" alt="Capoeira Instruments">
+            <img src="instruments.jpg" class="subtopic-img" alt="Berimbau and other Capoeira instruments">
           </div>
           <div class="subtopic" id="music-sub1">
             <div class="subtopic-title">Common Songs</div>
@@ -293,13 +313,14 @@ Capoeira develops both body and mind—it teaches awareness, respect, and resili
               Eu vim da Bahia<br>
               Zum Zum Zum Capoeira mata um
             </div>
-            <img src="songs.jpg" class="subtopic-img" alt="Capoeira Songs">
+            <img src="songs.jpg" class="subtopic-img" alt="List of common Capoeira songs">
           </div>
         </div>
       </div>
-      <div class="main-photo"><img src="music.jpg" alt="Music Capoeira"></div>
+      <div class="main-photo"><img src="music.jpg" alt="Capoeira musicians playing berimbau and atabaque"></div>
     </div>
-    <!-- CLASSES SECTION FULLY EXPANDED -->
+
+    <!-- CLASSES SECTION -->
     <div class="main-section reverse" id="classes">
       <div class="main-desc">
         <div class="main-heading">Classes</div>
@@ -315,21 +336,21 @@ Whether you’re a child discovering rhythm, a teen exploring strength, or an ad
             <div class="subtopic-content">Our toddlers’ Capoeira program introduces movement through imagination, rhythm, and play. Children learn coordination, balance, and focus using simple Capoeira movements woven into fun games and songs. The classes are joyful, musical, and nurturing—helping little ones build confidence and social skills in a friendly group setting.
 We focus on developing gross motor skills, spatial awareness, and rhythm through engaging activities that feel like play but teach discipline and teamwork. The toddlers learn to listen, move, and express themselves through music and motion—laying the foundation for a lifelong love of movement.
 Each child is encouraged to move at their own pace, making classes inclusive, fun, and safe.</div>
-            <img src="toddlers.jpg" class="subtopic-img" alt="Capoeira Toddlers">
+            <img src="toddlers.jpg" class="subtopic-img" alt="Toddlers participating in Capoeira class, playful activities">
           </div>
           <div class="subtopic" id="classes-sub1">
             <div class="subtopic-title">Kids & Teens (Ages 7–16)</div>
             <div class="subtopic-content">Capoeira for kids and teens combines physical fitness, rhythm, and creativity in an environment full of energy and respect. Students learn kicks, defenses, and acrobatics, along with songs and instruments. They also develop discipline, teamwork, and cultural awareness.
 Each class encourages self-expression and confidence through structured practice and games. Children learn to work together while celebrating individuality—a vital lesson both inside and outside the roda.
 For teens, Capoeira offers a powerful outlet for energy, focus, and leadership. It improves coordination, balance, and posture while nurturing a positive mindset. Beyond movement, they learn values of respect, perseverance, and community—skills that last a lifetime.</div>
-            <img src="kids-teens.jpg" class="subtopic-img" alt="Capoeira Kids & Teens">
+            <img src="kids-teens.jpg" class="subtopic-img" alt="Kids and teens practicing Capoeira drills">
           </div>
           <div class="subtopic" id="classes-sub2">
             <div class="subtopic-title">Adults (Ages 17 & above)</div>
             <div class="subtopic-content">Capoeira for adults is a holistic workout for the body and mind. It combines martial arts, dance, music, and acrobatics, offering strength, flexibility, and endurance in a single training. But beyond fitness, it’s a journey of rhythm, resilience, and rediscovery.
 Classes are designed to challenge you while respecting your pace. You’ll learn powerful movements, fluid transitions, and musical expression—all within an inclusive, supportive group. Capoeira helps reduce stress, improve posture, and build confidence through mindful movement.
 Whether you’re a beginner or returning to physical activity, Capoeira adapts to your level. Every session leaves you stronger, lighter, and more connected—with yourself and with the group.</div>
-            <img src="adults.jpg" class="subtopic-img" alt="Capoeira Adults">
+            <img src="adults.jpg" class="subtopic-img" alt="Adult Capoeira class showing strength and flexibility training">
           </div>
           <div class="subtopic" id="classes-sub3">
             <div class="subtopic-title">Schools</div>
@@ -342,81 +363,131 @@ Capoeira also promotes inclusivity, as every child, regardless of athletic abili
             <div class="subtopic-content">Private Capoeira sessions offer a personalized approach to learning—whether you’re a beginner wanting to build a foundation or an advanced student refining technique. These sessions focus on your specific goals: movement, music, rhythm, or overall fitness.
 Workshops are available for schools, fitness studios, and cultural organizations. They provide an immersive experience into Capoeira’s history, movements, and instruments. Each workshop is interactive and engaging, leaving participants inspired and energized.
 Private sessions and workshops are ideal for individuals or small groups who prefer focused attention, flexible timing, and faster progress. Every class is tailored to suit your rhythm, pace, and passion.</div>
-            <img src="workshops.jpg" class="subtopic-img" alt="Capoeira Workshops">
+            <img src="workshops.jpg" class="subtopic-img" alt="Capoeira workshops and private lessons in action">
           </div>
         </div>
       </div>
-      <div class="main-photo"><img src="classes.jpg" alt="Capoeira Classes"></div>
+      <div class="main-photo"><img src="classes.jpg" alt="Capoeira class environment and training session"></div>
     </div>
+
     <!-- GALLERY -->
     <div class="gallery-section" id="gallery-section">
       <div class="gallery-title">Gallery — Photos & Videos</div>
       <div class="gallery-grid">
-        <img src="image1.jpg" alt="Capoeira Gallery Image 1" class="gallery-img">
-        <img src="image2.jpg" alt="Capoeira Gallery Image 2" class="gallery-img">
-        <img src="image3.jpg" alt="Capoeira Gallery Image 3" class="gallery-img">
-        <img src="image4.jpg" alt="Capoeira Gallery Image 4" class="gallery-img">
-        <img src="image5.jpg" alt="Capoeira Gallery Image 5" class="gallery-img">
-        <img src="image6.jpg" alt="Capoeira Gallery Image 6" class="gallery-img">
-        <img src="image7.jpg" alt="Capoeira Gallery Image 7" class="gallery-img">
-        <img src="image8.jpg" alt="Capoeira Gallery Image 8" class="gallery-img">
-        <video src="video1.mp4" controls class="gallery-video"></video>
-        <video src="video2.mp4" controls class="gallery-video"></video>
+        <img src="image1.jpg" alt="Capoeira gallery image - roda formation" class="gallery-img">
+        <img src="image2.jpg" alt="Capoeira gallery image - training kicks" class="gallery-img">
+        <img src="image3.jpg" alt="Capoeira gallery image - acrobatic move" class="gallery-img">
+        <img src="image4.jpg" alt="Capoeira gallery image - musical ensemble" class="gallery-img">
+        <img src="image5.jpg" alt="Capoeira gallery image - kids class" class="gallery-img">
+        <img src="image6.jpg" alt="Capoeira gallery image - adults practice" class="gallery-img">
+        <img src="image7.jpg" alt="Capoeira gallery image - group performance" class="gallery-img">
+        <img src="image8.jpg" alt="Capoeira gallery image - workshop scene" class="gallery-img">
+        <video src="video1.mp4" controls class="gallery-video" aria-label="Capoeira video 1"></video>
+        <video src="video2.mp4" controls class="gallery-video" aria-label="Capoeira video 2"></video>
       </div>
     </div>
+
     <!-- CONTACT -->
     <div class="contact-section" id="contact-section">
       <div class="contact-details">
         <strong>Grupo Capoeira Brasil Pune</strong>
-        <p>📧 Email: <span>arrepiado@capoeirapune.com</span></p>
-        <p>📞 Phone: <span>+91 9766481796</span></p>
-        <p>📸 Instagram: <span>@capoeirapune.india</span></p>
+        <p>📧 Email: <a href="mailto:arrepiado@capoeirapune.com" style="color:#fff; text-decoration:underline;">arrepiado@capoeirapune.com</a></p>
+        <p>📞 Phone: <a href="tel:+919766481796" style="color:#fff; text-decoration:underline;">+91 9766481796</a></p>
+        <p>📸 Instagram: <a href="https://instagram.com/capoeirapune.india" target="_blank" rel="noopener noreferrer" style="color:#fff; text-decoration:underline;">@capoeirapune.india</a></p>
         <p>Find us on Google Maps or WhatsApp for directions and quick questions.</p>
       </div>
       <form class="contact-form" id="quick-question-form" onsubmit="sendContact(event)">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="question" placeholder="Your Question" required></textarea>
+        <label class="sr-only" for="name">Your Name</label>
+        <input id="name" type="text" name="name" placeholder="Your Name" required>
+        <label class="sr-only" for="email">Your Email</label>
+        <input id="email" type="email" name="email" placeholder="Your Email" required>
+        <label class="sr-only" for="question">Your Question</label>
+        <textarea id="question" name="question" placeholder="Your Question" required></textarea>
         <button type="submit">Send</button>
-        <div class="contact-success" id="contact-success"></div>
+        <div class="contact-success" id="contact-success" aria-live="polite"></div>
       </form>
     </div>
   </div>
+
   <footer>
     <div class="footer-year">2011 @ Grupo Capoeira Brasil Pune, India</div>
   </footer>
+
   <script>
+    // toggleSubtopics updated to also scroll the expanded subtopics into view so users can continue scrolling naturally.
     function toggleSubtopics(idx) {
       let sections = document.querySelectorAll('.main-section');
       sections.forEach((s,i) => {
-        if (i!==idx) s.classList.remove('active');
+        if (i !== idx) s.classList.remove('active');
       });
-      sections[idx].classList.toggle('active');
+      const section = sections[idx];
+      if (!section) return;
+      const wasActive = section.classList.contains('active');
+      section.classList.toggle('active');
+
+      // After expanding, scroll the subtopics into view so the user doesn't have to tap header again.
+      if (!wasActive) {
+        // give the browser a moment to expand the element so scrollIntoView lands correctly
+        setTimeout(() => {
+          const sub = section.querySelector('.subtopics');
+          if (sub) {
+            // scroll the subtopics into view, placing it slightly below top so header isn't covering it
+            const topOffset = (window.innerWidth > 900) ? 80 : 64;
+            const rect = sub.getBoundingClientRect();
+            const absoluteTop = window.scrollY + rect.top - topOffset;
+            window.scrollTo({ top: absoluteTop, behavior: 'smooth' });
+          }
+        }, 120);
+      } else {
+        // If collapsing, focus the section heading so keyboard/screen readers are OK
+        const heading = section.querySelector('.main-heading');
+        if (heading && typeof heading.focus === 'function') heading.focus();
+      }
     }
+
     function scrollToSection(id) {
       let el = document.getElementById(id);
       if (el) {
-        window.scrollTo({top: el.offsetTop - 80, behavior: 'smooth'});
+        // offset to account for sticky header height
+        const headerOffset = 72;
+        const rect = el.getBoundingClientRect();
+        const absoluteTop = window.scrollY + rect.top - headerOffset;
+        window.scrollTo({ top: absoluteTop, behavior: 'smooth' });
       }
+      // update active tab (keep simple)
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       let tabs = ['carousel-top','capoeira','about','music','classes','gallery-section','contact-section'];
       let idx = tabs.indexOf(id);
-      if (idx > -1) document.querySelectorAll('.tab-btn')[idx].classList.add('active');
+      if (idx > -1) {
+        const btns = document.querySelectorAll('.tab-btn');
+        if (btns[idx]) btns[idx].classList.add('active');
+      }
     }
+
     function scrollToSubtopic(section, subidx) {
       let el = document.getElementById(section + "-sub" + subidx);
       if (el) {
-        el.scrollIntoView({behavior: 'smooth', block: 'center'});
+        const headerOffset = 72;
+        const rect = el.getBoundingClientRect();
+        const absoluteTop = window.scrollY + rect.top - headerOffset;
+        window.scrollTo({ top: absoluteTop, behavior: 'smooth' });
       }
     }
+
     function sendContact(e) {
       e.preventDefault();
       let form = document.getElementById('quick-question-form');
       document.getElementById('contact-success').textContent = "Your message has been sent!";
       form.reset();
     }
+
     document.addEventListener('DOMContentLoaded',function(){
-      $('.carousel').carousel();
+      // initialize bootstrap carousel safely
+      if (window.jQuery && typeof jQuery().carousel === 'function') {
+        $('.carousel').carousel();
+      }
+      // Allow keyboard focus on headings when toggling sections
+      document.querySelectorAll('.main-heading').forEach(h => { h.setAttribute('tabindex','-1'); });
     });
   </script>
 </body>

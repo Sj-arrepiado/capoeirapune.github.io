@@ -1,137 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Grupo Capoeira Brasil Pune</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Capoeira in Pune | Grupo Capoeira Brasil Pune</title>
+  <meta name="description" content="Movement, music, and community — Capoeira in Pune for men, women, and children. Classes in Kalyani Nagar and Aundh. Paid trial reimbursed into your first month. Message on WhatsApp to join." />
+  <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)" />
+  <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin />
+  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap)" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
 </head>
+
 <body>
-  <nav>
-    <div class="logo-container">
-      <img src="logo.png" alt="Grupo Capoeira Brasil Pune Logo" class="logo-img">
-      <span class="logo-text">Grupo Capoeira Brasil Pune</span>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="brand">
+        <img src="logo.png" alt="Grupo Capoeira Brasil Pune Logo" class="brand-logo" />
+        <span class="brand-name">Grupo Capoeira Brasil Pune</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#classes">Classes</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#fees">Fees</a>
+        <a href="#about">About</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary btn-sm hide-mobile" href="[wa.me](https://wa.me/919766481796?text=Hi%20Capoeira%20Pune!%20I%27d%20like%20to%20book%20a%20trial.%20I%27m%20interested%20in%20%5BAdults%7CKids%5D%20at%20%5BArtsphere%7CAundh%5D)" target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
     </div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about-capoeira">About Capoeira</a></li>
-      <li><a href="#instructor">About Instructor</a></li>
-      <li><a href="#classes">Classes</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  </header>
+
   <main>
-    <section id="home" class="section">
-      <h1>Welcome to Grupo Capoeira Brasil Pune!</h1>
-      <blockquote>
-        Capoeira is more than just a martial art — it’s rhythm, movement, culture, and community all woven together.<br>
-        It’s where music meets motion, where discipline meets fun, and where everyone, no matter their age, finds a place to grow.
-      </blockquote>
-      <p>At our academy, we train to move better, feel stronger, and connect deeper — with ourselves and with others. Whether you’re looking to improve your fitness, learn something new, or just experience the energy of Capoeira, you’re welcome here.</p>
-      <p>Grupo Capoeira Brasil Pune is part of Grupo Capoeira Brasil, one of the largest and most respected Capoeira organizations in the world. Founded in Brazil in 1989, our group is known for its strong roots, musicality, and open-hearted community — now spreading its rhythm across Pune and all of India.</p>
-      <p><strong>Come be part of it.</strong> Step into the roda, feel the beat, and discover what Capoeira can bring to your life.</p>
-    </section>
-
-    <section id="about-capoeira" class="section">
-      <h2>🌀 What is Capoeira?</h2>
-      <p>Capoeira is an Afro-Brazilian martial art that beautifully blends dance, music, acrobatics, and self-defense into one powerful and expressive art form. It is often described as a game rather than a fight — played between two people inside a circle called a roda, accompanied by traditional instruments like the berimbau, atabaque, and pandeiro.</p>
-      <p>Unlike most martial arts that rely on force, Capoeira focuses on rhythm, flow, and creativity. Every movement is a dialogue — a combination of attack, defense, and playfulness, all performed in harmony with the music. It trains not only the body but also the mind, encouraging agility, awareness, discipline, and community spirit.</p>
-      <h3>🪘 A Brief History of Capoeira</h3>
-      <p>Capoeira was born in Brazil during the 16th century, created by African slaves who were brought to the country by Portuguese colonizers. These enslaved people combined African combat techniques, dances, and rhythms to develop a disguised form of self-defense — one that looked like a dance to deceive their masters.</p>
-      <p>For many years, Capoeira was banned in Brazil and practiced secretly, as it symbolized resistance and freedom. But over time, it evolved from a tool of survival to a cultural treasure. In the 20th century, great mestres (masters) like Mestre Bimba and Mestre Pastinha helped formalize and preserve Capoeira’s traditions, eventually leading to its recognition by UNESCO as an Intangible Cultural Heritage of Humanity in 2014.</p>
-      <p>Today, Capoeira is practiced worldwide, representing strength, freedom, art, and unity.</p>
-      <h3>🇮🇳 Capoeira in Pune</h3>
-      <p>Capoeira made its way to Pune in the early 2010s, introduced through workshops and the growing influence of Grupo Capoeira Brasil (GCB) — one of the world’s most respected Capoeira organizations.</p>
-      <p>Under the guidance of Mestre Caxias and led locally by Instrutor Arrepiado, Capoeira has steadily grown into a vibrant community of students, artists, and athletes. Grupo Capoeira Brasil Pune now trains students of all ages — from toddlers to adults — nurturing not just skill, but also values of respect, rhythm, discipline, and joy.</p>
-      <p>Through regular classes, workshops, and annual events like the Batizado (graduation ceremony), Capoeira continues to spread its message of culture, movement, and unity across the city.</p>
-    </section>
-
-    <section id="instructor" class="section">
-      <h2>About Instrutor Arrepiado</h2>
-      <div class="instructor-card">
-        <img src="logo.png" alt="Instrutor Arrepiado Logo" class="instructor-logo">
-        <div>
-          <p><strong>Instrutor Arrepiado</strong>, known outside the roda as Sagar Jain, has been practicing Capoeira for over 14 years and teaching for more than 12 years. He represents Grupo Capoeira Brasil, one of the world’s most respected Capoeira organizations, under the guidance of Mestre Caxias.</p>
-          <p>His journey began with a deep fascination for the rhythm, movement, and energy of Capoeira — an art that combines martial arts, dance, music, and culture into one dynamic expression. Over the years, he has trained with masters and teachers from around the world, continuing to deepen his understanding of both the physical and cultural essence of the art.</p>
-          <p>In Pune, Instrutor Arrepiado founded Grupo Capoeira Brasil Pune, a growing community where students of all ages — from toddlers to adults — come together to explore Capoeira through movement, music, and connection. His teaching focuses on discipline, consistency, and joy, ensuring that every student learns not only the movements but also the spirit and tradition of Capoeira.</p>
-          <p>Instrutor Arrepiado’s mission is to make Capoeira accessible to everyone and to share its values of respect, resilience, and community across India.</p>
+    <!-- Hero -->
+    <section id="home" class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Movement, music, and community — Capoeira in Pune</h1>
+          <p class="lead">
+            Classes for adults and kids at Kalyani Nagar and Aundh.
+            Paid trial that rolls into your first month.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="[wa.me](https://wa.me/919766481796?text=Hi%20Capoeira%20Pune!%20I%27d%20like%20to%20book%20a%20trial)" target="_blank" rel="noopener">
+              Message on WhatsApp
+            </a>
+            <a class="btn btn-outline" href="#classes">Explore Classes</a>
+          </div>
+          <p class="lineage">Grupo Capoeira Brasil • Under Mestre Caxias • Led by Instrutor Arrepiado</p>
+        </div>
+        <div class="hero-media">
+          <img src="hero.jpg" alt="Capoeira class in Pune — movement and music" />
         </div>
       </div>
     </section>
 
+    <!-- Programs -->
     <section id="classes" class="section">
-      <h2>🥋 Classes</h2>
-      <p>At Grupo Capoeira Brasil Pune, we offer Capoeira classes for all ages and experience levels — from playful beginners to dedicated practitioners.</p>
-      <div class="programs">
-        <div class="program">
-          <h4>Little Capoeiristas (Ages 3.5–6)</h4>
-          <p>Introducing rhythm, coordination, and teamwork through fun Capoeira-based games.</p>
-        </div>
-        <div class="program">
-          <h4>Kids (Ages 7–12)</h4>
-          <p>Developing strong fundamentals in movement, balance, and music while learning discipline and respect.</p>
-        </div>
-        <div class="program">
-          <h4>Teens & Adults</h4>
-          <p>Building technique, flow, acrobatics, and musicality — combining physical training with cultural understanding.</p>
-        </div>
-      </div>
-      <div class="extras">
-        <ul>
-          <li>Teach in Schools and Colleges: Introducing Capoeira as a part of physical education, cultural events, and wellness programs.</li>
-          <li>Offer Private Lessons: One-on-one sessions tailored to individual goals — from fitness and coordination to movement refinement.</li>
-          <li>Conduct Small Curated Group Sessions: Perfect for families, friends, or corporate teams who want a personalized learning experience.</li>
-        </ul>
-      </div>
-      <p>Each class includes warm-ups, sequences, partner work, and music practice.</p>
-      <p>We also host workshops, performances, and our annual Batizado — a celebration of progress, tradition, and community.</p>
-      <p>📍 Classes held in Pune</p>
-      <p>📧 <a href="mailto:arrepiado@capoeirapune.com">arrepiado@capoeirapune.com</a></p>
-    </section>
+      <div class="container">
+        <h2 class="section-title">Classes for everyone</h2>
+        <p class="section-sub">Capoeira is for men, women, and children — beginners welcome.</p>
 
-    <section id="faq" class="section">
-      <h2>❓ FAQ</h2>
-      <dl>
-        <dt>Do I need any martial arts or dance experience to start?</dt>
-        <dd>Not at all! Capoeira is for everyone. Beginners are always welcome.</dd>
-        <dt>What should I wear for class?</dt>
-        <dd>Comfortable workout clothes. Once you join regularly, you can get the official Grupo Capoeira Brasil Pune uniform.</dd>
-        <dt>Is Capoeira suitable for kids?</dt>
-        <dd>Yes — it’s one of the best arts for children to improve coordination, focus, and confidence, all while having fun.</dd>
-        <dt>How often should I train?</dt>
-        <dd>Ideally 2–3 times a week for steady progress, but even once a week with consistency can make a big difference.</dd>
-        <dt>Is there music in Capoeira classes?</dt>
-        <dd>Yes! Music is at the heart of Capoeira. Students learn to sing in Portuguese and play traditional instruments like the berimbau, atabaque, and pandeiro.</dd>
-      </dl>
-    </section>
+        <div class="cards">
+          <article class="card">
+            <h3>Adults</h3>
+            <ul>
+              <li>Strength, mobility, and flow</li>
+              <li>Kicks, dodges, acrobatics, and music</li>
+              <li>Rolling starts — join any week</li>
+            </ul>
+            <a class="btn btn-primary" href="[wa.me](https://wa.me/919766481796?text=Hi%20Capoeira%20Pune!%20I%27m%20interested%20in%20Adult%20classes)">WhatsApp to join</a>
+          </article>
 
-    <section id="gallery" class="section">
-      <h2>Gallery</h2>
-      <div class="gallery">
-        <img src="photo1.jpg" alt="Capoeira Movement 1">
-        <img src="photo2.jpg" alt="Capoeira Movement 2">
-        <img src="photo3.jpg" alt="Capoeira Movement 3">
-        <img src="photo4.jpg" alt="Capoeira Movement 4">
-        <img src="photo5.jpg" alt="Capoeira Movement 5">
+          <article class="card">
+            <h3>Kids & Teens (3–6, 7+)</h3>
+            <ul>
+              <li>Coordination, focus, and confidence</li>
+              <li>Play, rhythm, and teamwork</li>
+              <li>Start from age 3</li>
+            </ul>
+            <a class="btn btn-primary" href="[wa.me](https://wa.me/919766481796?text=Hi%20Capoeira%20Pune!%20I%27d%20like%20a%20trial%20for%20Kids%20classes)">Book a trial on WhatsApp</a>
+          </article>
+
+          <article class="card">
+            <h3>Toddlers (3–6)</h3>
+            <ul>
+              <li>Short, playful sessions</li>
+              <li>Balance, control, and rhythm</li>
+              <li>Parent‑friendly environment</li>
+            </ul>
+            <a class="btn btn-primary" href="[wa.me](https://wa.me/919766481796?text=Hi%20Capoeira%20Pune!%20I%20want%20details%20for%20Toddlers%20sessions)">Enquire on WhatsApp</a>
+          </article>
+
+          <article class="card">
+            <h3>Private • Workshops • Retreats</h3>
+            <ul>
+              <li>1:1, small groups, schools, corporates</li>
+              <li>Custom 60–90 minute formats</li>
+              <li>Travel retreats and showcases</li>
+            </ul>
+            <a class="btn btn-primary" href="[wa.me](https://wa.me/919766481796?text=Hi%20Capoeira%20Pune!%20I%20want%20to%20plan%20a%20workshop%2Fretreat)">WhatsApp for dates</a>
+          </article>
+        </div>
       </div>
     </section>
 
+    <!-- Schedule & Locations -->
+    <section id="schedule" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Schedule & Locations</h2>
+
+        <div class="grid-2">
+          <div class="panel">
+            <h3>Artsphere, Kalyani Nagar</h3>
+            <p class="address">[Insert full street address here], Kalyani Nagar, Pune</p>
+            <ul class="list">
+              <li><strong>Adults — Wed & Fri</strong>: 8:00–9:15 am • 8:00–9:15 pm</li>
+              <li><strong>Kids — Sat & Sun</strong>: 9:00–9:45 am (3–6) • 9:45–11:15 am (7+)</li>
+            </ul>
+            <a class="link" target="_blank" rel="noopener" href="[Insert Google Maps URL here]">Open in Google Maps</a>
+          </div>
+
+          <div class="panel">
+            <h3>The Open Door, Aundh</h3>
+            <p class="address">[Insert full street address here], Aundh, Pune</p>
+            <p class="note">Select batches and workshops — message for current dates.</p>
+            <a class="link" target="_blank" rel="noopener" href="[Insert Google Maps URL here]">Open in Google Maps</a>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="[wa.me](https://wa.me/919766481796?text=Hi%20Capoeira%20Pune!%20Please%20confirm%20today%E2%80%99s%20schedule)">Confirm today’s schedule on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why us -->
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h2 class="section-title">Why Capoeira with us</h2>
+          <ul class="list">
+            <li><strong>Community‑first:</strong> train with ages 3 to 60+ in a friendly circle.</li>
+            <li><strong>Balanced practice:</strong> martial art, music, acrobatics, and culture in one.</li>
+            <li><strong>Proven lineage:</strong> Grupo Capoeira Brasil under Mestre Caxias.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2 class="section-title">Trial & Fees</h2>
+          <p><strong>Paid Trial:</strong> your trial fee is credited to your first month when you join.</p>
+          <p><strong>Fees vary</strong> by class and venue. Message for the best plan for your goals and schedule.</p>
+          <a class="btn btn-primary" href="[wa.me](https://wa.me/919766481796?text=Hi%20Capoeira%20Pune!%20Could%20you%20share%20fees%20and%20trial%20details%3F)">WhatsApp for fees</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section alt">
+      <div class="container">
+        <h2 class="section-title">About us</h2>
+        <div class="about-grid">
+          <div>
+            <p>
+              Grupo Capoeira Brasil Pune brings the rich tradition of Brazilian Capoeira to India —
+              blending movement, rhythm, and community. We’re part of <strong>Grupo Capoeira Brasil</strong>,
+              under <strong>Mestre Caxias</strong>.
+            </p>
+            <p>
+              <strong>Instrutor Arrepiado (Sagar Jain)</strong> has trained for 14+ years and teaches students from
+              age 3 to 60+. His classes rest on three values: <em>consistency</em>, <em>respect</em>, and <em>energy</em>.
+              With him, you don’t just learn to kick or dodge — you learn rhythm, patience, and self‑expression.
+            </p>
+          </div>
+          <div class="about-media">
+            <img src="instructor.jpg" alt="Instrutor Arrepiado (Sagar Jain), Grupo Capoeira Brasil Pune" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section id="faqs" class="section">
+      <div class="container">
+        <h2 class="section-title">FAQs</h2>
+        <dl class="faq">
+          <dt>Is Capoeira safe for beginners?</dt>
+          <dd>Yes. We teach safe basics first, progress gradually, and adapt to your level.</dd>
+
+          <dt>Do I need to be flexible or fit?</dt>
+          <dd>No. You’ll build flexibility and fitness through training. Start where you are.</dd>
+
+          <dt>What should I bring?</dt>
+          <dd>Water, a small towel, comfortable sportswear. We usually train barefoot.</dd>
+
+          <dt>Is Capoeira a fight or a dance?</dt>
+          <dd>It’s a Brazilian martial art with music and flow. You’ll learn strategy, rhythm, and control.</dd>
+
+          <dt>How do trials work?</dt>
+          <dd>Your trial is paid; if you join, that fee is credited to your first month.</dd>
+
+          <dt>What are the age groups for kids?</dt>
+          <dd>3–6 years (45 minutes) and 7+ years (90 minutes).</dd>
+
+          <dt>When can I start?</dt>
+          <dd>Rolling batches — start any week. Message us to pick your first class.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Gallery</h2>
+        <div class="gallery">
+          <img src="photo1.jpg" alt="Capoeira movement — ginga in class" />
+          <img src="photo2.jpg" alt="Kids class practicing balance" />
+          <img src="photo3.jpg" alt="Roda — circle with music and play" />
+          <img src="photo4.jpg" alt="Partner drill — esquiva and kick control" />
+          <img src="photo5.jpg" alt="Music practice — berimbau, atabaque, pandeiro" />
+          <img src="photo6.jpg" alt="Workshop highlight with community" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
     <section id="contact" class="section">
-      <h2>📞 Contact</h2>
-      <div class="contact-card">
-        <p><strong>Grupo Capoeira Brasil Pune</strong></p>
-        <p>📍 Pune, India</p>
-        <p>📧 Email: <a href="mailto:arrepiad@capoeirapune.com">arrepiad@capoeirapune.com</a></p>
-        <p>📞 Phone: <a href="tel:+919766481796">9766 481 796</a></p>
-        <p>📸 Instagram: <a href="https://instagram.com/capoeirapune.india" target="_blank">@capoeirapune.india</a></p>
-        <p>For class timings, trial sessions, or collaborations — message us on Instagram or email us directly.</p>
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-card">
+          <p><strong>Grupo Capoeira Brasil Pune</strong></p>
+          <p>Pune, India</p>
+          <p>Email: <a href="mailto:arrepiado@capoeirapune.com">arrepiado@capoeirapune.com</a></p>
+          <p>Phone/WhatsApp: <a href="[wa.me](https://wa.me/919766481796)" target="_blank" rel="noopener">+91 97664 81796</a></p>
+          <p>Instagram: <a href="[instagram.com](https://instagram.com/capoeirapune.india)" target="_blank" rel="noopener">@capoeirapune.india</a></p>
+          <p class="muted">For timings, trial sessions, or collaborations — WhatsApp is fastest.</p>
+          <a class="btn btn-primary" href="[wa.me](https://wa.me/919766481796?text=Hi%20Capoeira%20Pune!%20I%27d%20like%20to%20book%20a%20trial)">Message on WhatsApp</a>
+        </div>
       </div>
     </section>
   </main>
-  <footer>
-    <p>&copy; 2025 Grupo Capoeira Brasil Pune | Designed for the Capoeira community</p>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Grupo Capoeira Brasil Pune • Movement, music, and community</p>
+      <nav class="footer-links">
+        <a href="#classes">Classes</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#fees">Fees</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </footer>
+
+  <!-- Sticky WhatsApp on mobile -->
+  <a class="wa-sticky" href="[wa.me](https://wa.me/919766481796?text=Hi%20Capoeira%20Pune!%20I%27d%20like%20to%20book%20a%20trial)" target="_blank" rel="noopener" aria-label="Message on WhatsApp">
+    WhatsApp
+  </a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

@@ -410,6 +410,7 @@
       <li><a href="#classes">Classes</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#music">Music</a></li>
+      <li><a href="#schedule">Schedule</a></li>
       <li><a href="#gallery">Gallery</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Join a Class</a>
@@ -424,6 +425,7 @@
   <a href="#classes">Classes</a>
   <a href="#about">About</a>
   <a href="#music">Music</a>
+  <a href="#schedule">Schedule</a>
   <a href="#gallery">Gallery</a>
   <a href="#contact" class="mob-cta">Join a Class →</a>
 </div>
@@ -754,8 +756,8 @@
   <div class="cta-ring cta-ring-2" aria-hidden="true"></div>
   <div class="cta-content container fade-in">
     <span class="tag">Come say hello</span>
-    <h2>Your first class is on us.</h2>
-    <p>No commitment, no equipment, no experience needed. Just come and see what it's all about. We'd love to have you.</p>
+    <h2>Ready to step into the roda?</h2>
+    <p>No experience needed, no special equipment — just show up. Get in touch and we'll help you find the right batch to start with.</p>
     <div class="cta-btns">
       <a href="#contact" class="btn-forest">Get in Touch</a>
       <a href="https://wa.me/919766481796" class="btn-outline-forest" target="_blank" rel="noopener noreferrer">
@@ -765,6 +767,164 @@
     </div>
   </div>
 </section>
+
+<!-- ── SCHEDULE & LOCATIONS ── -->
+<section id="schedule" aria-labelledby="schedule-h" style="background: var(--cream);">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="tag">Schedule & Locations</span>
+      <h2 id="schedule-h">Find a batch <em>near you</em></h2>
+      <p>We run classes across multiple locations in Pune. Get in touch to confirm your spot before joining.</p>
+    </div>
+
+    <div class="schedule-grid fade-in">
+
+      <!-- ARTSPHERE -->
+      <div class="loc-card">
+        <div class="loc-header">
+          <div>
+            <div class="loc-tag">Kalyani Nagar</div>
+            <div class="loc-name">Artsphere</div>
+          </div>
+          <div class="loc-pin">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+        </div>
+
+        <div class="loc-body">
+
+          <div class="batch-group">
+            <div class="batch-group-label">Adults</div>
+            <div class="batch-days">Wednesday &amp; Friday</div>
+            <div class="batch-row">
+              <span class="batch-tag">Morning</span>
+              <span class="batch-time">8:00 – 9:15 am</span>
+            </div>
+            <div class="batch-row">
+              <span class="batch-tag">Evening</span>
+              <span class="batch-time">8:00 – 9:15 pm</span>
+            </div>
+          </div>
+
+          <div class="loc-divider"></div>
+
+          <div class="batch-group">
+            <div class="batch-group-label">Kids</div>
+            <div class="batch-days">Saturday &amp; Sunday</div>
+            <div class="batch-row">
+              <span class="batch-tag">Batch 1</span>
+              <span class="batch-time">9:00 – 9:45 am &nbsp;<span class="batch-age">Ages 3.5 – 6</span></span>
+            </div>
+            <div class="batch-row">
+              <span class="batch-tag">Batch 2</span>
+              <span class="batch-time">9:45 – 11:15 am &nbsp;<span class="batch-age">Ages 7+</span></span>
+            </div>
+          </div>
+
+        </div>
+
+        <a href="#contact" class="loc-cta">Enquire about this batch →</a>
+      </div>
+
+      <!-- THE OPEN DOOR -->
+      <div class="loc-card loc-card-soon">
+        <div class="loc-header">
+          <div>
+            <div class="loc-tag">Aundh</div>
+            <div class="loc-name">The Open Door</div>
+          </div>
+          <div class="loc-pin">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+        </div>
+        <div class="loc-body">
+          <div class="coming-soon-wrap">
+            <div class="coming-soon-badge">Coming Soon</div>
+            <p class="coming-soon-text">Schedule for this location is being finalised. Get in touch and we'll let you know as soon as batches are open.</p>
+          </div>
+        </div>
+        <a href="#contact" class="loc-cta">Get notified when open →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 760px) { .schedule-grid { grid-template-columns: 1fr; } }
+
+  .loc-card {
+    background: var(--white);
+    border: 1px solid var(--cream-3);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .loc-card-soon { opacity: .88; }
+
+  .loc-header {
+    background: var(--forest);
+    padding: 24px 26px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .loc-tag { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-lt); margin-bottom: 5px; }
+  .loc-name { font-family: var(--font-display); font-size: 26px; font-weight: 500; color: #fff; line-height: 1.1; }
+  .loc-pin svg { width: 20px; height: 20px; stroke: rgba(255,255,255,.35); fill: none; stroke-width: 1.8; margin-top: 4px; }
+
+  .loc-body { padding: 26px; flex: 1; }
+  .loc-divider { height: 1px; background: var(--cream-2); margin: 20px 0; }
+
+  .batch-group-label {
+    font-size: 10px; font-weight: 500; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--forest-lt);
+    margin-bottom: 6px;
+  }
+  .batch-days {
+    font-size: 14px; font-weight: 500; color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .batch-row {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 8px;
+  }
+  .batch-tag {
+    background: var(--forest-pale); color: var(--forest-dk);
+    font-size: 11px; font-weight: 500;
+    padding: 3px 10px; border-radius: 20px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .batch-time { font-size: 14px; color: var(--ink-2); }
+  .batch-age { font-size: 11px; color: var(--muted); }
+
+  .coming-soon-wrap { text-align: center; padding: 16px 0; }
+  .coming-soon-badge {
+    display: inline-block;
+    background: var(--gold-pale); color: var(--gold-dk);
+    font-size: 11px; font-weight: 500; letter-spacing: 1px;
+    text-transform: uppercase; padding: 5px 14px;
+    border-radius: 20px; border: 1px solid var(--cream-3);
+    margin-bottom: 14px;
+  }
+  .coming-soon-text { font-size: 14px; color: var(--muted); line-height: 1.75; }
+
+  .loc-cta {
+    display: block;
+    padding: 16px 26px;
+    font-size: 13px; font-weight: 500;
+    color: var(--forest);
+    border-top: 1px solid var(--cream-2);
+    transition: background .2s;
+  }
+  .loc-cta:hover { background: var(--forest-mist); }
+</style>
 
 <!-- ── CONTACT ── -->
 <section id="contact" aria-labelledby="contact-h">

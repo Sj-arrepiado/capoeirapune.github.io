@@ -294,7 +294,7 @@
 
     .instrument-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius-md); padding: 22px 14px; text-align: center; transition: border-color .2s, transform .2s, background .2s; }
     .instrument-card:hover { border-color: var(--gold); background: rgba(255,255,255,.1); transform: translateY(-3px); }
-    .instrument-icon { font-size: 28px; margin-bottom: 10px; }
+    .instrument-icon { display: flex; align-items: center; justify-content: center; height: 68px; margin-bottom: 12px; }
     .instrument-name { font-size: 13px; font-weight: 500; color: #fff; margin-bottom: 3px; }
     .instrument-role { font-size: 11px; color: rgba(255,255,255,.45); }
 
@@ -690,11 +690,117 @@
       <p>The rhythm of the berimbau tells you everything — how fast to move, when to attack, when to slow down. Learning to listen is half the art.</p>
     </div>
     <div class="instruments-row fade-in">
-      <div class="instrument-card"><div class="instrument-icon" aria-hidden="true">🪘</div><div class="instrument-name">Berimbau</div><div class="instrument-role">Leads the rhythm</div></div>
-      <div class="instrument-card"><div class="instrument-icon" aria-hidden="true">🥁</div><div class="instrument-name">Atabaque</div><div class="instrument-role">The heartbeat</div></div>
-      <div class="instrument-card"><div class="instrument-icon" aria-hidden="true">🪇</div><div class="instrument-name">Pandeiro</div><div class="instrument-role">Swing & joy</div></div>
-      <div class="instrument-card"><div class="instrument-icon" aria-hidden="true">🔔</div><div class="instrument-name">Agogô</div><div class="instrument-role">Bright melody</div></div>
-      <div class="instrument-card"><div class="instrument-icon" aria-hidden="true">〰️</div><div class="instrument-name">Reco-reco</div><div class="instrument-role">Texture & groove</div></div>
+
+      <!-- BERIMBAU — single-string bow with gourd -->
+      <div class="instrument-card">
+        <div class="instrument-icon" aria-hidden="true">
+          <svg viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="64">
+            <!-- bow / stick -->
+            <line x1="30" y1="4" x2="30" y2="76" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- string (slightly curved) -->
+            <path d="M30 8 Q38 40 30 72" stroke="rgba(255,255,255,.5)" stroke-width="1" fill="none"/>
+            <!-- gourd -->
+            <ellipse cx="30" cy="58" rx="11" ry="13" fill="var(--gold)" opacity=".85"/>
+            <ellipse cx="30" cy="58" rx="7" ry="9" fill="var(--gold-dk)" opacity=".5"/>
+            <!-- stick at top -->
+            <circle cx="30" cy="6" r="2.5" fill="var(--gold-lt)"/>
+            <!-- dobrão (coin) on string -->
+            <circle cx="34" cy="36" r="3.5" fill="rgba(255,255,255,.25)" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="instrument-name">Berimbau</div>
+        <div class="instrument-role">Leads the rhythm</div>
+      </div>
+
+      <!-- ATABAQUE — tall conga-style drum -->
+      <div class="instrument-card">
+        <div class="instrument-icon" aria-hidden="true">
+          <svg viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="64">
+            <!-- drum body — tapers toward base -->
+            <path d="M18 18 Q16 60 22 72 L38 72 Q44 60 42 18 Z" fill="var(--gold)" opacity=".8"/>
+            <!-- drum head (top) -->
+            <ellipse cx="30" cy="18" rx="12" ry="5" fill="rgba(255,255,255,.25)" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/>
+            <!-- rim highlight -->
+            <ellipse cx="30" cy="18" rx="12" ry="5" fill="none" stroke="var(--gold-lt)" stroke-width="1"/>
+            <!-- base ring -->
+            <ellipse cx="30" cy="72" rx="8" ry="3" fill="var(--gold-dk)" opacity=".7"/>
+            <!-- tension ropes -->
+            <line x1="22" y1="22" x2="20" y2="68" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+            <line x1="30" y1="23" x2="30" y2="70" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+            <line x1="38" y1="22" x2="40" y2="68" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="instrument-name">Atabaque</div>
+        <div class="instrument-role">The heartbeat</div>
+      </div>
+
+      <!-- PANDEIRO — tambourine with jingles -->
+      <div class="instrument-card">
+        <div class="instrument-icon" aria-hidden="true">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+            <!-- frame ring -->
+            <circle cx="40" cy="40" r="28" stroke="var(--gold)" stroke-width="5" fill="none"/>
+            <!-- drum skin -->
+            <circle cx="40" cy="40" r="23" fill="var(--gold)" opacity=".18"/>
+            <!-- jingles — small rectangles around ring -->
+            <rect x="61" y="37" width="7" height="4" rx="1" fill="var(--gold-lt)" opacity=".9"/>
+            <rect x="51" y="60" width="7" height="4" rx="1" fill="var(--gold-lt)" opacity=".9" transform="rotate(-45 54 62)"/>
+            <rect x="28" y="64" width="7" height="4" rx="1" fill="var(--gold-lt)" opacity=".9" transform="rotate(-75 31 66)"/>
+            <rect x="10" y="50" width="7" height="4" rx="1" fill="var(--gold-lt)" opacity=".9" transform="rotate(-120 13 52)"/>
+            <rect x="10" y="26" width="7" height="4" rx="1" fill="var(--gold-lt)" opacity=".9" transform="rotate(120 13 28)"/>
+            <rect x="28" y="12" width="7" height="4" rx="1" fill="var(--gold-lt)" opacity=".9" transform="rotate(75 31 14)"/>
+            <rect x="50" y="13" width="7" height="4" rx="1" fill="var(--gold-lt)" opacity=".9" transform="rotate(45 53 15)"/>
+            <!-- thumb hole -->
+            <circle cx="40" cy="40" r="5" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="instrument-name">Pandeiro</div>
+        <div class="instrument-role">Swing &amp; joy</div>
+      </div>
+
+      <!-- AGOGÔ — double bell -->
+      <div class="instrument-card">
+        <div class="instrument-icon" aria-hidden="true">
+          <svg viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="64">
+            <!-- handle -->
+            <rect x="27" y="4" width="6" height="20" rx="3" fill="var(--gold)" opacity=".7"/>
+            <!-- connecting bar -->
+            <path d="M20 22 Q30 18 40 26" stroke="var(--gold)" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- large bell (left) -->
+            <path d="M10 30 Q8 48 16 56 Q20 60 24 56 Q28 48 26 30 Z" fill="var(--gold)" opacity=".85"/>
+            <ellipse cx="18" cy="30" rx="8" ry="3.5" fill="rgba(255,255,255,.2)" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+            <!-- small bell (right) -->
+            <path d="M30 34 Q28 48 34 54 Q37 57 40 54 Q44 48 42 34 Z" fill="var(--gold-lt)" opacity=".85"/>
+            <ellipse cx="36" cy="34" rx="6" ry="3" fill="rgba(255,255,255,.2)" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="instrument-name">Agogô</div>
+        <div class="instrument-role">Bright melody</div>
+      </div>
+
+      <!-- RECO-RECO — corrugated scraper tube -->
+      <div class="instrument-card">
+        <div class="instrument-icon" aria-hidden="true">
+          <svg viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="64">
+            <!-- main tube body -->
+            <rect x="20" y="10" width="20" height="58" rx="4" fill="var(--gold)" opacity=".75"/>
+            <!-- ridges on tube -->
+            <line x1="20" y1="22" x2="40" y2="22" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+            <line x1="20" y1="30" x2="40" y2="30" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+            <line x1="20" y1="38" x2="40" y2="38" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+            <line x1="20" y1="46" x2="40" y2="46" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+            <line x1="20" y1="54" x2="40" y2="54" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+            <!-- scraper stick -->
+            <rect x="38" y="4" width="4" height="44" rx="2" fill="rgba(255,255,255,.5)"/>
+            <!-- end caps -->
+            <rect x="20" y="10" width="20" height="5" rx="2" fill="var(--gold-lt)" opacity=".6"/>
+            <rect x="20" y="63" width="20" height="5" rx="2" fill="var(--gold-lt)" opacity=".6"/>
+          </svg>
+        </div>
+        <div class="instrument-name">Reco-reco</div>
+        <div class="instrument-role">Texture &amp; groove</div>
+      </div>
+
     </div>
     <div class="music-quote fade-in">
       <p>Students don't just learn to move — they learn to play, to sing, and to feel the music in their body. It's one of the things that makes Capoeira <em>unlike anything else.</em></p>
